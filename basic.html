@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>基礎單價目｜魔丸娛樂</title>
+
+  <meta name="description" content="魔丸娛樂基礎單價目，包含保底單、體驗單、賭約單、油鍋單、娛樂陪與技術陪。">
+  <meta property="og:title" content="基礎單價目｜魔丸娛樂">
+  <meta property="og:description" content="保底單、體驗單、賭約單、油鍋單、娛樂陪、技術陪完整價目。">
+  <meta property="og:image" content="logo.png">
+  <meta property="og:type" content="website">
+
+  <meta name="theme-color" content="#0b0706">
+  <link rel="icon" href="logo.png">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Microsoft JhengHei", "Noto Sans TC", Arial, sans-serif;
+      color: #f7efe2;
+      background:
+        radial-gradient(circle at 12% 8%, rgba(190, 18, 18, 0.28), transparent 20%),
+        radial-gradient(circle at 88% 14%, rgba(255, 95, 30, 0.16), transparent 18%),
+        radial-gradient(circle at 50% 85%, rgba(0, 0, 0, 0.6), transparent 35%),
+        linear-gradient(180deg, #080504 0%, #120a08 45%, #050403 100%);
+      overflow-x: hidden;
+      animation: pageFade 0.75s ease both;
+    }
+
+    @keyframes pageFade {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+        filter: blur(8px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+      }
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -2;
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+      background-size: 44px 44px;
+      opacity: 0.65;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+      background:
+        radial-gradient(circle at 22% 32%, rgba(245, 235, 215, 0.12), transparent 10%),
+        radial-gradient(circle at 72% 38%, rgba(245, 235, 215, 0.08), transparent 13%),
+        radial-gradient(circle at 48% 75%, rgba(150, 0, 0, 0.16), transparent 14%);
+      filter: blur(26px);
+      opacity: 0.52;
+    }
+
+    header {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 20;
+      backdrop-filter: blur(16px);
+      background: rgba(8, 5, 4, 0.78);
+      border-bottom: 1px solid rgba(255, 70, 40, 0.25);
+      box-shadow: 0 0 34px rgba(255, 35, 20, 0.12);
+    }
+
+    .nav {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 14px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: 4px;
+      color: #fff3e0;
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 46px;
+      height: 46px;
+      object-fit: cover;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 88, 45, 0.45);
+      box-shadow: 0 0 22px rgba(255, 40, 20, 0.4);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      color: #e7d5bf;
+      text-decoration: none;
+      transition: 0.2s;
+      white-space: nowrap;
+      font-weight: 800;
+    }
+
+    .nav-links a:hover {
+      color: #ff4a34;
+      text-shadow: 0 0 12px rgba(255, 74, 52, 0.7);
+    }
+
+    .page-hero {
+      padding: 150px 22px 70px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-hero::before {
+      content: "基礎單";
+      position: absolute;
+      left: 50%;
+      top: 58%;
+      transform: translate(-50%, -50%);
+      font-size: clamp(90px, 17vw, 230px);
+      font-weight: 900;
+      color: rgba(255, 244, 226, 0.035);
+      letter-spacing: 22px;
+      white-space: nowrap;
+      pointer-events: none;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 16px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.065);
+      border: 1px solid rgba(255, 82, 48, 0.32);
+      color: #ffb6a8;
+      font-size: 14px;
+      margin-bottom: 22px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      box-shadow: 0 0 26px rgba(255, 55, 20, 0.16);
+      position: relative;
+      z-index: 2;
+    }
+
+    .badge span {
+      width: 9px;
+      height: 9px;
+      background: #ff3b24;
+      border-radius: 50%;
+      box-shadow: 0 0 16px rgba(255, 59, 36, 0.9);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(46px, 7vw, 88px);
+      line-height: 1;
+      letter-spacing: 12px;
+      font-weight: 900;
+      color: #fff4e1;
+      text-shadow:
+        0 0 18px rgba(255, 60, 30, 0.4),
+        8px 9px 0 rgba(120, 0, 0, 0.28),
+        0 18px 50px rgba(0, 0, 0, 0.8);
+      position: relative;
+      z-index: 2;
+    }
+
+    .subtitle {
+      margin: 22px auto 0;
+      max-width: 720px;
+      color: #dfcab2;
+      font-size: 18px;
+      line-height: 1.9;
+      font-weight: 700;
+      position: relative;
+      z-index: 2;
+    }
+
+    .quick-nav {
+      max-width: 1180px;
+      margin: 0 auto 34px;
+      padding: 0 22px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .quick-nav a {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.07);
+      color: #ffd8cd;
+      border: 1px solid rgba(255, 80, 50, 0.22);
+      text-decoration: none;
+      font-weight: 900;
+      font-size: 14px;
+      transition: 0.2s;
+    }
+
+    .quick-nav a:hover {
+      background: rgba(255, 74, 52, 0.18);
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    section {
+      padding: 40px 22px;
+      position: relative;
+    }
+
+    .section-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .price-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 26px;
+    }
+
+    .price-card {
+      padding: 30px;
+      border-radius: 10px;
+      position: relative;
+      overflow: hidden;
+      transition: 0.25s;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.105), rgba(255,255,255,0.035));
+      border: 1px solid rgba(255, 95, 55, 0.22);
+      box-shadow:
+        0 0 38px rgba(255, 45, 20, 0.08),
+        10px 10px 0 rgba(0,0,0,0.34),
+        0 18px 48px rgba(0, 0, 0, 0.42);
+      backdrop-filter: blur(6px);
+      opacity: 0;
+      transform: translateY(30px);
+      animation: cardIn 0.75s ease forwards;
+    }
+
+    .price-card:nth-child(1) { animation-delay: 0.08s; }
+    .price-card:nth-child(2) { animation-delay: 0.16s; }
+    .price-card:nth-child(3) { animation-delay: 0.24s; }
+    .price-card:nth-child(4) { animation-delay: 0.32s; }
+    .price-card:nth-child(5) { animation-delay: 0.40s; }
+    .price-card:nth-child(6) { animation-delay: 0.48s; }
+
+    @keyframes cardIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .price-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.12), transparent 20%),
+        linear-gradient(120deg, transparent 0%, transparent 60%, rgba(255, 75, 45, 0.08) 61%, transparent 62%);
+      pointer-events: none;
+    }
+
+    .price-card:hover {
+      transform: translate(-3px, -3px);
+      border-color: rgba(255, 76, 45, 0.55);
+      box-shadow:
+        0 0 54px rgba(255, 45, 20, 0.18),
+        14px 14px 0 rgba(0, 0, 0, 0.42);
+    }
+
+    .price-card.featured {
+      border-color: rgba(255, 82, 48, 0.58);
+      box-shadow:
+        0 0 58px rgba(255, 45, 20, 0.18),
+        12px 12px 0 rgba(0, 0, 0, 0.4);
+    }
+
+    .price-label {
+      display: inline-block;
+      padding: 7px 12px;
+      border-radius: 4px;
+      background: rgba(255, 59, 36, 0.14);
+      color: #ff9b8d;
+      border: 1px solid rgba(255, 59, 36, 0.28);
+      font-size: 13px;
+      font-weight: 900;
+      margin-bottom: 16px;
+      letter-spacing: 1px;
+      position: relative;
+    }
+
+    .price-card h2 {
+      margin: 0 0 16px;
+      font-size: 32px;
+      color: #fff4e1;
+      letter-spacing: 5px;
+      position: relative;
+    }
+
+    .price-main {
+      margin: 16px 0 20px;
+      padding: 18px;
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, rgba(0, 0, 0, 0.34), rgba(255, 255, 255, 0.035));
+      border: 1px dashed rgba(255, 145, 110, 0.28);
+      position: relative;
+    }
+
+    .price-main p {
+      margin: 8px 0;
+      color: #eedbc5;
+      line-height: 1.8;
+      font-weight: 800;
+    }
+
+    .price-main strong {
+      color: #ff604b;
+      font-size: 20px;
+    }
+
+    .mini-title {
+      margin: 22px 0 10px;
+      color: #ff6a55;
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      position: relative;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 14px;
+      position: relative;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 7px 10px;
+      border-radius: 4px;
+      background: rgba(255, 59, 36, 0.1);
+      border: 1px solid rgba(255, 80, 50, 0.24);
+      color: #ffd8cd;
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .notice {
+      margin-top: 14px;
+      padding: 14px 16px;
+      border-radius: 6px;
+      background: rgba(255, 184, 0, 0.075);
+      border-left: 4px solid #ff5b32;
+      color: #f0d7b7;
+      line-height: 1.8;
+      font-size: 14px;
+      font-weight: 700;
+      position: relative;
+    }
+
+    .rules-list {
+      padding-left: 22px;
+      margin: 10px 0 0;
+      color: #dfcab2;
+      line-height: 1.9;
+      font-weight: 600;
+      position: relative;
+    }
+
+    .rules-list li {
+      margin-bottom: 6px;
+    }
+
+    .bottom-cta {
+      padding: 70px 22px 90px;
+      text-align: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 150px;
+      padding: 15px 28px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 900;
+      letter-spacing: 2px;
+      transition: 0.25s;
+      margin: 8px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #85130f, #ff4a24);
+      color: #fff4e1;
+      border: 1px solid rgba(255, 116, 70, 0.55);
+      box-shadow:
+        0 0 26px rgba(255, 55, 20, 0.42),
+        7px 7px 0 rgba(0, 0, 0, 0.42);
+    }
+
+    .btn-secondary {
+      color: #fff1dc;
+      background: rgba(255, 255, 255, 0.045);
+      border: 1px solid rgba(255, 166, 120, 0.34);
+      box-shadow: 7px 7px 0 rgba(0, 0, 0, 0.36);
+    }
+
+    .btn:hover {
+      transform: translate(-2px, -2px);
+    }
+
+    footer {
+      padding: 34px 22px;
+      text-align: center;
+      color: #a9927a;
+      background: rgba(5, 4, 3, 0.78);
+      border-top: 1px solid rgba(255, 80, 50, 0.18);
+      font-weight: 700;
+    }
+
+    @media (max-width: 980px) {
+      .price-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .page-hero {
+        padding-top: 125px;
+      }
+
+      h1 {
+        letter-spacing: 6px;
+      }
+
+      .price-card {
+        padding: 22px;
+      }
+
+      .price-card h2 {
+        font-size: 27px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="nav">
+      <a class="brand" href="index.html">
+        <img src="logo.png" alt="魔丸娛樂 Logo">
+        <span>魔丸娛樂</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html">回首頁</a>
+        <a href="#guarantee">保底單</a>
+        <a href="#trial">體驗單</a>
+        <a href="#bet">賭約單</a>
+        <a href="#item">油鍋單</a>
+        <a href="#play">娛樂陪</a>
+        <a href="#skill">技術陪</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="badge">
+        <span></span>
+        BASIC ORDER MENU
+      </div>
+
+      <h1>基礎單價目</h1>
+
+      <p class="subtitle">
+        以下為魔丸娛樂基礎單分類，實際排單、價格與服務內容仍以客服確認為準。
+      </p>
+    </section>
+
+    <div class="quick-nav">
+      <a href="#guarantee">保底單</a>
+      <a href="#trial">體驗單</a>
+      <a href="#bet">賭約單</a>
+      <a href="#item">油鍋單</a>
+      <a href="#play">娛樂陪</a>
+      <a href="#skill">技術陪</a>
+    </div>
+
+    <section>
+      <div class="section-inner">
+        <div class="price-grid">
+          <div class="price-card featured" id="guarantee">
+            <div class="price-label">BASIC</div>
+            <h2>保底單</h2>
+
+            <div class="price-main">
+              <p><strong>金額 x 1.3 = 保底哈夫幣</strong></p>
+              <p>最低 500T 起</p>
+              <p>1000T x 1.3 → 1300w</p>
+              <p>1500T x 1.3 → 1950w</p>
+              <p>2000T x 1.3 → 2600w</p>
+            </div>
+
+            <div class="mini-title">指定護航</div>
+            <div class="tag-list">
+              <span class="tag">Elite 200T</span>
+              <span class="tag">Grandmaster/Master 150T</span>
+              <span class="tag">Diamond 100T</span>
+              <span class="tag">單筆兩單以上免指定費</span>
+            </div>
+
+            <div class="mini-title">下單須知</div>
+            <ol class="rules-list">
+              <li>此單為打手選圖</li>
+              <li>打手最低四頭五甲</li>
+              <li>不包過點及飯卡，包卡 +500</li>
+              <li>打手雙倒並指示老闆丟包撤，該局不計入保底</li>
+              <li>老闆帶出價值低於100w，該局不計入保底</li>
+              <li>對局期間老闆務必全程配合打手指揮，如因老闆自身因素導致撤離失敗，將立即結單處理</li>
+              <li>服務期間老闆刻意不撿物品卡保底，經打手舉報核實，將立即結單處理</li>
+              <li>老闆撤離失敗算炸單，機密保底 +20w、絕密保底 +60w</li>
+              <li>連續炸單六局，遇外掛不計入，經老闆同意後，可更換打手或全額退款</li>
+              <li>服務期間出現服務態度惡劣等狀況，請立即連絡客服並善用客訴管道</li>
+            </ol>
+          </div>
+
+          <div class="price-card" id="trial">
+            <div class="price-label">TRIAL</div>
+            <h2>體驗單</h2>
+
+            <div class="price-main">
+              <p><strong>普通體驗單 500T</strong> 保 777w</p>
+              <p><strong>尊爵體驗單 1000T</strong> 保 1688w</p>
+            </div>
+
+            <div class="tag-list">
+              <span class="tag">每周可下單一次</span>
+            </div>
+
+            <div class="mini-title">下單須知</div>
+            <ol class="rules-list">
+              <li>此單為打手選圖</li>
+              <li>打手最低四頭五甲</li>
+              <li>包過點及飯卡</li>
+              <li>打手雙倒並指示老闆丟包撤，該局不計入保底</li>
+              <li>老闆帶出價值低於100w，該局不計入保底</li>
+              <li>對局期間老闆務必全程配合打手指揮，如因老闆自身因素導致撤離失敗，將立即結單處理</li>
+              <li>服務期間老闆刻意不撿物品卡保底，經打手舉報核實，將立即結單處理</li>
+              <li>老闆撤離失敗算炸單，機密保底 +20w、絕密保底 +60w</li>
+              <li>連續炸單六局，遇外掛不計入，經老闆同意後，可更換打手或全額退款</li>
+              <li>服務期間出現服務態度惡劣等狀況，請立即連絡客服並善用客訴管道</li>
+            </ol>
+          </div>
+
+          <div class="price-card" id="bet">
+            <div class="price-label">BET</div>
+            <h2>賭約單</h2>
+
+            <div class="price-main">
+              <p><strong>600T</strong> 單局 520w，打到有為止</p>
+              <p><strong>800T</strong> 單局 666w，打到有為止</p>
+              <p><strong>1000T</strong> 單局 888w，打到有為止</p>
+            </div>
+
+            <div class="mini-title">下單須知</div>
+            <ol class="rules-list">
+              <li>此單為打手選圖，機密以上</li>
+              <li>打手最低四頭五甲</li>
+              <li>包過點及飯卡</li>
+              <li>對局期間老闆務必全程配合打手指揮，如因老闆自身因素導致撤離失敗，將立即結單處理</li>
+              <li>服務期間老闆刻意不撿物品卡保底，經打手舉報核實，將立即結單處理</li>
+              <li>連續炸單六局，遇外掛不計入，經老闆同意後，可更換打手或全額退款</li>
+              <li>服務期間出現服務態度惡劣等狀況，請立即連絡客服並善用客訴管道</li>
+            </ol>
+          </div>
+
+          <div class="price-card" id="item">
+            <div class="price-label">ITEM</div>
+            <h2>油鍋單</h2>
+
+            <div class="price-main">
+              <p><strong>火箭燃油 3000T</strong> 保底 2000w</p>
+              <p><strong>GTI衛星通信天線 2000T</strong> 保底 1500w</p>
+              <p><strong>全包 4500T</strong> 保底 3500w</p>
+            </div>
+
+            <div class="mini-title">指定護航</div>
+            <div class="tag-list">
+              <span class="tag">Elite 200T</span>
+              <span class="tag">Grandmaster/Master 150T</span>
+              <span class="tag">Diamond 100T</span>
+            </div>
+
+            <div class="notice">
+              若是保底仍未出貨，下場改以撞車形式將道具交由老闆，確保老闆一定能取得。<br>
+              若是保底前出貨即算結單。
+            </div>
+
+            <div class="mini-title">下單須知</div>
+            <ol class="rules-list">
+              <li>打手最低四頭五甲</li>
+              <li>不包過點及飯卡，包卡 +500</li>
+              <li>打手雙倒並指示老闆丟包撤，該局不計入保底</li>
+              <li>老闆帶出價值低於100w，該局不計入保底</li>
+              <li>對局期間老闆務必全程配合打手指揮，如因老闆自身因素導致撤離失敗，將立即結單處理</li>
+              <li>服務期間老闆刻意不撿物品卡保底，經打手舉報核實，將立即結單處理</li>
+              <li>老闆撤離失敗算炸單，機密保底 +20w、絕密保底 +60w</li>
+              <li>連續炸單六局，遇外掛不計入，經老闆同意後，可更換打手或全額退款</li>
+              <li>服務期間出現服務態度惡劣等狀況，請立即連絡客服並善用客訴管道</li>
+            </ol>
+          </div>
+
+          <div class="price-card" id="play">
+            <div class="price-label">PLAY</div>
+            <h2>娛樂陪</h2>
+
+            <div class="price-main">
+              <p><strong>陪玩單陪 320T / 1H</strong></p>
+              <p>不保撤，無保底</p>
+            </div>
+
+            <div class="tag-list">
+              <span class="tag">指定陪玩 +100T</span>
+              <span class="tag">單筆兩單以上免指定費</span>
+            </div>
+
+            <div class="mini-title">下單須知</div>
+            <ol class="rules-list">
+              <li>此單為老闆選圖</li>
+              <li>不包過點卡及飯卡</li>
+              <li>服務期間出現服務態度惡劣等狀況，請立即連絡客服並善用客訴管道</li>
+              <li>陪玩單一律不接受任何技術投訴</li>
+            </ol>
+          </div>
+
+          <div class="price-card featured" id="skill">
+            <div class="price-label">SKILL</div>
+            <h2>技術陪</h2>
+
+            <div class="price-main">
+              <p><strong>機密單護 400T / 1H</strong> 無保底</p>
+              <p><strong>機密雙護 700T / 1H</strong> 保底 550w</p>
+              <p><strong>絕密雙護 900T / 1H</strong> 無保底</p>
+            </div>
+
+            <div class="notice">
+              純綠護，台服絕密太多掛，本店不做沒把握的約。
+            </div>
+
+            <div class="mini-title">指定護航</div>
+            <div class="tag-list">
+              <span class="tag">Elite 200T</span>
+              <span class="tag">Grandmaster/Master 150T</span>
+              <span class="tag">Diamond 100T</span>
+              <span class="tag">單筆兩單以上免指定費</span>
+            </div>
+
+            <div class="mini-title">下單須知</div>
+            <ol class="rules-list">
+              <li>此單為打手選圖</li>
+              <li>打手最低四頭五甲</li>
+              <li>包過點及飯卡</li>
+              <li>時間到但保底未到，會幫老闆把保底打滿再結單；保底到但時間未到，仍會陪老闆打滿時間</li>
+              <li>打手雙倒並指示老闆丟包撤，該局不計入保底</li>
+              <li>老闆帶出價值低於100w，該局不計入保底</li>
+              <li>對局期間老闆務必全程配合打手指揮，如因老闆自身因素導致撤離失敗，將立即結單處理</li>
+              <li>服務期間老闆刻意不撿物品卡保底，經打手舉報核實，將立即結單處理</li>
+              <li>老闆撤離失敗算炸單，機密保底 +20w、絕密保底 +60w</li>
+              <li>連續炸單六局，遇外掛不計入，經老闆同意後，可更換打手或全額退款</li>
+              <li>服務期間出現服務態度惡劣等狀況，請立即連絡客服並善用客訴管道</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="bottom-cta">
+      <a class="btn btn-primary" href="https://discord.gg/EdxRfJ2MfX" target="_blank">
+        前往 Discord 下單
+      </a>
+
+      <a class="btn btn-secondary" href="index.html">
+        回到首頁
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    © 2026 魔丸娛樂 Mowan Entertainment. All rights reserved.
+  </footer>
+</body>
+</html>
