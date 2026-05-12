@@ -21,7 +21,7 @@
     }
 
     html {
-      scroll-behavior: smooth;
+      scroll-behavior: auto;
     }
 
     body {
@@ -29,8 +29,8 @@
       font-family: "Microsoft JhengHei", "Noto Sans TC", Arial, sans-serif;
       color: #f7efe2;
       background:
-        radial-gradient(circle at 12% 8%, rgba(190, 18, 18, 0.22), transparent 20%),
-        radial-gradient(circle at 88% 14%, rgba(255, 95, 30, 0.12), transparent 18%),
+        radial-gradient(circle at 12% 8%, rgba(190, 18, 18, 0.2), transparent 20%),
+        radial-gradient(circle at 88% 14%, rgba(255, 95, 30, 0.1), transparent 18%),
         linear-gradient(180deg, #080504 0%, #120a08 45%, #050403 100%);
       overflow-x: hidden;
     }
@@ -42,24 +42,24 @@
       pointer-events: none;
       z-index: -2;
       background:
-        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
       background-size: 44px 44px;
-      opacity: 0.5;
+      opacity: 0.45;
     }
 
     .page-enter {
-      animation: pageEnter 0.55s ease both;
+      animation: pageEnter 0.45s ease both;
     }
 
     .page-exit {
-      animation: pageExit 0.35s ease both;
+      animation: pageExit 0.28s ease both;
     }
 
     @keyframes pageEnter {
       from {
         opacity: 0;
-        transform: translateY(22px);
+        transform: translateY(16px);
       }
 
       to {
@@ -76,53 +76,8 @@
 
       to {
         opacity: 0;
-        transform: translateY(24px);
+        transform: translateY(18px);
       }
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(36px);
-      transition: opacity 0.65s ease, transform 0.65s ease;
-    }
-
-    .reveal.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .reveal-left {
-      opacity: 0;
-      transform: translateX(-42px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-
-    .reveal-left.show {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    .reveal-right {
-      opacity: 0;
-      transform: translateX(42px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-
-    .reveal-right.show {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    .reveal-delay-1 {
-      transition-delay: 0.08s;
-    }
-
-    .reveal-delay-2 {
-      transition-delay: 0.16s;
-    }
-
-    .reveal-delay-3 {
-      transition-delay: 0.24s;
     }
 
     header {
@@ -131,9 +86,9 @@
       top: 0;
       left: 0;
       z-index: 20;
-      background: rgba(8, 5, 4, 0.92);
-      border-bottom: 1px solid rgba(255, 70, 40, 0.25);
-      box-shadow: 0 0 24px rgba(255, 35, 20, 0.08);
+      background: rgba(8, 5, 4, 0.94);
+      border-bottom: 1px solid rgba(255, 70, 40, 0.22);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.32);
     }
 
     .nav {
@@ -161,8 +116,8 @@
       height: 46px;
       object-fit: cover;
       border-radius: 14px;
-      border: 1px solid rgba(255, 88, 45, 0.45);
-      box-shadow: 0 0 18px rgba(255, 40, 20, 0.28);
+      border: 1px solid rgba(255, 88, 45, 0.42);
+      box-shadow: 0 0 14px rgba(255, 40, 20, 0.22);
     }
 
     .nav-links {
@@ -175,14 +130,13 @@
     .nav-links a {
       color: #e7d5bf;
       text-decoration: none;
-      transition: 0.2s;
+      transition: 0.18s;
       white-space: nowrap;
       font-weight: 800;
     }
 
     .nav-links a:hover {
       color: #ff4a34;
-      text-shadow: 0 0 10px rgba(255, 74, 52, 0.55);
     }
 
     .page-hero {
@@ -213,13 +167,12 @@
       padding: 9px 16px;
       border-radius: 999px;
       background: rgba(255, 255, 255, 0.065);
-      border: 1px solid rgba(255, 82, 48, 0.32);
+      border: 1px solid rgba(255, 82, 48, 0.3);
       color: #ffb6a8;
       font-size: 14px;
       margin-bottom: 22px;
       font-weight: 900;
       letter-spacing: 1px;
-      box-shadow: 0 0 20px rgba(255, 55, 20, 0.12);
       position: relative;
       z-index: 2;
     }
@@ -229,7 +182,7 @@
       height: 9px;
       background: #ff3b24;
       border-radius: 50%;
-      box-shadow: 0 0 14px rgba(255, 59, 36, 0.75);
+      box-shadow: 0 0 12px rgba(255, 59, 36, 0.6);
     }
 
     h1 {
@@ -240,9 +193,8 @@
       font-weight: 900;
       color: #fff4e1;
       text-shadow:
-        0 0 16px rgba(255, 60, 30, 0.32),
-        8px 9px 0 rgba(120, 0, 0, 0.25),
-        0 18px 40px rgba(0, 0, 0, 0.65);
+        0 0 12px rgba(255, 60, 30, 0.24),
+        6px 7px 0 rgba(120, 0, 0, 0.2);
       position: relative;
       z-index: 2;
     }
@@ -273,17 +225,16 @@
       border-radius: 999px;
       background: rgba(255, 255, 255, 0.07);
       color: #ffd8cd;
-      border: 1px solid rgba(255, 80, 50, 0.22);
+      border: 1px solid rgba(255, 80, 50, 0.2);
       text-decoration: none;
       font-weight: 900;
       font-size: 14px;
-      transition: 0.2s;
+      transition: 0.18s;
     }
 
     .quick-nav a:hover {
-      background: rgba(255, 74, 52, 0.18);
+      background: rgba(255, 74, 52, 0.16);
       color: #ffffff;
-      transform: translateY(-2px);
     }
 
     section {
@@ -307,29 +258,22 @@
       border-radius: 10px;
       position: relative;
       overflow: hidden;
-      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
       background:
         linear-gradient(135deg, rgba(255,255,255,0.105), rgba(255,255,255,0.035));
       border: 1px solid rgba(255, 95, 55, 0.22);
-      box-shadow:
-        0 0 26px rgba(255, 45, 20, 0.06),
-        9px 9px 0 rgba(0,0,0,0.32),
-        0 14px 38px rgba(0, 0, 0, 0.35);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
+      transition: border-color 0.18s ease, background 0.18s ease;
     }
 
     .price-card:hover {
-      transform: translate(-3px, -3px);
       border-color: rgba(255, 76, 45, 0.55);
-      box-shadow:
-        0 0 34px rgba(255, 45, 20, 0.13),
-        12px 12px 0 rgba(0, 0, 0, 0.38);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.13), rgba(255,255,255,0.045));
     }
 
     .price-card.featured {
-      border-color: rgba(255, 82, 48, 0.58);
-      box-shadow:
-        0 0 34px rgba(255, 45, 20, 0.14),
-        10px 10px 0 rgba(0, 0, 0, 0.35);
+      border-color: rgba(255, 82, 48, 0.52);
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.32);
     }
 
     .price-label {
@@ -338,7 +282,7 @@
       border-radius: 4px;
       background: rgba(255, 59, 36, 0.14);
       color: #ff9b8d;
-      border: 1px solid rgba(255, 59, 36, 0.28);
+      border: 1px solid rgba(255, 59, 36, 0.25);
       font-size: 13px;
       font-weight: 900;
       margin-bottom: 16px;
@@ -358,9 +302,8 @@
       margin: 16px 0 20px;
       padding: 18px;
       border-radius: 8px;
-      background:
-        linear-gradient(135deg, rgba(0, 0, 0, 0.34), rgba(255, 255, 255, 0.035));
-      border: 1px dashed rgba(255, 145, 110, 0.28);
+      background: rgba(0, 0, 0, 0.28);
+      border: 1px dashed rgba(255, 145, 110, 0.24);
       position: relative;
     }
 
@@ -398,7 +341,7 @@
       padding: 7px 10px;
       border-radius: 4px;
       background: rgba(255, 59, 36, 0.1);
-      border: 1px solid rgba(255, 80, 50, 0.24);
+      border: 1px solid rgba(255, 80, 50, 0.22);
       color: #ffd8cd;
       font-size: 14px;
       font-weight: 900;
@@ -445,43 +388,30 @@
       text-decoration: none;
       font-weight: 900;
       letter-spacing: 2px;
-      transition: 0.25s;
+      transition: 0.2s;
       margin: 8px;
       position: relative;
       overflow: hidden;
     }
 
-    .btn::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(110deg, transparent, rgba(255,255,255,0.16), transparent);
-      transform: translateX(-120%);
-      transition: 0.55s;
-    }
-
-    .btn:hover::before {
-      transform: translateX(120%);
-    }
-
     .btn-primary {
       background: linear-gradient(135deg, #85130f, #ff4a24);
       color: #fff4e1;
-      border: 1px solid rgba(255, 116, 70, 0.55);
+      border: 1px solid rgba(255, 116, 70, 0.5);
       box-shadow:
-        0 0 22px rgba(255, 55, 20, 0.28),
-        7px 7px 0 rgba(0, 0, 0, 0.36);
+        0 0 18px rgba(255, 55, 20, 0.22),
+        5px 5px 0 rgba(0, 0, 0, 0.34);
     }
 
     .btn-secondary {
       color: #fff1dc;
       background: rgba(255, 255, 255, 0.045);
-      border: 1px solid rgba(255, 166, 120, 0.34);
-      box-shadow: 7px 7px 0 rgba(0, 0, 0, 0.32);
+      border: 1px solid rgba(255, 166, 120, 0.3);
+      box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.28);
     }
 
     .btn:hover {
-      transform: translate(-2px, -2px);
+      transform: translateY(-2px);
     }
 
     footer {
@@ -519,18 +449,23 @@
       .price-card h2 {
         font-size: 27px;
       }
+
+      .btn {
+        width: 100%;
+        max-width: 320px;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
       .page-enter,
-      .page-exit,
-      .reveal,
-      .reveal-left,
-      .reveal-right {
+      .page-exit {
         animation: none !important;
+      }
+
+      .btn,
+      .price-card,
+      .quick-nav a {
         transition: none !important;
-        opacity: 1 !important;
-        transform: none !important;
       }
     }
   </style>
@@ -558,19 +493,19 @@
 
   <main>
     <section class="page-hero">
-      <div class="badge reveal show">
+      <div class="badge">
         <span></span>
         BASIC ORDER MENU
       </div>
 
-      <h1 class="reveal show">基礎單價目</h1>
+      <h1>基礎單價目</h1>
 
-      <p class="subtitle reveal show">
+      <p class="subtitle">
         以下為魔丸娛樂基礎單分類，實際排單、價格與服務內容仍以客服確認為準。
       </p>
     </section>
 
-    <div class="quick-nav reveal show">
+    <div class="quick-nav">
       <a href="#guarantee">保底單</a>
       <a href="#trial">體驗單</a>
       <a href="#bet">賭約單</a>
@@ -582,7 +517,7 @@
     <section>
       <div class="section-inner">
         <div class="price-grid">
-          <div class="price-card featured reveal" id="guarantee">
+          <div class="price-card featured" id="guarantee">
             <div class="price-label">BASIC</div>
             <h2>保底單</h2>
 
@@ -617,7 +552,7 @@
             </ol>
           </div>
 
-          <div class="price-card reveal reveal-delay-1" id="trial">
+          <div class="price-card" id="trial">
             <div class="price-label">TRIAL</div>
             <h2>體驗單</h2>
 
@@ -645,7 +580,7 @@
             </ol>
           </div>
 
-          <div class="price-card reveal" id="bet">
+          <div class="price-card" id="bet">
             <div class="price-label">BET</div>
             <h2>賭約單</h2>
 
@@ -667,7 +602,7 @@
             </ol>
           </div>
 
-          <div class="price-card reveal reveal-delay-1" id="item">
+          <div class="price-card" id="item">
             <div class="price-label">ITEM</div>
             <h2>油鍋單</h2>
 
@@ -703,7 +638,7 @@
             </ol>
           </div>
 
-          <div class="price-card reveal" id="play">
+          <div class="price-card" id="play">
             <div class="price-label">PLAY</div>
             <h2>娛樂陪</h2>
 
@@ -726,7 +661,7 @@
             </ol>
           </div>
 
-          <div class="price-card featured reveal reveal-delay-1" id="skill">
+          <div class="price-card featured" id="skill">
             <div class="price-label">SKILL</div>
             <h2>技術陪</h2>
 
@@ -767,7 +702,7 @@
       </div>
     </section>
 
-    <div class="bottom-cta reveal">
+    <div class="bottom-cta">
       <a class="btn btn-primary" href="https://discord.gg/EdxRfJ2MfX" target="_blank">
         前往 Discord 下單
       </a>
@@ -783,27 +718,6 @@
   </footer>
 
   <script>
-    const revealElements = document.querySelectorAll(
-      ".reveal, .reveal-left, .reveal-right"
-    );
-
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-          }
-        });
-      },
-      {
-        threshold: 0.12
-      }
-    );
-
-    revealElements.forEach(element => {
-      observer.observe(element);
-    });
-
     const pageLinks = document.querySelectorAll(".page-link");
 
     pageLinks.forEach(link => {
@@ -820,7 +734,7 @@
 
         setTimeout(() => {
           window.location.href = href;
-        }, 320);
+        }, 280);
       });
     });
   </script>
