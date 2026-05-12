@@ -7,13 +7,12 @@
   <title>魔丸娛樂｜三角洲護航・遊戲陪玩</title>
 
   <meta name="description" content="魔丸娛樂提供三角洲護航、遊戲陪玩與 Valorant 陪玩服務，重視排單效率、服務品質與顧客體驗。">
-
   <meta property="og:title" content="魔丸娛樂｜三角洲護航・遊戲陪玩">
   <meta property="og:description" content="三角洲護航、遊戲陪玩、Valorant 陪玩，快速排單，穩定服務。">
   <meta property="og:image" content="logo.png">
   <meta property="og:type" content="website">
 
-  <meta name="theme-color" content="#f4efe4">
+  <meta name="theme-color" content="#0b0706">
   <link rel="icon" href="logo.png">
 
   <style>
@@ -27,13 +26,13 @@
 
     body {
       margin: 0;
-      font-family: "Microsoft JhengHei", "Noto Serif TC", "Noto Sans TC", serif;
-      color: #1d1b18;
+      font-family: "Microsoft JhengHei", "Noto Sans TC", Arial, sans-serif;
+      color: #f7efe2;
       background:
-        radial-gradient(circle at 12% 10%, rgba(0, 0, 0, 0.12), transparent 22%),
-        radial-gradient(circle at 88% 18%, rgba(120, 0, 0, 0.12), transparent 18%),
-        radial-gradient(circle at 80% 75%, rgba(0, 0, 0, 0.1), transparent 22%),
-        linear-gradient(180deg, #f8f2e7 0%, #eee3d1 50%, #f7f0e5 100%);
+        radial-gradient(circle at 12% 8%, rgba(190, 18, 18, 0.28), transparent 20%),
+        radial-gradient(circle at 88% 14%, rgba(255, 95, 30, 0.16), transparent 18%),
+        radial-gradient(circle at 50% 85%, rgba(0, 0, 0, 0.6), transparent 35%),
+        linear-gradient(180deg, #080504 0%, #120a08 45%, #050403 100%);
       overflow-x: hidden;
     }
 
@@ -43,11 +42,12 @@
       inset: 0;
       pointer-events: none;
       z-index: -2;
-      background-image:
-        linear-gradient(rgba(50, 38, 25, 0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(50, 38, 25, 0.035) 1px, transparent 1px);
-      background-size: 36px 36px;
-      opacity: 0.7;
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(to bottom, transparent, black 12%, black 86%, transparent);
+      opacity: 0.65;
     }
 
     body::after {
@@ -57,11 +57,24 @@
       pointer-events: none;
       z-index: -1;
       background:
-        radial-gradient(circle at 20% 35%, rgba(0,0,0,0.12), transparent 9%),
-        radial-gradient(circle at 72% 34%, rgba(0,0,0,0.08), transparent 12%),
-        radial-gradient(circle at 45% 85%, rgba(100,0,0,0.1), transparent 10%);
-      filter: blur(22px);
-      opacity: 0.45;
+        radial-gradient(circle at 22% 32%, rgba(245, 235, 215, 0.12), transparent 10%),
+        radial-gradient(circle at 72% 38%, rgba(245, 235, 215, 0.08), transparent 13%),
+        radial-gradient(circle at 48% 75%, rgba(150, 0, 0, 0.16), transparent 14%);
+      filter: blur(26px);
+      opacity: 0.52;
+    }
+
+    .ink-stroke {
+      position: absolute;
+      pointer-events: none;
+      color: rgba(255, 244, 226, 0.035);
+      font-size: clamp(100px, 18vw, 260px);
+      font-weight: 900;
+      writing-mode: vertical-rl;
+      letter-spacing: 18px;
+      right: 4%;
+      top: 14%;
+      user-select: none;
     }
 
     header {
@@ -69,11 +82,11 @@
       position: fixed;
       top: 0;
       left: 0;
-      z-index: 10;
-      backdrop-filter: blur(14px);
-      background: rgba(248, 242, 231, 0.82);
-      border-bottom: 1px solid rgba(45, 35, 24, 0.18);
-      box-shadow: 0 10px 30px rgba(40, 25, 10, 0.08);
+      z-index: 20;
+      backdrop-filter: blur(16px);
+      background: rgba(8, 5, 4, 0.78);
+      border-bottom: 1px solid rgba(255, 70, 40, 0.25);
+      box-shadow: 0 0 34px rgba(255, 35, 20, 0.12);
     }
 
     .nav {
@@ -92,35 +105,36 @@
       gap: 12px;
       font-weight: 900;
       letter-spacing: 4px;
-      color: #17130f;
+      color: #fff3e0;
     }
 
     .brand img {
       width: 46px;
       height: 46px;
       object-fit: cover;
-      border-radius: 50%;
-      border: 1px solid rgba(0,0,0,0.18);
-      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+      border-radius: 14px;
+      border: 1px solid rgba(255, 88, 45, 0.45);
+      box-shadow: 0 0 22px rgba(255, 40, 20, 0.4);
     }
 
     .nav-links {
       display: flex;
-      gap: 20px;
+      gap: 18px;
       align-items: center;
       font-size: 14px;
     }
 
     .nav-links a {
-      color: #2c2720;
+      color: #e7d5bf;
       text-decoration: none;
       transition: 0.2s;
       white-space: nowrap;
-      font-weight: 700;
+      font-weight: 800;
     }
 
     .nav-links a:hover {
-      color: #9d1d15;
+      color: #ff4a34;
+      text-shadow: 0 0 12px rgba(255, 74, 52, 0.7);
     }
 
     .hero {
@@ -130,19 +144,40 @@
       align-items: center;
       justify-content: center;
       position: relative;
+      overflow: hidden;
     }
 
     .hero::before {
-      content: "魔丸";
+      content: "";
       position: absolute;
-      right: 5%;
-      top: 16%;
-      font-size: clamp(90px, 16vw, 220px);
-      writing-mode: vertical-rl;
-      font-weight: 900;
-      color: rgba(0, 0, 0, 0.055);
-      letter-spacing: 18px;
+      width: 820px;
+      height: 820px;
+      right: -260px;
+      top: 4%;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle, rgba(255, 62, 24, 0.24), transparent 52%),
+        conic-gradient(from 180deg, transparent, rgba(255, 65, 28, 0.32), transparent, rgba(255, 180, 80, 0.12), transparent);
+      filter: blur(2px);
+      opacity: 0.75;
+      animation: rotateAura 16s linear infinite;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(115deg, transparent 0%, transparent 42%, rgba(255, 70, 40, 0.12) 43%, transparent 44%, transparent 100%),
+        linear-gradient(65deg, transparent 0%, transparent 62%, rgba(255, 255, 255, 0.06) 63%, transparent 64%, transparent 100%);
       pointer-events: none;
+      opacity: 0.65;
+    }
+
+    @keyframes rotateAura {
+      to {
+        transform: rotate(360deg);
+      }
     }
 
     .hero-inner {
@@ -153,57 +188,59 @@
       align-items: center;
       gap: 52px;
       position: relative;
-      z-index: 1;
+      z-index: 2;
     }
 
     .badge {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 8px 16px;
+      gap: 9px;
+      padding: 9px 16px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.36);
-      border: 1px solid rgba(30, 20, 10, 0.18);
-      color: #8f1d16;
+      background: rgba(255, 255, 255, 0.065);
+      border: 1px solid rgba(255, 82, 48, 0.32);
+      color: #ffb6a8;
       font-size: 14px;
       margin-bottom: 22px;
       font-weight: 900;
       letter-spacing: 1px;
-      box-shadow: 0 10px 26px rgba(40, 25, 10, 0.08);
+      box-shadow: 0 0 26px rgba(255, 55, 20, 0.16);
     }
 
     .badge span {
       width: 9px;
       height: 9px;
-      background: #a51d16;
+      background: #ff3b24;
       border-radius: 50%;
-      box-shadow: 0 0 14px rgba(165, 29, 22, 0.55);
+      box-shadow: 0 0 16px rgba(255, 59, 36, 0.9);
     }
 
     h1 {
       margin: 0;
-      font-size: clamp(50px, 7vw, 92px);
+      font-size: clamp(52px, 7vw, 96px);
       line-height: 1;
       letter-spacing: 12px;
       font-weight: 900;
-      color: #11100e;
+      color: #fff4e1;
       text-shadow:
-        6px 8px 0 rgba(0,0,0,0.045),
-        0 14px 34px rgba(80, 40, 10, 0.12);
+        0 0 18px rgba(255, 60, 30, 0.4),
+        8px 9px 0 rgba(120, 0, 0, 0.28),
+        0 18px 50px rgba(0, 0, 0, 0.8);
     }
 
     .subtitle {
       margin-top: 20px;
-      color: #9d1d15;
+      color: #ff4a34;
       font-size: clamp(18px, 3vw, 28px);
       font-weight: 900;
       letter-spacing: 3px;
+      text-shadow: 0 0 14px rgba(255, 74, 52, 0.45);
     }
 
     .intro {
       margin-top: 26px;
-      max-width: 640px;
-      color: #3e3429;
+      max-width: 650px;
+      color: #e4d2bd;
       font-size: 18px;
       line-height: 2;
       font-weight: 600;
@@ -231,49 +268,75 @@
       overflow: hidden;
     }
 
+    .btn::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(110deg, transparent, rgba(255,255,255,0.18), transparent);
+      transform: translateX(-120%);
+      transition: 0.55s;
+    }
+
+    .btn:hover::before {
+      transform: translateX(120%);
+    }
+
     .btn-primary {
-      background: #16130f;
-      color: #f8f2e7;
-      border: 1px solid #16130f;
-      box-shadow: 7px 7px 0 rgba(157, 29, 21, 0.22);
+      background: linear-gradient(135deg, #85130f, #ff4a24);
+      color: #fff4e1;
+      border: 1px solid rgba(255, 116, 70, 0.55);
+      box-shadow:
+        0 0 26px rgba(255, 55, 20, 0.42),
+        7px 7px 0 rgba(0, 0, 0, 0.42);
     }
 
     .btn-primary:hover {
       transform: translate(-2px, -2px);
-      box-shadow: 11px 11px 0 rgba(157, 29, 21, 0.3);
+      box-shadow:
+        0 0 38px rgba(255, 55, 20, 0.65),
+        11px 11px 0 rgba(0, 0, 0, 0.46);
     }
 
     .btn-secondary {
-      color: #17130f;
-      background: rgba(255, 255, 255, 0.25);
-      border: 1px solid rgba(30, 20, 10, 0.35);
-      box-shadow: 7px 7px 0 rgba(0, 0, 0, 0.07);
+      color: #fff1dc;
+      background: rgba(255, 255, 255, 0.045);
+      border: 1px solid rgba(255, 166, 120, 0.34);
+      box-shadow: 7px 7px 0 rgba(0, 0, 0, 0.36);
     }
 
     .btn-secondary:hover {
       transform: translate(-2px, -2px);
-      color: #9d1d15;
+      color: #ffb6a8;
+      border-color: rgba(255, 74, 52, 0.68);
     }
 
     .logo-card {
       position: relative;
       padding: 18px;
-      border-radius: 6px;
+      border-radius: 12px;
       background:
-        linear-gradient(145deg, rgba(255,255,255,0.55), rgba(238,226,207,0.35));
-      border: 1px solid rgba(25, 18, 12, 0.22);
+        linear-gradient(145deg, rgba(255,255,255,0.12), rgba(255,255,255,0.03));
+      border: 1px solid rgba(255, 91, 48, 0.34);
       box-shadow:
-        18px 18px 0 rgba(0, 0, 0, 0.06),
-        0 30px 90px rgba(68, 38, 12, 0.18);
+        0 0 70px rgba(255, 45, 20, 0.22),
+        18px 18px 0 rgba(0, 0, 0, 0.35),
+        0 30px 90px rgba(0, 0, 0, 0.78);
+      overflow: hidden;
     }
 
     .logo-card::before {
       content: "";
       position: absolute;
-      inset: -16px;
-      border: 2px solid rgba(157, 29, 21, 0.2);
-      transform: rotate(-2deg);
-      z-index: -1;
+      inset: -50%;
+      background: conic-gradient(
+        from 180deg,
+        transparent,
+        rgba(255, 45, 20, 0.35),
+        transparent,
+        rgba(255, 180, 80, 0.16),
+        transparent
+      );
+      animation: rotateAura 9s linear infinite;
     }
 
     .logo-card::after {
@@ -281,35 +344,41 @@
       position: absolute;
       right: 20px;
       bottom: 18px;
-      width: 62px;
-      height: 62px;
-      border: 3px solid #a51d16;
-      color: #a51d16;
+      width: 64px;
+      height: 64px;
+      border: 3px solid #cf281b;
+      color: #cf281b;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 900;
       font-size: 18px;
       transform: rotate(-8deg);
-      background: rgba(248, 242, 231, 0.78);
+      background: rgba(10, 5, 4, 0.72);
+      z-index: 2;
+      box-shadow: 0 0 20px rgba(255, 45, 20, 0.25);
     }
 
     .logo-card img {
+      position: relative;
+      z-index: 1;
       width: 100%;
       display: block;
-      border-radius: 4px;
+      border-radius: 8px;
       object-fit: cover;
-      filter: contrast(1.08) saturate(0.92);
+      filter: contrast(1.08) saturate(1.05);
     }
 
     section {
-      padding: 90px 22px;
+      padding: 92px 22px;
       position: relative;
     }
 
     .section-inner {
       max-width: 1180px;
       margin: 0 auto;
+      position: relative;
+      z-index: 2;
     }
 
     .section-title {
@@ -321,12 +390,14 @@
       font-size: clamp(34px, 5vw, 52px);
       margin: 0;
       letter-spacing: 8px;
-      color: #16130f;
-      text-shadow: 5px 6px 0 rgba(0,0,0,0.045);
+      color: #fff3df;
+      text-shadow:
+        0 0 18px rgba(255, 60, 30, 0.35),
+        5px 6px 0 rgba(110, 0, 0, 0.25);
     }
 
     .section-title p {
-      color: #4a3f34;
+      color: #d8c6b0;
       line-height: 1.9;
       margin-top: 14px;
       font-weight: 600;
@@ -344,38 +415,59 @@
     .step,
     .cta {
       background:
-        linear-gradient(135deg, rgba(255,255,255,0.48), rgba(238,226,207,0.33));
-      border: 1px solid rgba(31, 23, 15, 0.2);
+        linear-gradient(135deg, rgba(255,255,255,0.105), rgba(255,255,255,0.035));
+      border: 1px solid rgba(255, 95, 55, 0.22);
       box-shadow:
-        10px 10px 0 rgba(0,0,0,0.055),
-        0 18px 48px rgba(68, 38, 12, 0.12);
+        0 0 38px rgba(255, 45, 20, 0.08),
+        10px 10px 0 rgba(0,0,0,0.34),
+        0 18px 48px rgba(0, 0, 0, 0.42);
+      backdrop-filter: blur(6px);
     }
 
     .card {
       padding: 30px;
-      border-radius: 6px;
+      border-radius: 10px;
       transition: 0.25s;
+      position: relative;
+      overflow: hidden;
     }
 
-    .card:hover {
+    .card::before,
+    .price-card::before,
+    .rule-box::before,
+    .step::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.12), transparent 20%),
+        linear-gradient(120deg, transparent 0%, transparent 60%, rgba(255, 75, 45, 0.08) 61%, transparent 62%);
+      pointer-events: none;
+    }
+
+    .card:hover,
+    .price-card:hover {
       transform: translate(-3px, -3px);
+      border-color: rgba(255, 76, 45, 0.55);
       box-shadow:
-        14px 14px 0 rgba(157, 29, 21, 0.16),
-        0 20px 55px rgba(68, 38, 12, 0.16);
+        0 0 54px rgba(255, 45, 20, 0.18),
+        14px 14px 0 rgba(0, 0, 0, 0.42);
     }
 
     .card h3 {
       margin: 0 0 14px;
-      color: #9d1d15;
+      color: #ff604b;
       font-size: 25px;
       letter-spacing: 2px;
+      position: relative;
     }
 
     .card p {
       margin: 0;
-      color: #3f352b;
+      color: #e0cdb6;
       line-height: 1.9;
       font-weight: 600;
+      position: relative;
     }
 
     .category-tabs {
@@ -388,12 +480,13 @@
 
     .category-tab {
       padding: 12px 22px;
-      border-radius: 2px;
-      background: #9d1d15;
-      color: #f8f2e7;
+      border-radius: 4px;
+      background: linear-gradient(135deg, #7d1410, #ff4a24);
+      color: #fff4e1;
       font-weight: 900;
       letter-spacing: 4px;
-      box-shadow: 7px 7px 0 rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(255, 180, 140, 0.35);
+      box-shadow: 0 0 28px rgba(255, 55, 20, 0.35);
     }
 
     .price-grid {
@@ -404,76 +497,70 @@
 
     .price-card {
       padding: 30px;
-      border-radius: 6px;
+      border-radius: 10px;
       position: relative;
       overflow: hidden;
-    }
-
-    .price-card::before {
-      content: "";
-      position: absolute;
-      right: -45px;
-      top: -45px;
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      background: rgba(0,0,0,0.06);
-      filter: blur(10px);
+      transition: 0.25s;
     }
 
     .price-card.featured {
-      border-color: rgba(157, 29, 21, 0.42);
+      border-color: rgba(255, 82, 48, 0.58);
       box-shadow:
-        10px 10px 0 rgba(157, 29, 21, 0.14),
-        0 22px 60px rgba(80, 25, 10, 0.14);
+        0 0 58px rgba(255, 45, 20, 0.18),
+        12px 12px 0 rgba(0, 0, 0, 0.4);
     }
 
     .price-label {
       display: inline-block;
       padding: 7px 12px;
-      border-radius: 2px;
-      background: rgba(157, 29, 21, 0.12);
-      color: #9d1d15;
-      border: 1px solid rgba(157, 29, 21, 0.22);
+      border-radius: 4px;
+      background: rgba(255, 59, 36, 0.14);
+      color: #ff9b8d;
+      border: 1px solid rgba(255, 59, 36, 0.28);
       font-size: 13px;
       font-weight: 900;
       margin-bottom: 16px;
       letter-spacing: 1px;
+      position: relative;
     }
 
     .price-card h3 {
       margin: 0 0 16px;
       font-size: 32px;
-      color: #17130f;
+      color: #fff4e1;
       letter-spacing: 5px;
+      position: relative;
     }
 
     .price-main {
       margin: 16px 0 20px;
       padding: 18px;
-      border-radius: 4px;
-      background: rgba(255, 255, 255, 0.34);
-      border: 1px dashed rgba(45, 35, 24, 0.32);
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, rgba(0, 0, 0, 0.34), rgba(255, 255, 255, 0.035));
+      border: 1px dashed rgba(255, 145, 110, 0.28);
+      position: relative;
     }
 
     .price-main p {
       margin: 8px 0;
-      color: #2f2923;
+      color: #eedbc5;
       line-height: 1.8;
       font-weight: 800;
     }
 
     .price-main strong {
-      color: #9d1d15;
+      color: #ff604b;
       font-size: 20px;
     }
 
     .mini-title {
       margin: 22px 0 10px;
-      color: #9d1d15;
+      color: #ff6a55;
       font-size: 18px;
       font-weight: 900;
       letter-spacing: 2px;
+      position: relative;
     }
 
     .tag-list {
@@ -481,15 +568,16 @@
       flex-wrap: wrap;
       gap: 8px;
       margin: 10px 0 14px;
+      position: relative;
     }
 
     .tag {
       display: inline-block;
       padding: 7px 10px;
-      border-radius: 3px;
-      background: rgba(30, 20, 10, 0.075);
-      border: 1px solid rgba(30, 20, 10, 0.18);
-      color: #2d241d;
+      border-radius: 4px;
+      background: rgba(255, 59, 36, 0.1);
+      border: 1px solid rgba(255, 80, 50, 0.24);
+      color: #ffd8cd;
       font-size: 14px;
       font-weight: 900;
     }
@@ -497,21 +585,23 @@
     .notice {
       margin-top: 14px;
       padding: 14px 16px;
-      border-radius: 4px;
-      background: rgba(157, 29, 21, 0.08);
-      border-left: 4px solid #9d1d15;
-      color: #3b3027;
+      border-radius: 6px;
+      background: rgba(255, 184, 0, 0.075);
+      border-left: 4px solid #ff5b32;
+      color: #f0d7b7;
       line-height: 1.8;
       font-size: 14px;
       font-weight: 700;
+      position: relative;
     }
 
     .rules-list {
       padding-left: 22px;
       margin: 10px 0 0;
-      color: #3d3329;
+      color: #dfcab2;
       line-height: 1.9;
       font-weight: 600;
+      position: relative;
     }
 
     .rules-list li {
@@ -526,38 +616,44 @@
 
     .rule-box {
       padding: 28px;
-      border-radius: 6px;
+      border-radius: 10px;
+      position: relative;
+      overflow: hidden;
     }
 
     .rule-box h3 {
       margin: 0 0 14px;
-      color: #9d1d15;
+      color: #ff604b;
       font-size: 25px;
       letter-spacing: 3px;
+      position: relative;
     }
 
     .rule-box p {
       margin: 0;
-      color: #3d3329;
+      color: #dfcab2;
       line-height: 1.95;
       font-weight: 600;
+      position: relative;
     }
 
     .rule-box ul {
       margin: 0;
       padding-left: 20px;
-      color: #3d3329;
+      color: #dfcab2;
       line-height: 1.95;
       font-weight: 600;
+      position: relative;
     }
 
     .final-note {
       margin-top: 34px;
       text-align: center;
-      color: #9d1d15;
+      color: #ff6a55;
       font-weight: 900;
       letter-spacing: 4px;
       font-size: 18px;
+      text-shadow: 0 0 16px rgba(255, 74, 52, 0.35);
     }
 
     .process {
@@ -568,42 +664,57 @@
 
     .step {
       padding: 26px;
-      border-radius: 6px;
+      border-radius: 10px;
+      position: relative;
+      overflow: hidden;
     }
 
     .step-number {
       width: 42px;
       height: 42px;
-      border-radius: 2px;
+      border-radius: 4px;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #17130f;
-      color: #f8f2e7;
+      background: linear-gradient(135deg, #7d1410, #ff4a24);
+      color: #fff4e1;
       font-weight: 900;
       margin-bottom: 16px;
-      box-shadow: 5px 5px 0 rgba(157, 29, 21, 0.18);
+      box-shadow: 0 0 20px rgba(255, 55, 20, 0.35);
+      position: relative;
     }
 
     .step h3 {
       margin: 0 0 10px;
-      color: #17130f;
+      color: #fff4e1;
       letter-spacing: 2px;
+      position: relative;
     }
 
     .step p {
       margin: 0;
-      color: #3d3329;
+      color: #dfcab2;
       line-height: 1.75;
       font-size: 15px;
       font-weight: 600;
+      position: relative;
     }
 
     .cta {
       text-align: center;
       padding: 74px 26px;
-      border-radius: 6px;
+      border-radius: 12px;
       position: relative;
+      overflow: hidden;
+      border-color: rgba(255, 80, 50, 0.34);
+    }
+
+    .cta::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: conic-gradient(from 180deg, transparent, rgba(255, 50, 20, 0.2), transparent, rgba(255, 180, 80, 0.08), transparent);
+      animation: rotateAura 12s linear infinite;
     }
 
     .cta::after {
@@ -613,28 +724,37 @@
       bottom: 28px;
       width: 70px;
       height: 70px;
-      border: 3px solid #9d1d15;
-      color: #9d1d15;
+      border: 3px solid #cf281b;
+      color: #cf281b;
       display: flex;
       align-items: center;
       justify-content: center;
       transform: rotate(-9deg);
       font-weight: 900;
       font-size: 20px;
-      opacity: 0.9;
+      opacity: 0.92;
+      background: rgba(10, 5, 4, 0.75);
+    }
+
+    .cta h2,
+    .cta p,
+    .cta .buttons {
+      position: relative;
+      z-index: 2;
     }
 
     .cta h2 {
       margin: 0;
       font-size: clamp(34px, 5vw, 54px);
       letter-spacing: 8px;
-      color: #16130f;
+      color: #fff3df;
+      text-shadow: 0 0 18px rgba(255, 60, 30, 0.32);
     }
 
     .cta p {
       max-width: 680px;
       margin: 18px auto 30px;
-      color: #3d3329;
+      color: #dfcab2;
       line-height: 1.9;
       font-weight: 600;
     }
@@ -642,9 +762,9 @@
     footer {
       padding: 34px 22px;
       text-align: center;
-      color: #5a5047;
-      background: rgba(238, 226, 207, 0.65);
-      border-top: 1px solid rgba(31, 23, 15, 0.16);
+      color: #a9927a;
+      background: rgba(5, 4, 3, 0.78);
+      border-top: 1px solid rgba(255, 80, 50, 0.18);
       font-weight: 700;
     }
 
@@ -738,6 +858,8 @@
 
   <main>
     <section class="hero">
+      <div class="ink-stroke">魔丸</div>
+
       <div class="hero-inner">
         <div>
           <div class="badge">
@@ -783,23 +905,17 @@
         <div class="cards">
           <div class="card">
             <h3>三角洲護航</h3>
-            <p>
-              安全箱、物資、任務需求與指定目標，依照訂單內容安排打手協助。
-            </p>
+            <p>安全箱、物資、任務需求與指定目標，依照訂單內容安排打手協助。</p>
           </div>
 
           <div class="card">
             <h3>遊戲陪玩</h3>
-            <p>
-              可依照時段、需求與風格安排陪玩，也支援指定陪玩服務。
-            </p>
+            <p>可依照時段、需求與風格安排陪玩，也支援指定陪玩服務。</p>
           </div>
 
           <div class="card">
             <h3>Valorant 陪玩</h3>
-            <p>
-              Valorant 陪玩服務開放中，後續將持續擴充更多遊戲與服務項目。
-            </p>
+            <p>Valorant 陪玩服務開放中，後續將持續擴充更多遊戲與服務項目。</p>
           </div>
         </div>
       </div>
