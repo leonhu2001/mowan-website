@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>魔丸娛樂</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, "Microsoft JhengHei", sans-serif;
+      background: #080808;
+      color: white;
+      text-align: center;
+    }
+
+    .hero {
+      min-height: 100vh;
+      padding: 60px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background:
+        radial-gradient(circle at top, rgba(255, 80, 0, 0.35), transparent 35%),
+        linear-gradient(180deg, #161616, #050505);
+    }
+
+    h1 {
+      font-size: 56px;
+      letter-spacing: 8px;
+      margin: 0 0 16px;
+    }
+
+    .subtitle {
+      font-size: 22px;
+      color: #ffb000;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    p {
+      max-width: 720px;
+      font-size: 18px;
+      line-height: 1.8;
+      color: #dddddd;
+    }
+
+    .buttons {
+      margin-top: 32px;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+      padding: 14px 26px;
+      border-radius: 999px;
+      font-weight: bold;
+      background: linear-gradient(135deg, #ff3c00, #ffb000);
+    }
+
+    a.secondary {
+      background: transparent;
+      border: 1px solid #ff8a00;
+    }
+
+    .cards {
+      margin-top: 50px;
+      width: 100%;
+      max-width: 950px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      padding: 24px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .card h3 {
+      color: #ffb000;
+      margin-top: 0;
+    }
+
+    footer {
+      padding: 24px;
+      color: #888;
+      background: #050505;
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <h1>魔丸娛樂</h1>
+    <div class="subtitle">三角洲護航｜遊戲陪玩｜Valorant 陪玩</div>
+
+    <p>
+      魔丸娛樂以三角洲護航及陪玩為主，現階段也提供 Valorant 陪玩服務。
+      我們重視排單效率、服務品質與顧客體驗，讓每一單都更穩、更順、更有感。
+    </p>
+
+    <div class="buttons">
+      <a href="這裡換成你的Discord邀請連結">加入 Discord</a>
+      <a class="secondary" href="這裡換成你的下單表單連結">立即下單</a>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <h3>三角洲護航</h3>
+        <p>安全箱、物資、任務需求，依照顧客需求安排打手。</p>
+      </div>
+
+      <div class="card">
+        <h3>遊戲陪玩</h3>
+        <p>可依照時段與需求安排陪玩，也可支援指定陪玩。</p>
+      </div>
+
+      <div class="card">
+        <h3>Valorant 陪玩</h3>
+        <p>Valorant 陪玩服務開放中，後續將持續擴充更多項目。</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 魔丸娛樂 Mowan Entertainment
+  </footer>
+</body>
+</html>
