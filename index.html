@@ -29,26 +29,10 @@
       font-family: "Microsoft JhengHei", "Noto Sans TC", Arial, sans-serif;
       color: #f7efe2;
       background:
-        radial-gradient(circle at 12% 8%, rgba(190, 18, 18, 0.28), transparent 20%),
-        radial-gradient(circle at 88% 14%, rgba(255, 95, 30, 0.16), transparent 18%),
-        radial-gradient(circle at 50% 85%, rgba(0, 0, 0, 0.6), transparent 35%),
+        radial-gradient(circle at 12% 8%, rgba(190, 18, 18, 0.22), transparent 20%),
+        radial-gradient(circle at 88% 14%, rgba(255, 95, 30, 0.12), transparent 18%),
         linear-gradient(180deg, #080504 0%, #120a08 45%, #050403 100%);
       overflow-x: hidden;
-      animation: pageFade 0.75s ease both;
-    }
-
-    @keyframes pageFade {
-      from {
-        opacity: 0;
-        transform: translateY(16px);
-        filter: blur(8px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-        filter: blur(0);
-      }
     }
 
     body::before {
@@ -58,38 +42,87 @@
       pointer-events: none;
       z-index: -2;
       background:
-        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
       background-size: 44px 44px;
-      mask-image: linear-gradient(to bottom, transparent, black 12%, black 86%, transparent);
-      opacity: 0.65;
+      opacity: 0.5;
     }
 
-    body::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: -1;
-      background:
-        radial-gradient(circle at 22% 32%, rgba(245, 235, 215, 0.12), transparent 10%),
-        radial-gradient(circle at 72% 38%, rgba(245, 235, 215, 0.08), transparent 13%),
-        radial-gradient(circle at 48% 75%, rgba(150, 0, 0, 0.16), transparent 14%);
-      filter: blur(26px);
-      opacity: 0.52;
+    .page-enter {
+      animation: pageEnter 0.55s ease both;
     }
 
-    .ink-stroke {
-      position: absolute;
-      pointer-events: none;
-      color: rgba(255, 244, 226, 0.035);
-      font-size: clamp(100px, 18vw, 260px);
-      font-weight: 900;
-      writing-mode: vertical-rl;
-      letter-spacing: 18px;
-      right: 4%;
-      top: 14%;
-      user-select: none;
+    .page-exit {
+      animation: pageExit 0.35s ease both;
+    }
+
+    @keyframes pageEnter {
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pageExit {
+      from {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      to {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-42px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal-left.show {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(42px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal-right.show {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .reveal-delay-1 {
+      transition-delay: 0.08s;
+    }
+
+    .reveal-delay-2 {
+      transition-delay: 0.16s;
+    }
+
+    .reveal-delay-3 {
+      transition-delay: 0.24s;
     }
 
     header {
@@ -98,10 +131,9 @@
       top: 0;
       left: 0;
       z-index: 20;
-      backdrop-filter: blur(16px);
-      background: rgba(8, 5, 4, 0.78);
+      background: rgba(8, 5, 4, 0.92);
       border-bottom: 1px solid rgba(255, 70, 40, 0.25);
-      box-shadow: 0 0 34px rgba(255, 35, 20, 0.12);
+      box-shadow: 0 0 24px rgba(255, 35, 20, 0.08);
     }
 
     .nav {
@@ -130,7 +162,7 @@
       object-fit: cover;
       border-radius: 14px;
       border: 1px solid rgba(255, 88, 45, 0.45);
-      box-shadow: 0 0 22px rgba(255, 40, 20, 0.4);
+      box-shadow: 0 0 18px rgba(255, 40, 20, 0.28);
     }
 
     .nav-links {
@@ -150,7 +182,7 @@
 
     .nav-links a:hover {
       color: #ff4a34;
-      text-shadow: 0 0 12px rgba(255, 74, 52, 0.7);
+      text-shadow: 0 0 10px rgba(255, 74, 52, 0.55);
     }
 
     .hero {
@@ -163,20 +195,17 @@
       overflow: hidden;
     }
 
-    .hero::before {
-      content: "";
+    .ink-stroke {
       position: absolute;
-      width: 820px;
-      height: 820px;
-      right: -260px;
-      top: 4%;
-      border-radius: 50%;
-      background:
-        radial-gradient(circle, rgba(255, 62, 24, 0.24), transparent 52%),
-        conic-gradient(from 180deg, transparent, rgba(255, 65, 28, 0.32), transparent, rgba(255, 180, 80, 0.12), transparent);
-      filter: blur(2px);
-      opacity: 0.75;
-      animation: rotateAura 16s linear infinite;
+      pointer-events: none;
+      color: rgba(255, 244, 226, 0.035);
+      font-size: clamp(100px, 18vw, 260px);
+      font-weight: 900;
+      writing-mode: vertical-rl;
+      letter-spacing: 18px;
+      right: 4%;
+      top: 14%;
+      user-select: none;
     }
 
     .hero::after {
@@ -184,16 +213,10 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(115deg, transparent 0%, transparent 42%, rgba(255, 70, 40, 0.12) 43%, transparent 44%, transparent 100%),
-        linear-gradient(65deg, transparent 0%, transparent 62%, rgba(255, 255, 255, 0.06) 63%, transparent 64%, transparent 100%);
+        linear-gradient(115deg, transparent 0%, transparent 42%, rgba(255, 70, 40, 0.08) 43%, transparent 44%, transparent 100%),
+        linear-gradient(65deg, transparent 0%, transparent 62%, rgba(255, 255, 255, 0.04) 63%, transparent 64%, transparent 100%);
       pointer-events: none;
       opacity: 0.65;
-    }
-
-    @keyframes rotateAura {
-      to {
-        transform: rotate(360deg);
-      }
     }
 
     .hero-inner {
@@ -220,7 +243,7 @@
       margin-bottom: 22px;
       font-weight: 900;
       letter-spacing: 1px;
-      box-shadow: 0 0 26px rgba(255, 55, 20, 0.16);
+      box-shadow: 0 0 20px rgba(255, 55, 20, 0.12);
     }
 
     .badge span {
@@ -228,7 +251,7 @@
       height: 9px;
       background: #ff3b24;
       border-radius: 50%;
-      box-shadow: 0 0 16px rgba(255, 59, 36, 0.9);
+      box-shadow: 0 0 14px rgba(255, 59, 36, 0.75);
     }
 
     h1 {
@@ -239,9 +262,9 @@
       font-weight: 900;
       color: #fff4e1;
       text-shadow:
-        0 0 18px rgba(255, 60, 30, 0.4),
-        8px 9px 0 rgba(120, 0, 0, 0.28),
-        0 18px 50px rgba(0, 0, 0, 0.8);
+        0 0 16px rgba(255, 60, 30, 0.32),
+        8px 9px 0 rgba(120, 0, 0, 0.25),
+        0 18px 40px rgba(0, 0, 0, 0.65);
     }
 
     .subtitle {
@@ -250,7 +273,7 @@
       font-size: clamp(18px, 3vw, 28px);
       font-weight: 900;
       letter-spacing: 3px;
-      text-shadow: 0 0 14px rgba(255, 74, 52, 0.45);
+      text-shadow: 0 0 12px rgba(255, 74, 52, 0.35);
     }
 
     .intro {
@@ -288,7 +311,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(110deg, transparent, rgba(255,255,255,0.18), transparent);
+      background: linear-gradient(110deg, transparent, rgba(255,255,255,0.16), transparent);
       transform: translateX(-120%);
       transition: 0.55s;
     }
@@ -302,22 +325,22 @@
       color: #fff4e1;
       border: 1px solid rgba(255, 116, 70, 0.55);
       box-shadow:
-        0 0 26px rgba(255, 55, 20, 0.42),
-        7px 7px 0 rgba(0, 0, 0, 0.42);
+        0 0 22px rgba(255, 55, 20, 0.28),
+        7px 7px 0 rgba(0, 0, 0, 0.36);
     }
 
     .btn-primary:hover {
       transform: translate(-2px, -2px);
       box-shadow:
-        0 0 38px rgba(255, 55, 20, 0.65),
-        11px 11px 0 rgba(0, 0, 0, 0.46);
+        0 0 28px rgba(255, 55, 20, 0.42),
+        10px 10px 0 rgba(0, 0, 0, 0.42);
     }
 
     .btn-secondary {
       color: #fff1dc;
       background: rgba(255, 255, 255, 0.045);
       border: 1px solid rgba(255, 166, 120, 0.34);
-      box-shadow: 7px 7px 0 rgba(0, 0, 0, 0.36);
+      box-shadow: 7px 7px 0 rgba(0, 0, 0, 0.32);
     }
 
     .btn-secondary:hover {
@@ -334,25 +357,9 @@
         linear-gradient(145deg, rgba(255,255,255,0.12), rgba(255,255,255,0.03));
       border: 1px solid rgba(255, 91, 48, 0.34);
       box-shadow:
-        0 0 70px rgba(255, 45, 20, 0.22),
-        18px 18px 0 rgba(0, 0, 0, 0.35),
-        0 30px 90px rgba(0, 0, 0, 0.78);
+        0 0 32px rgba(255, 45, 20, 0.18),
+        12px 12px 0 rgba(0, 0, 0, 0.35);
       overflow: hidden;
-    }
-
-    .logo-card::before {
-      content: "";
-      position: absolute;
-      inset: -50%;
-      background: conic-gradient(
-        from 180deg,
-        transparent,
-        rgba(255, 45, 20, 0.35),
-        transparent,
-        rgba(255, 180, 80, 0.16),
-        transparent
-      );
-      animation: rotateAura 9s linear infinite;
     }
 
     .logo-card::after {
@@ -372,7 +379,7 @@
       transform: rotate(-8deg);
       background: rgba(10, 5, 4, 0.72);
       z-index: 2;
-      box-shadow: 0 0 20px rgba(255, 45, 20, 0.25);
+      box-shadow: 0 0 16px rgba(255, 45, 20, 0.2);
     }
 
     .logo-card img {
@@ -382,7 +389,7 @@
       display: block;
       border-radius: 8px;
       object-fit: cover;
-      filter: contrast(1.08) saturate(1.05);
+      filter: contrast(1.05) saturate(1.03);
     }
 
     section {
@@ -408,8 +415,8 @@
       letter-spacing: 8px;
       color: #fff3df;
       text-shadow:
-        0 0 18px rgba(255, 60, 30, 0.35),
-        5px 6px 0 rgba(110, 0, 0, 0.25);
+        0 0 16px rgba(255, 60, 30, 0.26),
+        5px 6px 0 rgba(110, 0, 0, 0.22);
     }
 
     .section-title p {
@@ -428,15 +435,15 @@
     .card,
     .rule-box,
     .step,
-    .cta {
+    .cta,
+    .menu-preview {
       background:
         linear-gradient(135deg, rgba(255,255,255,0.105), rgba(255,255,255,0.035));
       border: 1px solid rgba(255, 95, 55, 0.22);
       box-shadow:
-        0 0 38px rgba(255, 45, 20, 0.08),
-        10px 10px 0 rgba(0,0,0,0.34),
-        0 18px 48px rgba(0, 0, 0, 0.42);
-      backdrop-filter: blur(6px);
+        0 0 26px rgba(255, 45, 20, 0.06),
+        9px 9px 0 rgba(0,0,0,0.32),
+        0 14px 38px rgba(0, 0, 0, 0.35);
     }
 
     .card {
@@ -447,24 +454,12 @@
       overflow: hidden;
     }
 
-    .card::before,
-    .rule-box::before,
-    .step::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.12), transparent 20%),
-        linear-gradient(120deg, transparent 0%, transparent 60%, rgba(255, 75, 45, 0.08) 61%, transparent 62%);
-      pointer-events: none;
-    }
-
     .card:hover {
       transform: translate(-3px, -3px);
       border-color: rgba(255, 76, 45, 0.55);
       box-shadow:
-        0 0 54px rgba(255, 45, 20, 0.18),
-        14px 14px 0 rgba(0, 0, 0, 0.42);
+        0 0 34px rgba(255, 45, 20, 0.13),
+        12px 12px 0 rgba(0, 0, 0, 0.38);
     }
 
     .card h3 {
@@ -487,12 +482,6 @@
       margin-top: 56px;
       padding: 36px;
       border-radius: 14px;
-      background:
-        linear-gradient(135deg, rgba(255,255,255,0.11), rgba(255,255,255,0.035));
-      border: 1px solid rgba(255, 95, 55, 0.25);
-      box-shadow:
-        0 0 42px rgba(255, 45, 20, 0.1),
-        12px 12px 0 rgba(0,0,0,0.35);
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -596,7 +585,7 @@
       font-weight: 900;
       letter-spacing: 4px;
       font-size: 18px;
-      text-shadow: 0 0 16px rgba(255, 74, 52, 0.35);
+      text-shadow: 0 0 14px rgba(255, 74, 52, 0.25);
     }
 
     .process {
@@ -623,7 +612,7 @@
       color: #fff4e1;
       font-weight: 900;
       margin-bottom: 16px;
-      box-shadow: 0 0 20px rgba(255, 55, 20, 0.35);
+      box-shadow: 0 0 16px rgba(255, 55, 20, 0.28);
       position: relative;
     }
 
@@ -650,14 +639,6 @@
       position: relative;
       overflow: hidden;
       border-color: rgba(255, 80, 50, 0.34);
-    }
-
-    .cta::before {
-      content: "";
-      position: absolute;
-      inset: -40%;
-      background: conic-gradient(from 180deg, transparent, rgba(255, 50, 20, 0.2), transparent, rgba(255, 180, 80, 0.08), transparent);
-      animation: rotateAura 12s linear infinite;
     }
 
     .cta::after {
@@ -691,7 +672,7 @@
       font-size: clamp(34px, 5vw, 54px);
       letter-spacing: 8px;
       color: #fff3df;
-      text-shadow: 0 0 18px rgba(255, 60, 30, 0.32);
+      text-shadow: 0 0 16px rgba(255, 60, 30, 0.25);
     }
 
     .cta p {
@@ -770,10 +751,23 @@
         padding: 28px 20px;
       }
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      .page-enter,
+      .page-exit,
+      .reveal,
+      .reveal-left,
+      .reveal-right {
+        animation: none !important;
+        transition: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
   </style>
 </head>
 
-<body>
+<body class="page-enter">
   <header>
     <div class="nav">
       <a class="brand" href="index.html">
@@ -783,7 +777,7 @@
 
       <nav class="nav-links">
         <a href="#services">服務項目</a>
-        <a href="basic.html">基礎單價目</a>
+        <a class="page-link" href="basic.html">基礎單價目</a>
         <a href="#rules">本店規章</a>
         <a href="#process">下單流程</a>
         <a href="#contact">立即下單</a>
@@ -796,7 +790,7 @@
       <div class="ink-stroke">魔丸</div>
 
       <div class="hero-inner">
-        <div>
+        <div class="reveal-left show">
           <div class="badge">
             <span></span>
             MOWAN ENTERTAINMENT
@@ -818,13 +812,13 @@
               加入 Discord
             </a>
 
-            <a class="btn btn-secondary" href="basic.html">
+            <a class="btn btn-secondary page-link" href="basic.html">
               查看價目
             </a>
           </div>
         </div>
 
-        <div class="logo-card">
+        <div class="logo-card reveal-right show">
           <img src="logo.png" alt="魔丸娛樂 Logo">
         </div>
       </div>
@@ -832,29 +826,29 @@
 
     <section id="services">
       <div class="section-inner">
-        <div class="section-title">
+        <div class="section-title reveal">
           <h2>服務項目</h2>
           <p>依照顧客需求安排合適人員，提供穩定、有效率的遊戲服務。</p>
         </div>
 
         <div class="cards">
-          <div class="card">
+          <div class="card reveal">
             <h3>三角洲護航</h3>
             <p>安全箱、物資、任務需求與指定目標，依照訂單內容安排打手協助。</p>
           </div>
 
-          <div class="card">
+          <div class="card reveal reveal-delay-1">
             <h3>遊戲陪玩</h3>
             <p>可依照時段、需求與風格安排陪玩，也支援指定陪玩服務。</p>
           </div>
 
-          <div class="card">
+          <div class="card reveal reveal-delay-2">
             <h3>Valorant 陪玩</h3>
             <p>Valorant 陪玩服務開放中，後續將持續擴充更多遊戲與服務項目。</p>
           </div>
         </div>
 
-        <div class="menu-preview">
+        <div class="menu-preview reveal">
           <h3>基礎單價目</h3>
           <p>
             基礎單價目已獨立成專屬頁面，包含保底單、體驗單、賭約單、油鍋單、娛樂陪與技術陪。
@@ -871,7 +865,7 @@
           </div>
 
           <div class="buttons" style="justify-content: center;">
-            <a class="btn btn-primary" href="basic.html">
+            <a class="btn btn-primary page-link" href="basic.html">
               前往基礎單價目
             </a>
           </div>
@@ -881,13 +875,13 @@
 
     <section id="rules">
       <div class="section-inner">
-        <div class="section-title">
+        <div class="section-title reveal">
           <h2>本店規章</h2>
           <p>歡迎各位闆闆來到魔丸娛樂，請在下單前詳閱以下說明。</p>
         </div>
 
         <div class="shop-rules">
-          <div class="rule-box">
+          <div class="rule-box reveal">
             <h3>下單前注意事項</h3>
             <ul>
               <li>確認需求：請先確認您所需的訂單內容及時間，並提供正確的資訊。</li>
@@ -897,7 +891,7 @@
             </ul>
           </div>
 
-          <div class="rule-box">
+          <div class="rule-box reveal reveal-delay-1">
             <h3>下單流程</h3>
             <ul>
               <li>每日客服時間 AM10:00 - AM02:00。</li>
@@ -907,7 +901,7 @@
             </ul>
           </div>
 
-          <div class="rule-box">
+          <div class="rule-box reveal">
             <h3>服務條款</h3>
             <p>
               本服務僅限於安全、正規操作，不涉及任何非法或違規行為。
@@ -916,7 +910,7 @@
             </p>
           </div>
 
-          <div class="rule-box">
+          <div class="rule-box reveal reveal-delay-1">
             <h3>服務過程中</h3>
             <p>
               為保障老闆與打手的權益，打手在服務過程中都會全程錄影。
@@ -925,7 +919,7 @@
             </p>
           </div>
 
-          <div class="rule-box">
+          <div class="rule-box reveal">
             <h3>本店售後</h3>
             <p>
               護航完畢後如對結果有疑慮，請在 24 小時內與客服反應。
@@ -933,7 +927,7 @@
             </p>
           </div>
 
-          <div class="rule-box">
+          <div class="rule-box reveal reveal-delay-1">
             <h3>聯絡方式</h3>
             <p>
               請至客服支援尋求客服聯絡，也可以至聊天頻道詢問工作人員。
@@ -941,7 +935,7 @@
           </div>
         </div>
 
-        <div class="final-note">
+        <div class="final-note reveal">
           - 魔丸娛樂擁有最終解釋權 -
         </div>
       </div>
@@ -949,31 +943,31 @@
 
     <section id="process">
       <div class="section-inner">
-        <div class="section-title">
+        <div class="section-title reveal">
           <h2>下單流程</h2>
           <p>簡單四步驟，快速安排服務。</p>
         </div>
 
         <div class="process">
-          <div class="step">
+          <div class="step reveal">
             <div class="step-number">1</div>
             <h3>加入 Discord</h3>
             <p>進入魔丸娛樂伺服器，查看服務項目、價目表與最新公告。</p>
           </div>
 
-          <div class="step">
+          <div class="step reveal reveal-delay-1">
             <div class="step-number">2</div>
             <h3>選擇服務</h3>
             <p>選擇基礎單、護航、陪玩或其他指定需求。</p>
           </div>
 
-          <div class="step">
+          <div class="step reveal reveal-delay-2">
             <div class="step-number">3</div>
             <h3>客服確認</h3>
             <p>確認價格、時間、人員與訂單內容，避免資訊落差。</p>
           </div>
 
-          <div class="step">
+          <div class="step reveal reveal-delay-3">
             <div class="step-number">4</div>
             <h3>安排接單</h3>
             <p>由合適人員接單服務，完成後可留下評價與回饋。</p>
@@ -984,7 +978,7 @@
 
     <section id="contact">
       <div class="section-inner">
-        <div class="cta">
+        <div class="cta reveal">
           <h2>準備下單了嗎？</h2>
           <p>
             點擊下方按鈕加入 Discord，客服將協助你確認需求、價格與排單時間。
@@ -995,7 +989,7 @@
               前往 Discord
             </a>
 
-            <a class="btn btn-secondary" href="basic.html">
+            <a class="btn btn-secondary page-link" href="basic.html">
               查看價目
             </a>
           </div>
@@ -1007,5 +1001,48 @@
   <footer>
     © 2026 魔丸娛樂 Mowan Entertainment. All rights reserved.
   </footer>
+
+  <script>
+    const revealElements = document.querySelectorAll(
+      ".reveal, .reveal-left, .reveal-right"
+    );
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          }
+        });
+      },
+      {
+        threshold: 0.12
+      }
+    );
+
+    revealElements.forEach(element => {
+      observer.observe(element);
+    });
+
+    const pageLinks = document.querySelectorAll(".page-link");
+
+    pageLinks.forEach(link => {
+      link.addEventListener("click", event => {
+        const href = link.getAttribute("href");
+
+        if (!href || href.startsWith("#") || link.target === "_blank") {
+          return;
+        }
+
+        event.preventDefault();
+        document.body.classList.remove("page-enter");
+        document.body.classList.add("page-exit");
+
+        setTimeout(() => {
+          window.location.href = href;
+        }, 320);
+      });
+    });
+  </script>
 </body>
 </html>
