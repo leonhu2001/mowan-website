@@ -362,26 +362,6 @@
       overflow: hidden;
     }
 
-    .logo-card::after {
-      content: "魔丸";
-      position: absolute;
-      right: 20px;
-      bottom: 18px;
-      width: 64px;
-      height: 64px;
-      border: 3px solid #cf281b;
-      color: #cf281b;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 900;
-      font-size: 18px;
-      transform: rotate(-8deg);
-      background: rgba(10, 5, 4, 0.72);
-      z-index: 2;
-      box-shadow: 0 0 16px rgba(255, 45, 20, 0.2);
-    }
-
     .logo-card img {
       position: relative;
       z-index: 1;
@@ -578,6 +558,10 @@
       position: relative;
     }
 
+    .rule-box strong {
+      color: #fff4e1;
+    }
+
     .final-note {
       margin-top: 34px;
       text-align: center;
@@ -639,25 +623,6 @@
       position: relative;
       overflow: hidden;
       border-color: rgba(255, 80, 50, 0.34);
-    }
-
-    .cta::after {
-      content: "魔丸";
-      position: absolute;
-      right: 32px;
-      bottom: 28px;
-      width: 70px;
-      height: 70px;
-      border: 3px solid #cf281b;
-      color: #cf281b;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transform: rotate(-9deg);
-      font-weight: 900;
-      font-size: 20px;
-      opacity: 0.92;
-      background: rgba(10, 5, 4, 0.75);
     }
 
     .cta h2,
@@ -739,12 +704,6 @@
 
       h1 {
         letter-spacing: 6px;
-      }
-
-      .cta::after {
-        opacity: 0.25;
-        right: 18px;
-        bottom: 18px;
       }
 
       .menu-preview {
@@ -877,7 +836,8 @@
       <div class="section-inner">
         <div class="section-title reveal">
           <h2>本店規章</h2>
-          <p>歡迎各位闆闆來到魔丸娛樂，請在下單前詳閱以下說明。</p>
+          <p>歡迎各位闆闆來到魔丸娛樂</p>
+          <p>感謝您選擇魔丸娛樂！為確保您流暢的體驗及安全，請在下單前詳閱以下說明。</p>
         </div>
 
         <div class="shop-rules">
@@ -895,9 +855,9 @@
             <h3>下單流程</h3>
             <ul>
               <li>每日客服時間 AM10:00 - AM02:00。</li>
-              <li>與客服於票口確認訂單資料，包含服務項目、時間、聯絡方式等。</li>
-              <li>完成付款後，我們將依序安排陪玩或打手。</li>
-              <li>訂單完成後，將提供成品截圖，若適用。</li>
+              <li>與客服於票口確認訂單資料（服務項目、時間、聯絡方式等）。</li>
+              <li>完成付款後，我們將依序安排陪玩/打手。</li>
+              <li>訂單完成後，將提供成品截圖（若適用）。</li>
             </ul>
           </div>
 
@@ -905,16 +865,14 @@
             <h3>服務條款</h3>
             <p>
               本服務僅限於安全、正規操作，不涉及任何非法或違規行為。
-              若遇不可抗力因素，例如系統維護、伺服器異常、外掛、老闆不聽指揮，
-              可協調更改時間或部分退款。
+              若遇不可抗力因素（例：系統維護、伺服器異常、外掛、老闆不聽指揮），可協調更改時間或部分退款。
             </p>
           </div>
 
           <div class="rule-box reveal reveal-delay-1">
             <h3>服務過程中</h3>
             <p>
-              為保障老闆與打手的權益，打手在服務過程中都會全程錄影。
-              如老闆電腦設備允許，也請老闆全程錄影。
+              為保障老闆與打手的權益，打手在服務過程中都會全程錄影，如老闆電腦設備允許，也請老闆全程錄影。
               若老闆打單途中突然有事不能繼續，可以跟打手另約時間繼續。
             </p>
           </div>
@@ -922,7 +880,7 @@
           <div class="rule-box reveal">
             <h3>本店售後</h3>
             <p>
-              護航完畢後如對結果有疑慮，請在 24 小時內與客服反應。
+              護航完畢後如對結果有疑慮，請在 <strong>24 小時內</strong> 與客服反應。
               我們將視情況提供補償或再次服務。
             </p>
           </div>
@@ -930,7 +888,8 @@
           <div class="rule-box reveal reveal-delay-1">
             <h3>聯絡方式</h3>
             <p>
-              請至客服支援尋求客服聯絡，也可以至聊天頻道詢問工作人員。
+              請至客服支援尋求客服聯絡。<br>
+              也可以至聊天頻道詢問工作人員。
             </p>
           </div>
         </div>
