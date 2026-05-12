@@ -29,26 +29,10 @@
       font-family: "Microsoft JhengHei", "Noto Sans TC", Arial, sans-serif;
       color: #f7efe2;
       background:
-        radial-gradient(circle at 12% 8%, rgba(190, 18, 18, 0.28), transparent 20%),
-        radial-gradient(circle at 88% 14%, rgba(255, 95, 30, 0.16), transparent 18%),
-        radial-gradient(circle at 50% 85%, rgba(0, 0, 0, 0.6), transparent 35%),
+        radial-gradient(circle at 12% 8%, rgba(190, 18, 18, 0.22), transparent 20%),
+        radial-gradient(circle at 88% 14%, rgba(255, 95, 30, 0.12), transparent 18%),
         linear-gradient(180deg, #080504 0%, #120a08 45%, #050403 100%);
       overflow-x: hidden;
-      animation: pageFade 0.75s ease both;
-    }
-
-    @keyframes pageFade {
-      from {
-        opacity: 0;
-        transform: translateY(18px);
-        filter: blur(8px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-        filter: blur(0);
-      }
     }
 
     body::before {
@@ -58,24 +42,87 @@
       pointer-events: none;
       z-index: -2;
       background:
-        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
       background-size: 44px 44px;
-      opacity: 0.65;
+      opacity: 0.5;
     }
 
-    body::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: -1;
-      background:
-        radial-gradient(circle at 22% 32%, rgba(245, 235, 215, 0.12), transparent 10%),
-        radial-gradient(circle at 72% 38%, rgba(245, 235, 215, 0.08), transparent 13%),
-        radial-gradient(circle at 48% 75%, rgba(150, 0, 0, 0.16), transparent 14%);
-      filter: blur(26px);
-      opacity: 0.52;
+    .page-enter {
+      animation: pageEnter 0.55s ease both;
+    }
+
+    .page-exit {
+      animation: pageExit 0.35s ease both;
+    }
+
+    @keyframes pageEnter {
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pageExit {
+      from {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      to {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-42px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal-left.show {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(42px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal-right.show {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .reveal-delay-1 {
+      transition-delay: 0.08s;
+    }
+
+    .reveal-delay-2 {
+      transition-delay: 0.16s;
+    }
+
+    .reveal-delay-3 {
+      transition-delay: 0.24s;
     }
 
     header {
@@ -84,10 +131,9 @@
       top: 0;
       left: 0;
       z-index: 20;
-      backdrop-filter: blur(16px);
-      background: rgba(8, 5, 4, 0.78);
+      background: rgba(8, 5, 4, 0.92);
       border-bottom: 1px solid rgba(255, 70, 40, 0.25);
-      box-shadow: 0 0 34px rgba(255, 35, 20, 0.12);
+      box-shadow: 0 0 24px rgba(255, 35, 20, 0.08);
     }
 
     .nav {
@@ -116,7 +162,7 @@
       object-fit: cover;
       border-radius: 14px;
       border: 1px solid rgba(255, 88, 45, 0.45);
-      box-shadow: 0 0 22px rgba(255, 40, 20, 0.4);
+      box-shadow: 0 0 18px rgba(255, 40, 20, 0.28);
     }
 
     .nav-links {
@@ -136,7 +182,7 @@
 
     .nav-links a:hover {
       color: #ff4a34;
-      text-shadow: 0 0 12px rgba(255, 74, 52, 0.7);
+      text-shadow: 0 0 10px rgba(255, 74, 52, 0.55);
     }
 
     .page-hero {
@@ -173,7 +219,7 @@
       margin-bottom: 22px;
       font-weight: 900;
       letter-spacing: 1px;
-      box-shadow: 0 0 26px rgba(255, 55, 20, 0.16);
+      box-shadow: 0 0 20px rgba(255, 55, 20, 0.12);
       position: relative;
       z-index: 2;
     }
@@ -183,7 +229,7 @@
       height: 9px;
       background: #ff3b24;
       border-radius: 50%;
-      box-shadow: 0 0 16px rgba(255, 59, 36, 0.9);
+      box-shadow: 0 0 14px rgba(255, 59, 36, 0.75);
     }
 
     h1 {
@@ -194,9 +240,9 @@
       font-weight: 900;
       color: #fff4e1;
       text-shadow:
-        0 0 18px rgba(255, 60, 30, 0.4),
-        8px 9px 0 rgba(120, 0, 0, 0.28),
-        0 18px 50px rgba(0, 0, 0, 0.8);
+        0 0 16px rgba(255, 60, 30, 0.32),
+        8px 9px 0 rgba(120, 0, 0, 0.25),
+        0 18px 40px rgba(0, 0, 0, 0.65);
       position: relative;
       z-index: 2;
     }
@@ -261,57 +307,29 @@
       border-radius: 10px;
       position: relative;
       overflow: hidden;
-      transition: 0.25s;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
       background:
         linear-gradient(135deg, rgba(255,255,255,0.105), rgba(255,255,255,0.035));
       border: 1px solid rgba(255, 95, 55, 0.22);
       box-shadow:
-        0 0 38px rgba(255, 45, 20, 0.08),
-        10px 10px 0 rgba(0,0,0,0.34),
-        0 18px 48px rgba(0, 0, 0, 0.42);
-      backdrop-filter: blur(6px);
-      opacity: 0;
-      transform: translateY(30px);
-      animation: cardIn 0.75s ease forwards;
-    }
-
-    .price-card:nth-child(1) { animation-delay: 0.08s; }
-    .price-card:nth-child(2) { animation-delay: 0.16s; }
-    .price-card:nth-child(3) { animation-delay: 0.24s; }
-    .price-card:nth-child(4) { animation-delay: 0.32s; }
-    .price-card:nth-child(5) { animation-delay: 0.40s; }
-    .price-card:nth-child(6) { animation-delay: 0.48s; }
-
-    @keyframes cardIn {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .price-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.12), transparent 20%),
-        linear-gradient(120deg, transparent 0%, transparent 60%, rgba(255, 75, 45, 0.08) 61%, transparent 62%);
-      pointer-events: none;
+        0 0 26px rgba(255, 45, 20, 0.06),
+        9px 9px 0 rgba(0,0,0,0.32),
+        0 14px 38px rgba(0, 0, 0, 0.35);
     }
 
     .price-card:hover {
       transform: translate(-3px, -3px);
       border-color: rgba(255, 76, 45, 0.55);
       box-shadow:
-        0 0 54px rgba(255, 45, 20, 0.18),
-        14px 14px 0 rgba(0, 0, 0, 0.42);
+        0 0 34px rgba(255, 45, 20, 0.13),
+        12px 12px 0 rgba(0, 0, 0, 0.38);
     }
 
     .price-card.featured {
       border-color: rgba(255, 82, 48, 0.58);
       box-shadow:
-        0 0 58px rgba(255, 45, 20, 0.18),
-        12px 12px 0 rgba(0, 0, 0, 0.4);
+        0 0 34px rgba(255, 45, 20, 0.14),
+        10px 10px 0 rgba(0, 0, 0, 0.35);
     }
 
     .price-label {
@@ -429,6 +447,21 @@
       letter-spacing: 2px;
       transition: 0.25s;
       margin: 8px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(110deg, transparent, rgba(255,255,255,0.16), transparent);
+      transform: translateX(-120%);
+      transition: 0.55s;
+    }
+
+    .btn:hover::before {
+      transform: translateX(120%);
     }
 
     .btn-primary {
@@ -436,15 +469,15 @@
       color: #fff4e1;
       border: 1px solid rgba(255, 116, 70, 0.55);
       box-shadow:
-        0 0 26px rgba(255, 55, 20, 0.42),
-        7px 7px 0 rgba(0, 0, 0, 0.42);
+        0 0 22px rgba(255, 55, 20, 0.28),
+        7px 7px 0 rgba(0, 0, 0, 0.36);
     }
 
     .btn-secondary {
       color: #fff1dc;
       background: rgba(255, 255, 255, 0.045);
       border: 1px solid rgba(255, 166, 120, 0.34);
-      box-shadow: 7px 7px 0 rgba(0, 0, 0, 0.36);
+      box-shadow: 7px 7px 0 rgba(0, 0, 0, 0.32);
     }
 
     .btn:hover {
@@ -487,19 +520,32 @@
         font-size: 27px;
       }
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      .page-enter,
+      .page-exit,
+      .reveal,
+      .reveal-left,
+      .reveal-right {
+        animation: none !important;
+        transition: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
   </style>
 </head>
 
-<body>
+<body class="page-enter">
   <header>
     <div class="nav">
-      <a class="brand" href="index.html">
+      <a class="brand page-link" href="index.html">
         <img src="logo.png" alt="魔丸娛樂 Logo">
         <span>魔丸娛樂</span>
       </a>
 
       <nav class="nav-links">
-        <a href="index.html">回首頁</a>
+        <a class="page-link" href="index.html">回首頁</a>
         <a href="#guarantee">保底單</a>
         <a href="#trial">體驗單</a>
         <a href="#bet">賭約單</a>
@@ -512,19 +558,19 @@
 
   <main>
     <section class="page-hero">
-      <div class="badge">
+      <div class="badge reveal show">
         <span></span>
         BASIC ORDER MENU
       </div>
 
-      <h1>基礎單價目</h1>
+      <h1 class="reveal show">基礎單價目</h1>
 
-      <p class="subtitle">
+      <p class="subtitle reveal show">
         以下為魔丸娛樂基礎單分類，實際排單、價格與服務內容仍以客服確認為準。
       </p>
     </section>
 
-    <div class="quick-nav">
+    <div class="quick-nav reveal show">
       <a href="#guarantee">保底單</a>
       <a href="#trial">體驗單</a>
       <a href="#bet">賭約單</a>
@@ -536,7 +582,7 @@
     <section>
       <div class="section-inner">
         <div class="price-grid">
-          <div class="price-card featured" id="guarantee">
+          <div class="price-card featured reveal" id="guarantee">
             <div class="price-label">BASIC</div>
             <h2>保底單</h2>
 
@@ -571,7 +617,7 @@
             </ol>
           </div>
 
-          <div class="price-card" id="trial">
+          <div class="price-card reveal reveal-delay-1" id="trial">
             <div class="price-label">TRIAL</div>
             <h2>體驗單</h2>
 
@@ -599,7 +645,7 @@
             </ol>
           </div>
 
-          <div class="price-card" id="bet">
+          <div class="price-card reveal" id="bet">
             <div class="price-label">BET</div>
             <h2>賭約單</h2>
 
@@ -621,7 +667,7 @@
             </ol>
           </div>
 
-          <div class="price-card" id="item">
+          <div class="price-card reveal reveal-delay-1" id="item">
             <div class="price-label">ITEM</div>
             <h2>油鍋單</h2>
 
@@ -657,7 +703,7 @@
             </ol>
           </div>
 
-          <div class="price-card" id="play">
+          <div class="price-card reveal" id="play">
             <div class="price-label">PLAY</div>
             <h2>娛樂陪</h2>
 
@@ -680,7 +726,7 @@
             </ol>
           </div>
 
-          <div class="price-card featured" id="skill">
+          <div class="price-card featured reveal reveal-delay-1" id="skill">
             <div class="price-label">SKILL</div>
             <h2>技術陪</h2>
 
@@ -721,12 +767,12 @@
       </div>
     </section>
 
-    <div class="bottom-cta">
+    <div class="bottom-cta reveal">
       <a class="btn btn-primary" href="https://discord.gg/EdxRfJ2MfX" target="_blank">
         前往 Discord 下單
       </a>
 
-      <a class="btn btn-secondary" href="index.html">
+      <a class="btn btn-secondary page-link" href="index.html">
         回到首頁
       </a>
     </div>
@@ -735,5 +781,48 @@
   <footer>
     © 2026 魔丸娛樂 Mowan Entertainment. All rights reserved.
   </footer>
+
+  <script>
+    const revealElements = document.querySelectorAll(
+      ".reveal, .reveal-left, .reveal-right"
+    );
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          }
+        });
+      },
+      {
+        threshold: 0.12
+      }
+    );
+
+    revealElements.forEach(element => {
+      observer.observe(element);
+    });
+
+    const pageLinks = document.querySelectorAll(".page-link");
+
+    pageLinks.forEach(link => {
+      link.addEventListener("click", event => {
+        const href = link.getAttribute("href");
+
+        if (!href || href.startsWith("#") || link.target === "_blank") {
+          return;
+        }
+
+        event.preventDefault();
+        document.body.classList.remove("page-enter");
+        document.body.classList.add("page-exit");
+
+        setTimeout(() => {
+          window.location.href = href;
+        }, 320);
+      });
+    });
+  </script>
 </body>
 </html>
