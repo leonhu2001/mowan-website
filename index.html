@@ -34,6 +34,21 @@
         radial-gradient(circle at 50% 85%, rgba(0, 0, 0, 0.6), transparent 35%),
         linear-gradient(180deg, #080504 0%, #120a08 45%, #050403 100%);
       overflow-x: hidden;
+      animation: pageFade 0.75s ease both;
+    }
+
+    @keyframes pageFade {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+        filter: blur(8px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+      }
     }
 
     body::before {
@@ -106,6 +121,7 @@
       font-weight: 900;
       letter-spacing: 4px;
       color: #fff3e0;
+      text-decoration: none;
     }
 
     .brand img {
@@ -410,7 +426,6 @@
     }
 
     .card,
-    .price-card,
     .rule-box,
     .step,
     .cta {
@@ -433,7 +448,6 @@
     }
 
     .card::before,
-    .price-card::before,
     .rule-box::before,
     .step::before {
       content: "";
@@ -445,8 +459,7 @@
       pointer-events: none;
     }
 
-    .card:hover,
-    .price-card:hover {
+    .card:hover {
       transform: translate(-3px, -3px);
       border-color: rgba(255, 76, 45, 0.55);
       box-shadow:
@@ -470,142 +483,72 @@
       position: relative;
     }
 
-    .category-tabs {
+    .menu-preview {
+      margin-top: 56px;
+      padding: 36px;
+      border-radius: 14px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.11), rgba(255,255,255,0.035));
+      border: 1px solid rgba(255, 95, 55, 0.25);
+      box-shadow:
+        0 0 42px rgba(255, 45, 20, 0.1),
+        12px 12px 0 rgba(0,0,0,0.35);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .menu-preview::before {
+      content: "基礎單";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      color: rgba(255, 244, 226, 0.035);
+      font-size: clamp(72px, 12vw, 160px);
+      font-weight: 900;
+      letter-spacing: 18px;
+      white-space: nowrap;
+      pointer-events: none;
+    }
+
+    .menu-preview h3 {
+      margin: 0;
+      color: #fff4e1;
+      font-size: clamp(28px, 4vw, 42px);
+      letter-spacing: 6px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .menu-preview p {
+      max-width: 720px;
+      margin: 18px auto 0;
+      color: #dfcab2;
+      line-height: 1.9;
+      font-weight: 600;
+      position: relative;
+      z-index: 1;
+    }
+
+    .menu-tags {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 36px;
-    }
-
-    .category-tab {
-      padding: 12px 22px;
-      border-radius: 4px;
-      background: linear-gradient(135deg, #7d1410, #ff4a24);
-      color: #fff4e1;
-      font-weight: 900;
-      letter-spacing: 4px;
-      border: 1px solid rgba(255, 180, 140, 0.35);
-      box-shadow: 0 0 28px rgba(255, 55, 20, 0.35);
-    }
-
-    .price-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 26px;
-    }
-
-    .price-card {
-      padding: 30px;
-      border-radius: 10px;
+      gap: 10px;
+      margin: 26px 0 0;
       position: relative;
-      overflow: hidden;
-      transition: 0.25s;
+      z-index: 1;
     }
 
-    .price-card.featured {
-      border-color: rgba(255, 82, 48, 0.58);
-      box-shadow:
-        0 0 58px rgba(255, 45, 20, 0.18),
-        12px 12px 0 rgba(0, 0, 0, 0.4);
-    }
-
-    .price-label {
-      display: inline-block;
-      padding: 7px 12px;
-      border-radius: 4px;
-      background: rgba(255, 59, 36, 0.14);
-      color: #ff9b8d;
-      border: 1px solid rgba(255, 59, 36, 0.28);
-      font-size: 13px;
-      font-weight: 900;
-      margin-bottom: 16px;
-      letter-spacing: 1px;
-      position: relative;
-    }
-
-    .price-card h3 {
-      margin: 0 0 16px;
-      font-size: 32px;
-      color: #fff4e1;
-      letter-spacing: 5px;
-      position: relative;
-    }
-
-    .price-main {
-      margin: 16px 0 20px;
-      padding: 18px;
-      border-radius: 8px;
-      background:
-        linear-gradient(135deg, rgba(0, 0, 0, 0.34), rgba(255, 255, 255, 0.035));
-      border: 1px dashed rgba(255, 145, 110, 0.28);
-      position: relative;
-    }
-
-    .price-main p {
-      margin: 8px 0;
-      color: #eedbc5;
-      line-height: 1.8;
-      font-weight: 800;
-    }
-
-    .price-main strong {
-      color: #ff604b;
-      font-size: 20px;
-    }
-
-    .mini-title {
-      margin: 22px 0 10px;
-      color: #ff6a55;
-      font-size: 18px;
-      font-weight: 900;
-      letter-spacing: 2px;
-      position: relative;
-    }
-
-    .tag-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 10px 0 14px;
-      position: relative;
-    }
-
-    .tag {
-      display: inline-block;
-      padding: 7px 10px;
-      border-radius: 4px;
+    .menu-tag {
+      padding: 8px 12px;
+      border-radius: 999px;
       background: rgba(255, 59, 36, 0.1);
       border: 1px solid rgba(255, 80, 50, 0.24);
       color: #ffd8cd;
       font-size: 14px;
       font-weight: 900;
-    }
-
-    .notice {
-      margin-top: 14px;
-      padding: 14px 16px;
-      border-radius: 6px;
-      background: rgba(255, 184, 0, 0.075);
-      border-left: 4px solid #ff5b32;
-      color: #f0d7b7;
-      line-height: 1.8;
-      font-size: 14px;
-      font-weight: 700;
-      position: relative;
-    }
-
-    .rules-list {
-      padding-left: 22px;
-      margin: 10px 0 0;
-      color: #dfcab2;
-      line-height: 1.9;
-      font-weight: 600;
-      position: relative;
-    }
-
-    .rules-list li {
-      margin-bottom: 6px;
     }
 
     .shop-rules {
@@ -787,10 +730,6 @@
         grid-template-columns: 1fr;
       }
 
-      .price-grid {
-        grid-template-columns: 1fr;
-      }
-
       .shop-rules {
         grid-template-columns: 1fr;
       }
@@ -821,18 +760,14 @@
         letter-spacing: 6px;
       }
 
-      .price-card {
-        padding: 22px;
-      }
-
-      .price-card h3 {
-        font-size: 27px;
-      }
-
       .cta::after {
         opacity: 0.25;
         right: 18px;
         bottom: 18px;
+      }
+
+      .menu-preview {
+        padding: 28px 20px;
       }
     }
   </style>
@@ -841,14 +776,14 @@
 <body>
   <header>
     <div class="nav">
-      <div class="brand">
+      <a class="brand" href="index.html">
         <img src="logo.png" alt="魔丸娛樂 Logo">
         <span>魔丸娛樂</span>
-      </div>
+      </a>
 
       <nav class="nav-links">
         <a href="#services">服務項目</a>
-        <a href="#pricing">基礎單價目</a>
+        <a href="basic.html">基礎單價目</a>
         <a href="#rules">本店規章</a>
         <a href="#process">下單流程</a>
         <a href="#contact">立即下單</a>
@@ -883,7 +818,7 @@
               加入 Discord
             </a>
 
-            <a class="btn btn-secondary" href="#pricing">
+            <a class="btn btn-secondary" href="basic.html">
               查看價目
             </a>
           </div>
@@ -918,201 +853,27 @@
             <p>Valorant 陪玩服務開放中，後續將持續擴充更多遊戲與服務項目。</p>
           </div>
         </div>
-      </div>
-    </section>
 
-    <section id="pricing">
-      <div class="section-inner">
-        <div class="section-title">
-          <h2>基礎單價目</h2>
-          <p>以下為基礎單分類，實際排單仍以客服確認為準。</p>
-        </div>
+        <div class="menu-preview">
+          <h3>基礎單價目</h3>
+          <p>
+            基礎單價目已獨立成專屬頁面，包含保底單、體驗單、賭約單、油鍋單、娛樂陪與技術陪。
+            點擊下方按鈕即可進入完整價目頁。
+          </p>
 
-        <div class="category-tabs">
-          <div class="category-tab">基礎單</div>
-        </div>
-
-        <div class="price-grid">
-          <div class="price-card featured">
-            <div class="price-label">BASIC</div>
-            <h3>保底單</h3>
-
-            <div class="price-main">
-              <p><strong>金額 x 1.3 = 保底哈夫幣</strong></p>
-              <p>最低 500T 起</p>
-              <p>1000T x 1.3 → 1300w</p>
-              <p>1500T x 1.3 → 1950w</p>
-              <p>2000T x 1.3 → 2600w</p>
-            </div>
-
-            <div class="mini-title">指定護航</div>
-            <div class="tag-list">
-              <span class="tag">Elite 200T</span>
-              <span class="tag">Grandmaster/Master 150T</span>
-              <span class="tag">Diamond 100T</span>
-              <span class="tag">單筆兩單以上免指定費</span>
-            </div>
-
-            <div class="mini-title">下單須知</div>
-            <ol class="rules-list">
-              <li>此單為打手選圖</li>
-              <li>打手最低四頭五甲</li>
-              <li>不包過點及飯卡，包卡 +500</li>
-              <li>打手雙倒並指示老闆丟包撤，該局不計入保底</li>
-              <li>老闆帶出價值低於100w，該局不計入保底</li>
-              <li>對局期間老闆務必全程配合打手指揮，如因老闆自身因素導致撤離失敗，將立即結單處理</li>
-              <li>服務期間老闆刻意不撿物品卡保底，經打手舉報核實，將立即結單處理</li>
-              <li>老闆撤離失敗算炸單，機密保底 +20w、絕密保底 +60w</li>
-              <li>連續炸單六局，遇外掛不計入，經老闆同意後，可更換打手或全額退款</li>
-              <li>服務期間出現服務態度惡劣等狀況，請立即連絡客服並善用客訴管道</li>
-            </ol>
+          <div class="menu-tags">
+            <span class="menu-tag">保底單</span>
+            <span class="menu-tag">體驗單</span>
+            <span class="menu-tag">賭約單</span>
+            <span class="menu-tag">油鍋單</span>
+            <span class="menu-tag">娛樂陪</span>
+            <span class="menu-tag">技術陪</span>
           </div>
 
-          <div class="price-card">
-            <div class="price-label">TRIAL</div>
-            <h3>體驗單</h3>
-
-            <div class="price-main">
-              <p><strong>普通體驗單 500T</strong> 保 777w</p>
-              <p><strong>尊爵體驗單 1000T</strong> 保 1688w</p>
-            </div>
-
-            <div class="tag-list">
-              <span class="tag">每周可下單一次</span>
-            </div>
-
-            <div class="mini-title">下單須知</div>
-            <ol class="rules-list">
-              <li>此單為打手選圖</li>
-              <li>打手最低四頭五甲</li>
-              <li>包過點及飯卡</li>
-              <li>打手雙倒並指示老闆丟包撤，該局不計入保底</li>
-              <li>老闆帶出價值低於100w，該局不計入保底</li>
-              <li>對局期間老闆務必全程配合打手指揮，如因老闆自身因素導致撤離失敗，將立即結單處理</li>
-              <li>服務期間老闆刻意不撿物品卡保底，經打手舉報核實，將立即結單處理</li>
-              <li>老闆撤離失敗算炸單，機密保底 +20w、絕密保底 +60w</li>
-              <li>連續炸單六局，遇外掛不計入，經老闆同意後，可更換打手或全額退款</li>
-              <li>服務期間出現服務態度惡劣等狀況，請立即連絡客服並善用客訴管道</li>
-            </ol>
-          </div>
-
-          <div class="price-card">
-            <div class="price-label">BET</div>
-            <h3>賭約單</h3>
-
-            <div class="price-main">
-              <p><strong>600T</strong> 單局 520w，打到有為止</p>
-              <p><strong>800T</strong> 單局 666w，打到有為止</p>
-              <p><strong>1000T</strong> 單局 888w，打到有為止</p>
-            </div>
-
-            <div class="mini-title">下單須知</div>
-            <ol class="rules-list">
-              <li>此單為打手選圖，機密以上</li>
-              <li>打手最低四頭五甲</li>
-              <li>包過點及飯卡</li>
-              <li>對局期間老闆務必全程配合打手指揮，如因老闆自身因素導致撤離失敗，將立即結單處理</li>
-              <li>服務期間老闆刻意不撿物品卡保底，經打手舉報核實，將立即結單處理</li>
-              <li>連續炸單六局，遇外掛不計入，經老闆同意後，可更換打手或全額退款</li>
-              <li>服務期間出現服務態度惡劣等狀況，請立即連絡客服並善用客訴管道</li>
-            </ol>
-          </div>
-
-          <div class="price-card">
-            <div class="price-label">ITEM</div>
-            <h3>油鍋單</h3>
-
-            <div class="price-main">
-              <p><strong>火箭燃油 3000T</strong> 保底 2000w</p>
-              <p><strong>GTI衛星通信天線 2000T</strong> 保底 1500w</p>
-              <p><strong>全包 4500T</strong> 保底 3500w</p>
-            </div>
-
-            <div class="mini-title">指定護航</div>
-            <div class="tag-list">
-              <span class="tag">Elite 200T</span>
-              <span class="tag">Grandmaster/Master 150T</span>
-              <span class="tag">Diamond 100T</span>
-            </div>
-
-            <div class="notice">
-              若是保底仍未出貨，下場改以撞車形式將道具交由老闆，確保老闆一定能取得。<br>
-              若是保底前出貨即算結單。
-            </div>
-
-            <div class="mini-title">下單須知</div>
-            <ol class="rules-list">
-              <li>打手最低四頭五甲</li>
-              <li>不包過點及飯卡，包卡 +500</li>
-              <li>打手雙倒並指示老闆丟包撤，該局不計入保底</li>
-              <li>老闆帶出價值低於100w，該局不計入保底</li>
-              <li>對局期間老闆務必全程配合打手指揮，如因老闆自身因素導致撤離失敗，將立即結單處理</li>
-              <li>服務期間老闆刻意不撿物品卡保底，經打手舉報核實，將立即結單處理</li>
-              <li>老闆撤離失敗算炸單，機密保底 +20w、絕密保底 +60w</li>
-              <li>連續炸單六局，遇外掛不計入，經老闆同意後，可更換打手或全額退款</li>
-              <li>服務期間出現服務態度惡劣等狀況，請立即連絡客服並善用客訴管道</li>
-            </ol>
-          </div>
-
-          <div class="price-card">
-            <div class="price-label">PLAY</div>
-            <h3>娛樂陪</h3>
-
-            <div class="price-main">
-              <p><strong>陪玩單陪 320T / 1H</strong></p>
-              <p>不保撤，無保底</p>
-            </div>
-
-            <div class="tag-list">
-              <span class="tag">指定陪玩 +100T</span>
-              <span class="tag">單筆兩單以上免指定費</span>
-            </div>
-
-            <div class="mini-title">下單須知</div>
-            <ol class="rules-list">
-              <li>此單為老闆選圖</li>
-              <li>不包過點卡及飯卡</li>
-              <li>服務期間出現服務態度惡劣等狀況，請立即連絡客服並善用客訴管道</li>
-              <li>陪玩單一律不接受任何技術投訴</li>
-            </ol>
-          </div>
-
-          <div class="price-card featured">
-            <div class="price-label">SKILL</div>
-            <h3>技術陪</h3>
-
-            <div class="price-main">
-              <p><strong>機密單護 400T / 1H</strong> 無保底</p>
-              <p><strong>機密雙護 700T / 1H</strong> 保底 550w</p>
-              <p><strong>絕密雙護 900T / 1H</strong> 無保底</p>
-            </div>
-
-            <div class="notice">
-              純綠護，台服絕密太多掛，本店不做沒把握的約。
-            </div>
-
-            <div class="mini-title">指定護航</div>
-            <div class="tag-list">
-              <span class="tag">Elite 200T</span>
-              <span class="tag">Grandmaster/Master 150T</span>
-              <span class="tag">Diamond 100T</span>
-              <span class="tag">單筆兩單以上免指定費</span>
-            </div>
-
-            <div class="mini-title">下單須知</div>
-            <ol class="rules-list">
-              <li>此單為打手選圖</li>
-              <li>打手最低四頭五甲</li>
-              <li>包過點及飯卡</li>
-              <li>時間到但保底未到，會幫老闆把保底打滿再結單；保底到但時間未到，仍會陪老闆打滿時間</li>
-              <li>打手雙倒並指示老闆丟包撤，該局不計入保底</li>
-              <li>老闆帶出價值低於100w，該局不計入保底</li>
-              <li>對局期間老闆務必全程配合打手指揮，如因老闆自身因素導致撤離失敗，將立即結單處理</li>
-              <li>服務期間老闆刻意不撿物品卡保底，經打手舉報核實，將立即結單處理</li>
-              <li>老闆撤離失敗算炸單，機密保底 +20w、絕密保底 +60w</li>
-              <li>連續炸單六局，遇外掛不計入，經老闆同意後，可更換打手或全額退款</li>
-              <li>服務期間出現服務態度惡劣等狀況，請立即連絡客服並善用客訴管道</li>
-            </ol>
+          <div class="buttons" style="justify-content: center;">
+            <a class="btn btn-primary" href="basic.html">
+              前往基礎單價目
+            </a>
           </div>
         </div>
       </div>
@@ -1234,7 +995,7 @@
               前往 Discord
             </a>
 
-            <a class="btn btn-secondary" href="#pricing">
+            <a class="btn btn-secondary" href="basic.html">
               查看價目
             </a>
           </div>
