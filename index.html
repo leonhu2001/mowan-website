@@ -3,141 +3,570 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>魔丸娛樂</title>
+
+  <title>魔丸娛樂｜三角洲護航・遊戲陪玩</title>
+
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, "Microsoft JhengHei", sans-serif;
-      background: #080808;
-      color: white;
-      text-align: center;
+      font-family: Arial, "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+      background: #070707;
+      color: #ffffff;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at top left, rgba(160, 0, 0, 0.22), transparent 32%),
+        radial-gradient(circle at top right, rgba(255, 80, 0, 0.12), transparent 30%),
+        linear-gradient(180deg, #111111 0%, #050505 55%, #000000 100%);
+      z-index: -2;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 40px 40px;
+      opacity: 0.35;
+      z-index: -1;
+    }
+
+    header {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      backdrop-filter: blur(12px);
+      background: rgba(0, 0, 0, 0.58);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 14px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: 3px;
+    }
+
+    .brand img {
+      width: 44px;
+      height: 44px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(180, 0, 0, 0.45);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      color: #d8d8d8;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #ff3b24;
     }
 
     .hero {
       min-height: 100vh;
-      padding: 60px 20px;
+      padding: 130px 22px 80px;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
       align-items: center;
-      background:
-        radial-gradient(circle at top, rgba(255, 80, 0, 0.35), transparent 35%),
-        linear-gradient(180deg, #161616, #050505);
+      justify-content: center;
     }
 
-    .logo {
-      width: 160px;
-      max-width: 70%;
-      margin-bottom: 24px;
-      border-radius: 24px;
+    .hero-inner {
+      width: 100%;
+      max-width: 1180px;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: center;
+      gap: 48px;
     }
-  
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #ffb0a4;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .badge span {
+      width: 8px;
+      height: 8px;
+      background: #ff2b19;
+      border-radius: 50%;
+      box-shadow: 0 0 14px #ff2b19;
+    }
+
     h1 {
-      font-size: 56px;
+      margin: 0;
+      font-size: clamp(46px, 7vw, 86px);
+      line-height: 1;
       letter-spacing: 8px;
-      margin: 0 0 16px;
+      font-weight: 900;
+      text-shadow:
+        0 0 22px rgba(255, 45, 24, 0.34),
+        0 12px 40px rgba(0, 0, 0, 0.8);
     }
 
     .subtitle {
-      font-size: 22px;
-      color: #ffb000;
-      margin-bottom: 20px;
-      font-weight: bold;
+      margin-top: 18px;
+      color: #ff3b24;
+      font-size: clamp(18px, 3vw, 28px);
+      font-weight: 800;
+      letter-spacing: 2px;
     }
 
-    p {
-      max-width: 720px;
+    .intro {
+      margin-top: 24px;
+      max-width: 620px;
+      color: #d4d4d4;
       font-size: 18px;
-      line-height: 1.8;
-      color: #dddddd;
+      line-height: 1.9;
     }
 
     .buttons {
-      margin-top: 32px;
       display: flex;
-      gap: 16px;
       flex-wrap: wrap;
-      justify-content: center;
+      gap: 16px;
+      margin-top: 34px;
     }
 
-    a {
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 150px;
+      padding: 15px 26px;
+      border-radius: 999px;
       text-decoration: none;
       color: white;
-      padding: 14px 26px;
-      border-radius: 999px;
-      font-weight: bold;
-      background: linear-gradient(135deg, #ff3c00, #ffb000);
+      font-weight: 900;
+      letter-spacing: 1px;
+      transition: 0.25s;
     }
 
-    a.secondary {
-      background: transparent;
-      border: 1px solid #ff8a00;
+    .btn-primary {
+      background: linear-gradient(135deg, #df1300, #ff6a00);
+      box-shadow: 0 0 26px rgba(255, 47, 0, 0.38);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 38px rgba(255, 47, 0, 0.58);
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255, 85, 50, 0.65);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 45, 20, 0.12);
+      transform: translateY(-3px);
+    }
+
+    .logo-card {
+      position: relative;
+      padding: 18px;
+      border-radius: 34px;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.12), rgba(255,255,255,0.02));
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow:
+        0 0 60px rgba(180, 0, 0, 0.28),
+        0 30px 90px rgba(0, 0, 0, 0.75);
+      overflow: hidden;
+    }
+
+    .logo-card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: conic-gradient(
+        from 180deg,
+        transparent,
+        rgba(255, 35, 20, 0.25),
+        transparent,
+        rgba(255, 115, 0, 0.18),
+        transparent
+      );
+      animation: spin 9s linear infinite;
+    }
+
+    .logo-card img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      display: block;
+      border-radius: 24px;
+      object-fit: cover;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    section {
+      padding: 90px 22px;
+    }
+
+    .section-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 42px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(32px, 5vw, 48px);
+      margin: 0;
+      letter-spacing: 4px;
+    }
+
+    .section-title p {
+      color: #bfbfbf;
+      line-height: 1.8;
+      margin-top: 14px;
     }
 
     .cards {
-      margin-top: 50px;
-      width: 100%;
-      max-width: 950px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
     }
 
     .card {
-      padding: 24px;
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 28px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.055);
+      border: 1px solid rgba(255, 255, 255, 0.11);
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+      transition: 0.25s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255, 59, 36, 0.55);
+      box-shadow: 0 22px 70px rgba(120, 0, 0, 0.25);
     }
 
     .card h3 {
-      color: #ffb000;
-      margin-top: 0;
+      margin: 0 0 14px;
+      color: #ff4a34;
+      font-size: 24px;
+    }
+
+    .card p {
+      margin: 0;
+      color: #d1d1d1;
+      line-height: 1.8;
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .step {
+      padding: 24px;
+      border-radius: 22px;
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .step-number {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #df1300, #ff6a00);
+      font-weight: 900;
+      margin-bottom: 16px;
+    }
+
+    .step h3 {
+      margin: 0 0 10px;
+      color: white;
+    }
+
+    .step p {
+      margin: 0;
+      color: #cfcfcf;
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    .cta {
+      text-align: center;
+      padding: 70px 26px;
+      border-radius: 34px;
+      background:
+        radial-gradient(circle at top, rgba(255, 55, 20, 0.25), transparent 45%),
+        rgba(255, 255, 255, 0.055);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .cta h2 {
+      margin: 0;
+      font-size: clamp(32px, 5vw, 52px);
+      letter-spacing: 4px;
+    }
+
+    .cta p {
+      max-width: 680px;
+      margin: 18px auto 30px;
+      color: #d7d7d7;
+      line-height: 1.8;
     }
 
     footer {
-      padding: 24px;
+      padding: 32px 22px;
+      text-align: center;
       color: #888;
-      background: #050505;
+      background: #020202;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .intro {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .buttons {
+        justify-content: center;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .process {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .hero {
+        padding-top: 110px;
+      }
+
+      .process {
+        grid-template-columns: 1fr;
+      }
+
+      .brand {
+        font-size: 14px;
+      }
+
+      h1 {
+        letter-spacing: 5px;
+      }
     }
   </style>
 </head>
+
 <body>
-  <section class="hero">
-    <img src="logo.png" alt="魔丸娛樂 Logo" class="logo">
-    <h1>魔丸娛樂</h1>
-    <div class="subtitle">三角洲護航｜遊戲陪玩｜Valorant 陪玩</div>
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <img src="logo.png" alt="魔丸娛樂 Logo">
+        <span>魔丸娛樂</span>
+      </div>
 
-    <p>
-      魔丸娛樂以三角洲護航及陪玩為主，現階段也提供 Valorant 陪玩服務。
-      我們重視排單效率、服務品質與顧客體驗，讓每一單都更穩、更順、更有感。
-    </p>
-
-    <div class="buttons">
-      <a href="https://discord.gg/EdxRfJ2MfX">加入 Discord</a>
-      <a class="secondary" href="https://discord.gg/EdxRfJ2MfX">立即下單</a>
+      <nav class="nav-links">
+        <a href="#services">服務項目</a>
+        <a href="#process">下單流程</a>
+        <a href="#contact">立即下單</a>
+      </nav>
     </div>
+  </header>
 
-    <div class="cards">
-      <div class="card">
-        <h3>三角洲護航</h3>
-        <p>安全箱、物資、任務需求，依照顧客需求安排打手。</p>
-      </div>
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <div class="badge">
+            <span></span>
+            MOWAN ENTERTAINMENT
+          </div>
 
-      <div class="card">
-        <h3>遊戲陪玩</h3>
-        <p>可依照時段與需求安排陪玩，也可支援指定陪玩。</p>
-      </div>
+          <h1>魔丸娛樂</h1>
 
-      <div class="card">
-        <h3>Valorant 陪玩</h3>
-        <p>Valorant 陪玩服務開放中，後續將持續擴充更多項目。</p>
+          <div class="subtitle">
+            三角洲護航｜遊戲陪玩｜Valorant 陪玩
+          </div>
+
+          <p class="intro">
+            魔丸娛樂以三角洲護航及陪玩服務為主，現階段也提供 Valorant 陪玩。
+            我們重視排單效率、服務品質與顧客體驗，讓每一單都更穩、更順、更有感。
+          </p>
+
+          <div class="buttons">
+            <a class="btn btn-primary" href="https://discord.gg/你的邀請碼" target="_blank">
+              加入 Discord
+            </a>
+
+            <a class="btn btn-secondary" href="https://discord.gg/你的邀請碼" target="_blank">
+              立即下單
+            </a>
+          </div>
+        </div>
+
+        <div class="logo-card">
+          <img src="logo.png" alt="魔丸娛樂 Logo">
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section id="services">
+      <div class="section-inner">
+        <div class="section-title">
+          <h2>服務項目</h2>
+          <p>依照顧客需求安排合適人員，提供穩定、有效率的遊戲服務。</p>
+        </div>
+
+        <div class="cards">
+          <div class="card">
+            <h3>三角洲護航</h3>
+            <p>
+              安全箱、物資、任務需求與指定目標，依照訂單內容安排打手協助。
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>遊戲陪玩</h3>
+            <p>
+              可依照時段、需求與風格安排陪玩，也支援指定陪玩服務。
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Valorant 陪玩</h3>
+            <p>
+              Valorant 陪玩服務開放中，後續將持續擴充更多遊戲與服務項目。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="section-inner">
+        <div class="section-title">
+          <h2>下單流程</h2>
+          <p>簡單四步驟，快速安排服務。</p>
+        </div>
+
+        <div class="process">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3>加入 Discord</h3>
+            <p>進入魔丸娛樂伺服器，查看服務項目與最新公告。</p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3>選擇服務</h3>
+            <p>選擇三角洲護航、陪玩、Valorant 陪玩或其他指定需求。</p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3>客服確認</h3>
+            <p>確認價格、時間、人員與訂單內容，避免資訊落差。</p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">4</div>
+            <h3>安排接單</h3>
+            <p>由合適人員接單服務，完成後可留下評價與回饋。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-inner">
+        <div class="cta">
+          <h2>準備下單了嗎？</h2>
+          <p>
+            點擊下方按鈕加入 Discord，客服將協助你確認需求、價格與排單時間。
+          </p>
+
+          <div class="buttons" style="justify-content: center;">
+            <a class="btn btn-primary" href="https://discord.gg/你的邀請碼" target="_blank">
+              前往 Discord
+            </a>
+
+            <a class="btn btn-secondary" href="#services">
+              查看服務
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    © 2026 魔丸娛樂 Mowan Entertainment
+    © 2026 魔丸娛樂 Mowan Entertainment. All rights reserved.
   </footer>
 </body>
 </html>
