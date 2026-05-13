@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>趣味單價目｜魔丸娛樂</title>
+
+  <meta name="description" content="魔丸娛樂趣味單價目，包含豪到你了嗎、瘋狗撕咬、這甚麼鳥槍、想吃自己打。">
+  <meta property="og:title" content="趣味單價目｜魔丸娛樂">
+  <meta property="og:description" content="豪到你了嗎、瘋狗撕咬、這甚麼鳥槍、想吃自己打完整趣味單價目。">
+  <meta property="og:image" content="logo.png">
+  <meta property="og:type" content="website">
+
+  <meta name="theme-color" content="#0b0706">
+  <link rel="icon" href="logo.png">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: auto;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Microsoft JhengHei", "Noto Sans TC", Arial, sans-serif;
+      color: #f7efe2;
+      background:
+        radial-gradient(circle at 12% 8%, rgba(190, 18, 18, 0.2), transparent 20%),
+        radial-gradient(circle at 88% 14%, rgba(255, 95, 30, 0.1), transparent 18%),
+        linear-gradient(180deg, #080504 0%, #120a08 45%, #050403 100%);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -2;
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+      background-size: 44px 44px;
+      opacity: 0.45;
+    }
+
+    .page-enter {
+      animation: pageEnter 0.45s ease both;
+    }
+
+    .page-exit {
+      animation: pageExit 0.28s ease both;
+    }
+
+    @keyframes pageEnter {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pageExit {
+      from {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      to {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+    }
+
+    header {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 20;
+      background: rgba(8, 5, 4, 0.94);
+      border-bottom: 1px solid rgba(255, 70, 40, 0.22);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.32);
+    }
+
+    .nav {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 14px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: 4px;
+      color: #fff3e0;
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 46px;
+      height: 46px;
+      object-fit: cover;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 88, 45, 0.42);
+      box-shadow: 0 0 14px rgba(255, 40, 20, 0.22);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      color: #e7d5bf;
+      text-decoration: none;
+      transition: 0.18s;
+      white-space: nowrap;
+      font-weight: 800;
+    }
+
+    .nav-links a:hover {
+      color: #ff4a34;
+    }
+
+    .page-hero {
+      padding: 150px 22px 70px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-hero::before {
+      content: "趣味單";
+      position: absolute;
+      left: 50%;
+      top: 58%;
+      transform: translate(-50%, -50%);
+      font-size: clamp(90px, 17vw, 230px);
+      font-weight: 900;
+      color: rgba(255, 244, 226, 0.035);
+      letter-spacing: 22px;
+      white-space: nowrap;
+      pointer-events: none;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 16px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.065);
+      border: 1px solid rgba(255, 82, 48, 0.3);
+      color: #ffb6a8;
+      font-size: 14px;
+      margin-bottom: 22px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .badge span {
+      width: 9px;
+      height: 9px;
+      background: #ff3b24;
+      border-radius: 50%;
+      box-shadow: 0 0 12px rgba(255, 59, 36, 0.6);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(46px, 7vw, 88px);
+      line-height: 1;
+      letter-spacing: 12px;
+      font-weight: 900;
+      color: #fff4e1;
+      text-shadow:
+        0 0 12px rgba(255, 60, 30, 0.24),
+        6px 7px 0 rgba(120, 0, 0, 0.2);
+      position: relative;
+      z-index: 2;
+    }
+
+    .subtitle {
+      margin: 22px auto 0;
+      max-width: 760px;
+      color: #dfcab2;
+      font-size: 18px;
+      line-height: 1.9;
+      font-weight: 700;
+      position: relative;
+      z-index: 2;
+    }
+
+    .quick-nav {
+      max-width: 1180px;
+      margin: 0 auto 34px;
+      padding: 0 22px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .quick-nav a {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.07);
+      color: #ffd8cd;
+      border: 1px solid rgba(255, 80, 50, 0.2);
+      text-decoration: none;
+      font-weight: 900;
+      font-size: 14px;
+      transition: 0.18s;
+    }
+
+    .quick-nav a:hover {
+      background: rgba(255, 74, 52, 0.16);
+      color: #ffffff;
+    }
+
+    section {
+      padding: 40px 22px;
+      position: relative;
+    }
+
+    .section-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .price-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 26px;
+    }
+
+    .price-card {
+      padding: 30px;
+      border-radius: 10px;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.105), rgba(255,255,255,0.035));
+      border: 1px solid rgba(255, 95, 55, 0.22);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
+      transition: border-color 0.18s ease, background 0.18s ease;
+    }
+
+    .price-card:hover {
+      border-color: rgba(255, 76, 45, 0.55);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.13), rgba(255,255,255,0.045));
+    }
+
+    .price-card.featured {
+      border-color: rgba(255, 82, 48, 0.52);
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.32);
+    }
+
+    .price-label {
+      display: inline-block;
+      padding: 7px 12px;
+      border-radius: 4px;
+      background: rgba(255, 59, 36, 0.14);
+      color: #ff9b8d;
+      border: 1px solid rgba(255, 59, 36, 0.25);
+      font-size: 13px;
+      font-weight: 900;
+      margin-bottom: 16px;
+      letter-spacing: 1px;
+      position: relative;
+    }
+
+    .price-card h2 {
+      margin: 0 0 16px;
+      font-size: 32px;
+      color: #fff4e1;
+      letter-spacing: 5px;
+      position: relative;
+    }
+
+    .price-main {
+      margin: 16px 0 20px;
+      padding: 18px;
+      border-radius: 8px;
+      background: rgba(0, 0, 0, 0.28);
+      border: 1px dashed rgba(255, 145, 110, 0.24);
+      position: relative;
+    }
+
+    .price-main p {
+      margin: 8px 0;
+      color: #eedbc5;
+      line-height: 1.8;
+      font-weight: 800;
+    }
+
+    .price-main strong {
+      color: #ff604b;
+      font-size: 20px;
+    }
+
+    .mini-title {
+      margin: 22px 0 10px;
+      color: #ff6a55;
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      position: relative;
+    }
+
+    .code-list {
+      display: grid;
+      gap: 8px;
+      margin: 10px 0 14px;
+    }
+
+    .code-item {
+      padding: 10px 12px;
+      border-radius: 6px;
+      background: rgba(0, 0, 0, 0.28);
+      border: 1px solid rgba(255, 145, 110, 0.18);
+      color: #ffd8cd;
+      font-weight: 800;
+      line-height: 1.65;
+      word-break: break-all;
+      font-size: 14px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 14px;
+      position: relative;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 7px 10px;
+      border-radius: 4px;
+      background: rgba(255, 59, 36, 0.1);
+      border: 1px solid rgba(255, 80, 50, 0.22);
+      color: #ffd8cd;
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .notice {
+      margin-top: 14px;
+      padding: 14px 16px;
+      border-radius: 6px;
+      background: rgba(255, 184, 0, 0.075);
+      border-left: 4px solid #ff5b32;
+      color: #f0d7b7;
+      line-height: 1.8;
+      font-size: 14px;
+      font-weight: 700;
+      position: relative;
+    }
+
+    .rules-list {
+      padding-left: 22px;
+      margin: 10px 0 0;
+      color: #dfcab2;
+      line-height: 1.9;
+      font-weight: 600;
+      position: relative;
+    }
+
+    .rules-list li {
+      margin-bottom: 6px;
+    }
+
+    .bottom-cta {
+      padding: 70px 22px 90px;
+      text-align: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 150px;
+      padding: 15px 28px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 900;
+      letter-spacing: 2px;
+      transition: 0.2s;
+      margin: 8px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #85130f, #ff4a24);
+      color: #fff4e1;
+      border: 1px solid rgba(255, 116, 70, 0.5);
+      box-shadow:
+        0 0 18px rgba(255, 55, 20, 0.22),
+        5px 5px 0 rgba(0, 0, 0, 0.34);
+    }
+
+    .btn-secondary {
+      color: #fff1dc;
+      background: rgba(255, 255, 255, 0.045);
+      border: 1px solid rgba(255, 166, 120, 0.3);
+      box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.28);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    footer {
+      padding: 34px 22px;
+      text-align: center;
+      color: #a9927a;
+      background: rgba(5, 4, 3, 0.78);
+      border-top: 1px solid rgba(255, 80, 50, 0.18);
+      font-weight: 700;
+    }
+
+    @media (max-width: 980px) {
+      .price-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .page-hero {
+        padding-top: 125px;
+      }
+
+      h1 {
+        letter-spacing: 6px;
+      }
+
+      .price-card {
+        padding: 22px;
+      }
+
+      .price-card h2 {
+        font-size: 27px;
+      }
+
+      .btn {
+        width: 100%;
+        max-width: 320px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .page-enter,
+      .page-exit {
+        animation: none !important;
+      }
+
+      .btn,
+      .price-card,
+      .quick-nav a {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="page-enter">
+  <header>
+    <div class="nav">
+      <a class="brand page-link" href="index.html">
+        <img src="logo.png" alt="魔丸娛樂 Logo">
+        <span>魔丸娛樂</span>
+      </a>
+
+      <nav class="nav-links">
+        <a class="page-link" href="index.html">回首頁</a>
+        <a class="page-link" href="basic.html">基礎單</a>
+        <a href="#hao">豪到你了嗎</a>
+        <a href="#dog">瘋狗撕咬</a>
+        <a href="#gun">這甚麼鳥槍</a>
+        <a href="#eat">想吃自己打</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="badge">
+        <span></span>
+        FUN ORDER MENU
+      </div>
+
+      <h1>趣味單價目</h1>
+
+      <p class="subtitle">
+        以下為魔丸娛樂趣味單分類，內容以娛樂性質為主，實際排單、價格與服務內容仍以客服確認為準。
+      </p>
+    </section>
+
+    <div class="quick-nav">
+      <a href="#hao">豪到你了嗎</a>
+      <a href="#dog">瘋狗撕咬</a>
+      <a href="#gun">這甚麼鳥槍</a>
+      <a href="#eat">想吃自己打</a>
+    </div>
+
+    <section>
+      <div class="section-inner">
+        <div class="price-grid">
+          <div class="price-card featured" id="hao">
+            <div class="price-label">FUN</div>
+            <h2>豪到你了嗎</h2>
+
+            <div class="price-main">
+              <p><strong>1500T</strong> 基礎保底 1388w</p>
+            </div>
+
+            <div class="mini-title">⚠️ 開打前檢查</div>
+            <ol class="rules-list">
+              <li>打手必須威龍</li>
+              <li>必須防爆頭 + 老賽甲</li>
+              <li>必須語音 English</li>
+            </ol>
+
+            <div class="mini-title">⚠️ 只能使用下列改槍碼</div>
+            <div class="code-list">
+              <div class="code-item">AS Val突擊步槍-烽火地帶-6JTT3AS0DIN2660UM69V7</div>
+              <div class="code-item">M7戰鬥步槍-烽火地帶-6JTT3RG0DIN2660UM69V7</div>
+              <div class="code-item">M14射手步槍-烽火地帶-6JTQFJK07BHND4KAPD2AJ</div>
+            </div>
+
+            <div class="mini-title">規則</div>
+            <ol class="rules-list">
+              <li>僅能拉閘，禁止飛升</li>
+              <li>全程禁止靜步，必須歐美</li>
+              <li>打贏說「豪到你了嗎，妹妹?」，打輸說「卡了」，沒說保底 +30w</li>
+              <li>丟 C4 前要說「一個吸Four」，噴氣前要說「一個氣」，丟虎蹲前要說「一個炮」，沒說保底 +30w</li>
+              <li>遇到人說「窩累同雷碗」，沒說保底 +30w</li>
+              <li>出貨要說「有感覺了嗎，妹妹」，沒說保底 +30w</li>
+            </ol>
+
+            <div class="mini-title">下單須知</div>
+            <div class="notice">
+              此單為娛樂單，請老闆熟知並了解其娛樂性質，不接受技術層面等投訴，若出現爭議，一律以客服截圖畫面為據！
+            </div>
+          </div>
+
+          <div class="price-card" id="dog">
+            <div class="price-label">FUN</div>
+            <h2>瘋狗撕咬</h2>
+
+            <div class="price-main">
+              <p><strong>1500T</strong> 基礎保底 1388w</p>
+            </div>
+
+            <div class="mini-title">規則</div>
+            <ol class="rules-list">
+              <li>打手只能選疾風進圖</li>
+              <li>每次放置錨點後必須化身瘋狗，一路狗叫撕咬敵人</li>
+              <li>打手若放置錨點後忘記狗叫，基礎保底 +30w</li>
+            </ol>
+
+            <div class="mini-title">下單須知</div>
+            <div class="notice">
+              此單為娛樂單，請老闆熟知並了解其娛樂性質，不接受技術層面等投訴，若出現爭議，一律以客服截圖畫面為據！
+            </div>
+          </div>
+
+          <div class="price-card" id="gun">
+            <div class="price-label">FUN</div>
+            <h2>這甚麼鳥槍</h2>
+
+            <div class="price-main">
+              <p><strong>1500T</strong> 基礎保底 1388w</p>
+            </div>
+
+            <div class="mini-title">規則</div>
+            <ol class="rules-list">
+              <li>前三局由老闆幫打手改槍</li>
+              <li>老闆卡戰備進圖</li>
+              <li>打手每使用老闆改的槍擊殺一人，保底 -50w</li>
+              <li>使用繳獲的槍保底殺人 +60w</li>
+              <li>打手倒地保底 +100w</li>
+              <li>第四局結算保底後開始正常護航</li>
+            </ol>
+
+            <div class="mini-title">下單須知</div>
+            <div class="notice">
+              此單為娛樂單，請老闆熟知並了解其娛樂性質，不接受技術層面等投訴，若出現爭議，一律以客服截圖畫面為據！
+            </div>
+          </div>
+
+          <div class="price-card featured" id="eat">
+            <div class="price-label">FUN</div>
+            <h2>想吃自己打</h2>
+
+            <div class="price-main">
+              <p><strong>1700T</strong> 基礎保底 1588w</p>
+            </div>
+
+            <div class="mini-title">規則</div>
+            <ol class="rules-list">
+              <li>前三局由打手幫老闆起裝</li>
+              <li>打手幹員為一盾一奶，且必須優先救人</li>
+              <li>老闆每擊殺一人 +50w 保底</li>
+              <li>擊殺 3 人以上，每人 +120w 保底</li>
+              <li>老闆每次被拉起來 -30w 保底</li>
+              <li>第四局結算保底後開始正常護航</li>
+            </ol>
+
+            <div class="mini-title">下單須知</div>
+            <div class="notice">
+              此單為娛樂單，請老闆熟知並了解其娛樂性質，不接受技術層面等投訴，若出現爭議，一律以客服截圖畫面為據！
+            </div>
+          </div>
+        </div>
