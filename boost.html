@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>代解代肝｜魔丸娛樂</title>
+
+  <meta name="description" content="魔丸娛樂代解代肝類別，包含純綠代肝哈夫幣與 S9 賽季 3x3。">
+  <meta property="og:title" content="代解代肝｜魔丸娛樂">
+  <meta property="og:description" content="純綠代肝哈夫幣、S9 賽季 3x3、安全箱服務。">
+  <meta property="og:image" content="logo.png">
+  <meta property="og:type" content="website">
+
+  <meta name="theme-color" content="#0b0706">
+  <link rel="icon" href="logo.png">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: auto;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Microsoft JhengHei", "Noto Sans TC", Arial, sans-serif;
+      color: #f7efe2;
+      background:
+        radial-gradient(circle at 12% 8%, rgba(190, 18, 18, 0.2), transparent 20%),
+        radial-gradient(circle at 88% 14%, rgba(255, 95, 30, 0.1), transparent 18%),
+        linear-gradient(180deg, #080504 0%, #120a08 45%, #050403 100%);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -2;
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+      background-size: 44px 44px;
+      opacity: 0.45;
+    }
+
+    .page-enter {
+      animation: pageEnter 0.45s ease both;
+    }
+
+    .page-exit {
+      animation: pageExit 0.28s ease both;
+    }
+
+    @keyframes pageEnter {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pageExit {
+      from {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      to {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+    }
+
+    header {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 20;
+      background: rgba(8, 5, 4, 0.94);
+      border-bottom: 1px solid rgba(255, 70, 40, 0.22);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.32);
+    }
+
+    .nav {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 14px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: 4px;
+      color: #fff3e0;
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 46px;
+      height: 46px;
+      object-fit: cover;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 88, 45, 0.42);
+      box-shadow: 0 0 14px rgba(255, 40, 20, 0.22);
+    }
+
+
+    .category-switch {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-left: 8px;
+    }
+
+    .category-switch a {
+      padding: 12px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      color: #ffd8cd;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 80, 50, 0.26);
+      transition: 0.18s;
+      white-space: nowrap;
+    }
+
+    .category-switch a.active,
+    .category-switch a:hover {
+      color: #fff4e1;
+      background: linear-gradient(135deg, #85130f, #ff4a24);
+      border-color: rgba(255, 116, 70, 0.5);
+      box-shadow: 0 0 18px rgba(255, 55, 20, 0.22);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      color: #e7d5bf;
+      text-decoration: none;
+      transition: 0.18s;
+      white-space: nowrap;
+      font-weight: 800;
+    }
+
+    .nav-links a:hover {
+      color: #ff4a34;
+    }
+
+    .page-hero {
+      padding: 150px 22px 70px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-hero::before {
+      content: "趣味單";
+      position: absolute;
+      left: 50%;
+      top: 58%;
+      transform: translate(-50%, -50%);
+      font-size: clamp(90px, 17vw, 230px);
+      font-weight: 900;
+      color: rgba(255, 244, 226, 0.035);
+      letter-spacing: 22px;
+      white-space: nowrap;
+      pointer-events: none;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 16px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.065);
+      border: 1px solid rgba(255, 82, 48, 0.3);
+      color: #ffb6a8;
+      font-size: 14px;
+      margin-bottom: 22px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .badge span {
+      width: 9px;
+      height: 9px;
+      background: #ff3b24;
+      border-radius: 50%;
+      box-shadow: 0 0 12px rgba(255, 59, 36, 0.6);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(46px, 7vw, 88px);
+      line-height: 1;
+      letter-spacing: 12px;
+      font-weight: 900;
+      color: #fff4e1;
+      text-shadow:
+        0 0 12px rgba(255, 60, 30, 0.24),
+        6px 7px 0 rgba(120, 0, 0, 0.2);
+      position: relative;
+      z-index: 2;
+    }
+
+    .subtitle {
+      margin: 22px auto 0;
+      max-width: 760px;
+      color: #dfcab2;
+      font-size: 18px;
+      line-height: 1.9;
+      font-weight: 700;
+      position: relative;
+      z-index: 2;
+    }
+
+    .quick-nav {
+      max-width: 1180px;
+      margin: 0 auto 34px;
+      padding: 0 22px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .quick-nav a {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.07);
+      color: #ffd8cd;
+      border: 1px solid rgba(255, 80, 50, 0.2);
+      text-decoration: none;
+      font-weight: 900;
+      font-size: 14px;
+      transition: 0.18s;
+    }
+
+    .quick-nav a:hover {
+      background: rgba(255, 74, 52, 0.16);
+      color: #ffffff;
+    }
+
+    section {
+      padding: 40px 22px;
+      position: relative;
+    }
+
+    .section-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .price-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 26px;
+    }
+
+    .price-card {
+      padding: 30px;
+      border-radius: 10px;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.105), rgba(255,255,255,0.035));
+      border: 1px solid rgba(255, 95, 55, 0.22);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
+      transition: border-color 0.18s ease, background 0.18s ease;
+    }
+
+    .price-card:hover {
+      border-color: rgba(255, 76, 45, 0.55);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.13), rgba(255,255,255,0.045));
+    }
+
+    .price-card.featured {
+      border-color: rgba(255, 82, 48, 0.52);
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.32);
+    }
+
+    .price-label {
+      display: inline-block;
+      padding: 7px 12px;
+      border-radius: 4px;
+      background: rgba(255, 59, 36, 0.14);
+      color: #ff9b8d;
+      border: 1px solid rgba(255, 59, 36, 0.25);
+      font-size: 13px;
+      font-weight: 900;
+      margin-bottom: 16px;
+      letter-spacing: 1px;
+      position: relative;
+    }
+
+    .price-card h2 {
+      margin: 0 0 16px;
+      font-size: 32px;
+      color: #fff4e1;
+      letter-spacing: 5px;
+      position: relative;
+    }
+
+    .price-main {
+      margin: 16px 0 20px;
+      padding: 18px;
+      border-radius: 8px;
+      background: rgba(0, 0, 0, 0.28);
+      border: 1px dashed rgba(255, 145, 110, 0.24);
+      position: relative;
+    }
+
+    .price-main p {
+      margin: 8px 0;
+      color: #eedbc5;
+      line-height: 1.8;
+      font-weight: 800;
+    }
+
+    .price-main strong {
+      color: #ff604b;
+      font-size: 20px;
+    }
+
+    .mini-title {
+      margin: 22px 0 10px;
+      color: #ff6a55;
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      position: relative;
+    }
+
+    .code-list {
+      display: grid;
+      gap: 8px;
+      margin: 10px 0 14px;
+    }
+
+    .code-item {
+      padding: 10px 12px;
+      border-radius: 6px;
+      background: rgba(0, 0, 0, 0.28);
+      border: 1px solid rgba(255, 145, 110, 0.18);
+      color: #ffd8cd;
+      font-weight: 800;
+      line-height: 1.65;
+      word-break: break-all;
+      font-size: 14px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 14px;
+      position: relative;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 7px 10px;
+      border-radius: 4px;
+      background: rgba(255, 59, 36, 0.1);
+      border: 1px solid rgba(255, 80, 50, 0.22);
+      color: #ffd8cd;
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .notice {
+      margin-top: 14px;
+      padding: 14px 16px;
+      border-radius: 6px;
+      background: rgba(255, 184, 0, 0.075);
+      border-left: 4px solid #ff5b32;
+      color: #f0d7b7;
+      line-height: 1.8;
+      font-size: 14px;
+      font-weight: 700;
+      position: relative;
+    }
+
+    .rules-list {
+      padding-left: 22px;
+      margin: 10px 0 0;
+      color: #dfcab2;
+      line-height: 1.9;
+      font-weight: 600;
+      position: relative;
+    }
+
+    .rules-list li {
+      margin-bottom: 6px;
+    }
+
+    .bottom-cta {
+      padding: 70px 22px 90px;
+      text-align: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 150px;
+      padding: 15px 28px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 900;
+      letter-spacing: 2px;
+      transition: 0.2s;
+      margin: 8px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #85130f, #ff4a24);
+      color: #fff4e1;
+      border: 1px solid rgba(255, 116, 70, 0.5);
+      box-shadow:
+        0 0 18px rgba(255, 55, 20, 0.22),
+        5px 5px 0 rgba(0, 0, 0, 0.34);
+    }
+
+    .btn-secondary {
+      color: #fff1dc;
+      background: rgba(255, 255, 255, 0.045);
+      border: 1px solid rgba(255, 166, 120, 0.3);
+      box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.28);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    footer {
+      padding: 34px 22px;
+      text-align: center;
+      color: #a9927a;
+      background: rgba(5, 4, 3, 0.78);
+      border-top: 1px solid rgba(255, 80, 50, 0.18);
+      font-weight: 700;
+    }
+
+    @media (max-width: 980px) {
+      .price-grid {
+        grid-template-columns: 1fr;
+      }
+
+  
+    .category-switch {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-left: 8px;
+    }
+
+    .category-switch a {
+      padding: 12px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      color: #ffd8cd;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 80, 50, 0.26);
+      transition: 0.18s;
+      white-space: nowrap;
+    }
+
+    .category-switch a.active,
+    .category-switch a:hover {
+      color: #fff4e1;
+      background: linear-gradient(135deg, #85130f, #ff4a24);
+      border-color: rgba(255, 116, 70, 0.5);
+      box-shadow: 0 0 18px rgba(255, 55, 20, 0.22);
+    }
+
+    .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .page-hero {
+        padding-top: 125px;
+      }
+
+      h1 {
+        letter-spacing: 6px;
+      }
+
+      .price-card {
+        padding: 22px;
+      }
+
+      .price-card h2 {
+        font-size: 27px;
+      }
+
+
+      .category-switch {
+        gap: 6px;
+        margin-left: 0;
+      }
+
+      .category-switch a {
+        font-size: 13px;
+        padding: 9px 10px;
+        letter-spacing: 1px;
+      }
+
+      .btn {
+        width: 100%;
+        max-width: 320px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .page-enter,
+      .page-exit {
+        animation: none !important;
+      }
+
+      .btn,
+      .price-card,
+      .quick-nav a {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="page-enter">
+  <header>
+    <div class="nav">
+      <a class="brand page-link" href="index.html">
+        <img src="logo.png" alt="魔丸娛樂 Logo">
+        <span>魔丸娛樂</span>
+      </a>
+
+      <div class="category-switch">
+        <a class="page-link" href="basic.html">基礎單</a>
+        <a class="page-link" href="fun.html">趣味單</a>
+        <a class="page-link active" href="boost.html">代解代肝</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero" data-watermark="代肝">
+      <div class="badge">
+        <span></span>
+        BOOST ORDER MENU
+      </div>
+
+      <h1>代解代肝</h1>
+
+      <p class="subtitle">
+        以下為魔丸娛樂代解代肝類別，包含純綠代肝哈夫幣與 S9 賽季 3x3。實際排單、價格與服務內容仍以客服確認為準。
+      </p>
+    </section>
+
+    <div class="quick-nav">
+      <a href="#hafcoin">純綠代肝哈夫幣</a>
+      <a href="#s9">S9 賽季 3x3</a>
+    </div>
+
+    <section>
+      <div class="section-inner">
+        <div class="price-grid">
+          <div class="price-card featured" id="hafcoin">
+            <div class="price-label">BOOST</div>
+            <h2>純綠代肝哈夫幣</h2>
+
+            <div class="price-main">
+              <p><strong>5000w → 700T</strong></p>
+              <p>加贈 200w</p>
+              <p><strong>1E → 1250T</strong></p>
+              <p>加贈 500w</p>
+              <p><strong>2E → 2500T</strong></p>
+              <p>加贈 1200w</p>
+            </div>
+
+            <div class="notice">
+              基於效率問題，安全箱少於 4 格不接。
+            </div>
+
+            <div class="mini-title">下單須知</div>
+            <ol class="rules-list">
+              <li>代肝僅計純幣，如有需要預留任何大小紅，請提前告知。</li>
+              <li>接單期間請勿搶登。</li>
+            </ol>
+          </div>
+
+          <div class="price-card" id="s9">
+            <div class="price-label">S9</div>
+            <h2>S9 賽季 3x3</h2>
+
+            <div class="price-main">
+              <p><strong>一般安全箱</strong></p>
+              <p>[2命運契約 + 2收集者] → 5500T</p>
+              <p><strong>頂級安全箱</strong></p>
+              <p>[7命運契約 + 6收集者] → 8500T</p>
+              <p><strong>僅安全箱造型</strong></p>
+              <p>依進度及需求定價，須已完成賽季 3x3</p>
+            </div>
+
+            <div class="mini-title">下單須知</div>
+            <ol class="rules-list">
+              <li>包損耗 → +500T</li>
+              <li>提前一個賽季預約 → -500T</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="bottom-cta">
+      <a class="btn btn-primary" href="https://discord.gg/EdxRfJ2MfX" target="_blank">
+        前往 Discord 下單
+      </a>
+
+      <a class="btn btn-secondary page-link" href="index.html">
+        回到首頁
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    © 2026 魔丸娛樂 Mowan Entertainment. All rights reserved.
+  </footer>
+
+  <script>
+    const pageLinks = document.querySelectorAll(".page-link");
+
+    pageLinks.forEach(link => {
+      link.addEventListener("click", event => {
+        const href = link.getAttribute("href");
+
+        if (!href || href.startsWith("#") || link.target === "_blank") {
+          return;
+        }
+
+        event.preventDefault();
+        document.body.classList.remove("page-enter");
+        document.body.classList.add("page-exit");
+
+        setTimeout(() => {
+          window.location.href = href;
+        }, 280);
+      });
+    });
+  </script>
+</body>
+</html>
