@@ -106,6 +106,36 @@
       box-shadow: 0 0 14px rgba(255, 40, 20, 0.22);
     }
 
+
+    .category-switch {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-left: 8px;
+    }
+
+    .category-switch a {
+      padding: 12px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      color: #ffd8cd;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 80, 50, 0.26);
+      transition: 0.18s;
+      white-space: nowrap;
+    }
+
+    .category-switch a.active,
+    .category-switch a:hover {
+      color: #fff4e1;
+      background: linear-gradient(135deg, #85130f, #ff4a24);
+      border-color: rgba(255, 116, 70, 0.5);
+      box-shadow: 0 0 18px rgba(255, 55, 20, 0.22);
+    }
+
     .nav-links {
       display: flex;
       gap: 18px;
@@ -414,7 +444,37 @@
         grid-template-columns: 1fr;
       }
 
-      .nav-links {
+  
+    .category-switch {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-left: 8px;
+    }
+
+    .category-switch a {
+      padding: 12px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      color: #ffd8cd;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 80, 50, 0.26);
+      transition: 0.18s;
+      white-space: nowrap;
+    }
+
+    .category-switch a.active,
+    .category-switch a:hover {
+      color: #fff4e1;
+      background: linear-gradient(135deg, #85130f, #ff4a24);
+      border-color: rgba(255, 116, 70, 0.5);
+      box-shadow: 0 0 18px rgba(255, 55, 20, 0.22);
+    }
+
+    .nav-links {
         display: none;
       }
     }
@@ -434,6 +494,18 @@
 
       .price-card h2 {
         font-size: 27px;
+      }
+
+
+      .category-switch {
+        gap: 6px;
+        margin-left: 0;
+      }
+
+      .category-switch a {
+        font-size: 13px;
+        padding: 9px 10px;
+        letter-spacing: 1px;
       }
 
       .btn {
@@ -464,16 +536,10 @@
         <span>魔丸娛樂</span>
       </a>
 
-      <nav class="nav-links">
-        <a class="page-link" href="index.html">回首頁</a>
+      <div class="category-switch">
+        <a class="page-link active" href="basic.html">基礎單</a>
         <a class="page-link" href="fun.html">趣味單</a>
-        <a href="#guarantee">保底單</a>
-        <a href="#trial">體驗單</a>
-        <a href="#bet">賭約單</a>
-        <a href="#item">油鍋單</a>
-        <a href="#play">娛樂陪</a>
-        <a href="#skill">技術陪</a>
-      </nav>
+      </div>
     </div>
   </header>
 
