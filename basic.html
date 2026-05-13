@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>魔丸娛樂｜三角洲護航・遊戲陪玩</title>
+  <title>基礎單價目｜魔丸娛樂</title>
 
-  <meta name="description" content="魔丸娛樂提供三角洲護航、遊戲陪玩與 Valorant 陪玩服務，重視排單效率、服務品質與顧客體驗。">
-  <meta property="og:title" content="魔丸娛樂｜三角洲護航・遊戲陪玩">
-  <meta property="og:description" content="三角洲護航、遊戲陪玩、Valorant 陪玩，快速排單，穩定服務。">
+  <meta name="description" content="魔丸娛樂基礎單價目，包含保底單、體驗單、賭約單、油鍋單、娛樂陪與技術陪。">
+  <meta property="og:title" content="基礎單價目｜魔丸娛樂">
+  <meta property="og:description" content="保底單、體驗單、賭約單、油鍋單、娛樂陪、技術陪完整價目。">
   <meta property="og:image" content="logo.png">
   <meta property="og:type" content="website">
 
@@ -21,7 +21,7 @@
     }
 
     html {
-      scroll-behavior: smooth;
+      scroll-behavior: auto;
     }
 
     body {
@@ -29,8 +29,8 @@
       font-family: "Microsoft JhengHei", "Noto Sans TC", Arial, sans-serif;
       color: #f7efe2;
       background:
-        radial-gradient(circle at 12% 8%, rgba(190, 18, 18, 0.22), transparent 20%),
-        radial-gradient(circle at 88% 14%, rgba(255, 95, 30, 0.12), transparent 18%),
+        radial-gradient(circle at 12% 8%, rgba(190, 18, 18, 0.2), transparent 20%),
+        radial-gradient(circle at 88% 14%, rgba(255, 95, 30, 0.1), transparent 18%),
         linear-gradient(180deg, #080504 0%, #120a08 45%, #050403 100%);
       overflow-x: hidden;
     }
@@ -42,24 +42,24 @@
       pointer-events: none;
       z-index: -2;
       background:
-        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
       background-size: 44px 44px;
-      opacity: 0.5;
+      opacity: 0.45;
     }
 
     .page-enter {
-      animation: pageEnter 0.55s ease both;
+      animation: pageEnter 0.45s ease both;
     }
 
     .page-exit {
-      animation: pageExit 0.35s ease both;
+      animation: pageExit 0.28s ease both;
     }
 
     @keyframes pageEnter {
       from {
         opacity: 0;
-        transform: translateY(22px);
+        transform: translateY(16px);
       }
 
       to {
@@ -76,53 +76,8 @@
 
       to {
         opacity: 0;
-        transform: translateY(24px);
+        transform: translateY(18px);
       }
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(36px);
-      transition: opacity 0.65s ease, transform 0.65s ease;
-    }
-
-    .reveal.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .reveal-left {
-      opacity: 0;
-      transform: translateX(-42px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-
-    .reveal-left.show {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    .reveal-right {
-      opacity: 0;
-      transform: translateX(42px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-
-    .reveal-right.show {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    .reveal-delay-1 {
-      transition-delay: 0.08s;
-    }
-
-    .reveal-delay-2 {
-      transition-delay: 0.16s;
-    }
-
-    .reveal-delay-3 {
-      transition-delay: 0.24s;
     }
 
     header {
@@ -131,9 +86,9 @@
       top: 0;
       left: 0;
       z-index: 20;
-      background: rgba(8, 5, 4, 0.92);
-      border-bottom: 1px solid rgba(255, 70, 40, 0.25);
-      box-shadow: 0 0 24px rgba(255, 35, 20, 0.08);
+      background: rgba(8, 5, 4, 0.94);
+      border-bottom: 1px solid rgba(255, 70, 40, 0.22);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.32);
     }
 
     .nav {
@@ -161,8 +116,8 @@
       height: 46px;
       object-fit: cover;
       border-radius: 14px;
-      border: 1px solid rgba(255, 88, 45, 0.45);
-      box-shadow: 0 0 18px rgba(255, 40, 20, 0.28);
+      border: 1px solid rgba(255, 88, 45, 0.42);
+      box-shadow: 0 0 14px rgba(255, 40, 20, 0.22);
     }
 
     .nav-links {
@@ -175,59 +130,34 @@
     .nav-links a {
       color: #e7d5bf;
       text-decoration: none;
-      transition: 0.2s;
+      transition: 0.18s;
       white-space: nowrap;
       font-weight: 800;
     }
 
     .nav-links a:hover {
       color: #ff4a34;
-      text-shadow: 0 0 10px rgba(255, 74, 52, 0.55);
     }
 
-    .hero {
-      min-height: 100vh;
-      padding: 132px 22px 80px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .page-hero {
+      padding: 150px 22px 70px;
+      text-align: center;
       position: relative;
       overflow: hidden;
     }
 
-    .ink-stroke {
+    .page-hero::before {
+      content: "基礎單";
       position: absolute;
-      pointer-events: none;
-      color: rgba(255, 244, 226, 0.035);
-      font-size: clamp(100px, 18vw, 260px);
+      left: 50%;
+      top: 58%;
+      transform: translate(-50%, -50%);
+      font-size: clamp(90px, 17vw, 230px);
       font-weight: 900;
-      writing-mode: vertical-rl;
-      letter-spacing: 18px;
-      right: 4%;
-      top: 14%;
-      user-select: none;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(115deg, transparent 0%, transparent 42%, rgba(255, 70, 40, 0.08) 43%, transparent 44%, transparent 100%),
-        linear-gradient(65deg, transparent 0%, transparent 62%, rgba(255, 255, 255, 0.04) 63%, transparent 64%, transparent 100%);
+      color: rgba(255, 244, 226, 0.035);
+      letter-spacing: 22px;
+      white-space: nowrap;
       pointer-events: none;
-      opacity: 0.65;
-    }
-
-    .hero-inner {
-      width: 100%;
-      max-width: 1180px;
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      align-items: center;
-      gap: 52px;
-      position: relative;
-      z-index: 2;
     }
 
     .badge {
@@ -237,13 +167,14 @@
       padding: 9px 16px;
       border-radius: 999px;
       background: rgba(255, 255, 255, 0.065);
-      border: 1px solid rgba(255, 82, 48, 0.32);
+      border: 1px solid rgba(255, 82, 48, 0.3);
       color: #ffb6a8;
       font-size: 14px;
       margin-bottom: 22px;
       font-weight: 900;
       letter-spacing: 1px;
-      box-shadow: 0 0 20px rgba(255, 55, 20, 0.12);
+      position: relative;
+      z-index: 2;
     }
 
     .badge span {
@@ -251,45 +182,200 @@
       height: 9px;
       background: #ff3b24;
       border-radius: 50%;
-      box-shadow: 0 0 14px rgba(255, 59, 36, 0.75);
+      box-shadow: 0 0 12px rgba(255, 59, 36, 0.6);
     }
 
     h1 {
       margin: 0;
-      font-size: clamp(52px, 7vw, 96px);
+      font-size: clamp(46px, 7vw, 88px);
       line-height: 1;
       letter-spacing: 12px;
       font-weight: 900;
       color: #fff4e1;
       text-shadow:
-        0 0 16px rgba(255, 60, 30, 0.32),
-        8px 9px 0 rgba(120, 0, 0, 0.25),
-        0 18px 40px rgba(0, 0, 0, 0.65);
+        0 0 12px rgba(255, 60, 30, 0.24),
+        6px 7px 0 rgba(120, 0, 0, 0.2);
+      position: relative;
+      z-index: 2;
     }
 
     .subtitle {
-      margin-top: 20px;
-      color: #ff4a34;
-      font-size: clamp(18px, 3vw, 28px);
-      font-weight: 900;
-      letter-spacing: 3px;
-      text-shadow: 0 0 12px rgba(255, 74, 52, 0.35);
-    }
-
-    .intro {
-      margin-top: 26px;
-      max-width: 650px;
-      color: #e4d2bd;
+      margin: 22px auto 0;
+      max-width: 720px;
+      color: #dfcab2;
       font-size: 18px;
-      line-height: 2;
-      font-weight: 600;
+      line-height: 1.9;
+      font-weight: 700;
+      position: relative;
+      z-index: 2;
     }
 
-    .buttons {
+    .quick-nav {
+      max-width: 1180px;
+      margin: 0 auto 34px;
+      padding: 0 22px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .quick-nav a {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.07);
+      color: #ffd8cd;
+      border: 1px solid rgba(255, 80, 50, 0.2);
+      text-decoration: none;
+      font-weight: 900;
+      font-size: 14px;
+      transition: 0.18s;
+    }
+
+    .quick-nav a:hover {
+      background: rgba(255, 74, 52, 0.16);
+      color: #ffffff;
+    }
+
+    section {
+      padding: 40px 22px;
+      position: relative;
+    }
+
+    .section-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .price-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 26px;
+    }
+
+    .price-card {
+      padding: 30px;
+      border-radius: 10px;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.105), rgba(255,255,255,0.035));
+      border: 1px solid rgba(255, 95, 55, 0.22);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
+      transition: border-color 0.18s ease, background 0.18s ease;
+    }
+
+    .price-card:hover {
+      border-color: rgba(255, 76, 45, 0.55);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.13), rgba(255,255,255,0.045));
+    }
+
+    .price-card.featured {
+      border-color: rgba(255, 82, 48, 0.52);
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.32);
+    }
+
+    .price-label {
+      display: inline-block;
+      padding: 7px 12px;
+      border-radius: 4px;
+      background: rgba(255, 59, 36, 0.14);
+      color: #ff9b8d;
+      border: 1px solid rgba(255, 59, 36, 0.25);
+      font-size: 13px;
+      font-weight: 900;
+      margin-bottom: 16px;
+      letter-spacing: 1px;
+      position: relative;
+    }
+
+    .price-card h2 {
+      margin: 0 0 16px;
+      font-size: 32px;
+      color: #fff4e1;
+      letter-spacing: 5px;
+      position: relative;
+    }
+
+    .price-main {
+      margin: 16px 0 20px;
+      padding: 18px;
+      border-radius: 8px;
+      background: rgba(0, 0, 0, 0.28);
+      border: 1px dashed rgba(255, 145, 110, 0.24);
+      position: relative;
+    }
+
+    .price-main p {
+      margin: 8px 0;
+      color: #eedbc5;
+      line-height: 1.8;
+      font-weight: 800;
+    }
+
+    .price-main strong {
+      color: #ff604b;
+      font-size: 20px;
+    }
+
+    .mini-title {
+      margin: 22px 0 10px;
+      color: #ff6a55;
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      position: relative;
+    }
+
+    .tag-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 16px;
-      margin-top: 34px;
+      gap: 8px;
+      margin: 10px 0 14px;
+      position: relative;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 7px 10px;
+      border-radius: 4px;
+      background: rgba(255, 59, 36, 0.1);
+      border: 1px solid rgba(255, 80, 50, 0.22);
+      color: #ffd8cd;
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .notice {
+      margin-top: 14px;
+      padding: 14px 16px;
+      border-radius: 6px;
+      background: rgba(255, 184, 0, 0.075);
+      border-left: 4px solid #ff5b32;
+      color: #f0d7b7;
+      line-height: 1.8;
+      font-size: 14px;
+      font-weight: 700;
+      position: relative;
+    }
+
+    .rules-list {
+      padding-left: 22px;
+      margin: 10px 0 0;
+      color: #dfcab2;
+      line-height: 1.9;
+      font-weight: 600;
+      position: relative;
+    }
+
+    .rules-list li {
+      margin-bottom: 6px;
+    }
+
+    .bottom-cta {
+      padding: 70px 22px 90px;
+      text-align: center;
     }
 
     .btn {
@@ -302,389 +388,30 @@
       text-decoration: none;
       font-weight: 900;
       letter-spacing: 2px;
-      transition: 0.25s;
+      transition: 0.2s;
+      margin: 8px;
       position: relative;
       overflow: hidden;
-    }
-
-    .btn::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(110deg, transparent, rgba(255,255,255,0.16), transparent);
-      transform: translateX(-120%);
-      transition: 0.55s;
-    }
-
-    .btn:hover::before {
-      transform: translateX(120%);
     }
 
     .btn-primary {
       background: linear-gradient(135deg, #85130f, #ff4a24);
       color: #fff4e1;
-      border: 1px solid rgba(255, 116, 70, 0.55);
+      border: 1px solid rgba(255, 116, 70, 0.5);
       box-shadow:
-        0 0 22px rgba(255, 55, 20, 0.28),
-        7px 7px 0 rgba(0, 0, 0, 0.36);
-    }
-
-    .btn-primary:hover {
-      transform: translate(-2px, -2px);
-      box-shadow:
-        0 0 28px rgba(255, 55, 20, 0.42),
-        10px 10px 0 rgba(0, 0, 0, 0.42);
+        0 0 18px rgba(255, 55, 20, 0.22),
+        5px 5px 0 rgba(0, 0, 0, 0.34);
     }
 
     .btn-secondary {
       color: #fff1dc;
       background: rgba(255, 255, 255, 0.045);
-      border: 1px solid rgba(255, 166, 120, 0.34);
-      box-shadow: 7px 7px 0 rgba(0, 0, 0, 0.32);
+      border: 1px solid rgba(255, 166, 120, 0.3);
+      box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.28);
     }
 
-    .btn-secondary:hover {
-      transform: translate(-2px, -2px);
-      color: #ffb6a8;
-      border-color: rgba(255, 74, 52, 0.68);
-    }
-
-    .logo-card {
-      position: relative;
-      padding: 18px;
-      border-radius: 12px;
-      background:
-        linear-gradient(145deg, rgba(255,255,255,0.12), rgba(255,255,255,0.03));
-      border: 1px solid rgba(255, 91, 48, 0.34);
-      box-shadow:
-        0 0 32px rgba(255, 45, 20, 0.18),
-        12px 12px 0 rgba(0, 0, 0, 0.35);
-      overflow: hidden;
-    }
-
-    .logo-card::after {
-      content: "魔丸";
-      position: absolute;
-      right: 20px;
-      bottom: 18px;
-      width: 64px;
-      height: 64px;
-      border: 3px solid #cf281b;
-      color: #cf281b;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 900;
-      font-size: 18px;
-      transform: rotate(-8deg);
-      background: rgba(10, 5, 4, 0.72);
-      z-index: 2;
-      box-shadow: 0 0 16px rgba(255, 45, 20, 0.2);
-    }
-
-    .logo-card img {
-      position: relative;
-      z-index: 1;
-      width: 100%;
-      display: block;
-      border-radius: 8px;
-      object-fit: cover;
-      filter: contrast(1.05) saturate(1.03);
-    }
-
-    section {
-      padding: 92px 22px;
-      position: relative;
-    }
-
-    .section-inner {
-      max-width: 1180px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 2;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 44px;
-    }
-
-    .section-title h2 {
-      font-size: clamp(34px, 5vw, 52px);
-      margin: 0;
-      letter-spacing: 8px;
-      color: #fff3df;
-      text-shadow:
-        0 0 16px rgba(255, 60, 30, 0.26),
-        5px 6px 0 rgba(110, 0, 0, 0.22);
-    }
-
-    .section-title p {
-      color: #d8c6b0;
-      line-height: 1.9;
-      margin-top: 14px;
-      font-weight: 600;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .card,
-    .rule-box,
-    .step,
-    .cta,
-    .menu-preview {
-      background:
-        linear-gradient(135deg, rgba(255,255,255,0.105), rgba(255,255,255,0.035));
-      border: 1px solid rgba(255, 95, 55, 0.22);
-      box-shadow:
-        0 0 26px rgba(255, 45, 20, 0.06),
-        9px 9px 0 rgba(0,0,0,0.32),
-        0 14px 38px rgba(0, 0, 0, 0.35);
-    }
-
-    .card {
-      padding: 30px;
-      border-radius: 10px;
-      transition: 0.25s;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .card:hover {
-      transform: translate(-3px, -3px);
-      border-color: rgba(255, 76, 45, 0.55);
-      box-shadow:
-        0 0 34px rgba(255, 45, 20, 0.13),
-        12px 12px 0 rgba(0, 0, 0, 0.38);
-    }
-
-    .card h3 {
-      margin: 0 0 14px;
-      color: #ff604b;
-      font-size: 25px;
-      letter-spacing: 2px;
-      position: relative;
-    }
-
-    .card p {
-      margin: 0;
-      color: #e0cdb6;
-      line-height: 1.9;
-      font-weight: 600;
-      position: relative;
-    }
-
-    .menu-preview {
-      margin-top: 56px;
-      padding: 36px;
-      border-radius: 14px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .menu-preview::before {
-      content: "基礎單";
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      color: rgba(255, 244, 226, 0.035);
-      font-size: clamp(72px, 12vw, 160px);
-      font-weight: 900;
-      letter-spacing: 18px;
-      white-space: nowrap;
-      pointer-events: none;
-    }
-
-    .menu-preview h3 {
-      margin: 0;
-      color: #fff4e1;
-      font-size: clamp(28px, 4vw, 42px);
-      letter-spacing: 6px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .menu-preview p {
-      max-width: 720px;
-      margin: 18px auto 0;
-      color: #dfcab2;
-      line-height: 1.9;
-      font-weight: 600;
-      position: relative;
-      z-index: 1;
-    }
-
-    .menu-tags {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 26px 0 0;
-      position: relative;
-      z-index: 1;
-    }
-
-    .menu-tag {
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(255, 59, 36, 0.1);
-      border: 1px solid rgba(255, 80, 50, 0.24);
-      color: #ffd8cd;
-      font-size: 14px;
-      font-weight: 900;
-    }
-
-    .shop-rules {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-    }
-
-    .rule-box {
-      padding: 28px;
-      border-radius: 10px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .rule-box h3 {
-      margin: 0 0 14px;
-      color: #ff604b;
-      font-size: 25px;
-      letter-spacing: 3px;
-      position: relative;
-    }
-
-    .rule-box p {
-      margin: 0;
-      color: #dfcab2;
-      line-height: 1.95;
-      font-weight: 600;
-      position: relative;
-    }
-
-    .rule-box ul {
-      margin: 0;
-      padding-left: 20px;
-      color: #dfcab2;
-      line-height: 1.95;
-      font-weight: 600;
-      position: relative;
-    }
-
-    .rule-box strong {
-      color: #fff4e1;
-    }
-
-    .final-note {
-      margin-top: 34px;
-      text-align: center;
-      color: #ff6a55;
-      font-weight: 900;
-      letter-spacing: 4px;
-      font-size: 18px;
-      text-shadow: 0 0 14px rgba(255, 74, 52, 0.25);
-    }
-
-    .process {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-    }
-
-    .step {
-      padding: 26px;
-      border-radius: 10px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .step-number {
-      width: 42px;
-      height: 42px;
-      border-radius: 4px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #7d1410, #ff4a24);
-      color: #fff4e1;
-      font-weight: 900;
-      margin-bottom: 16px;
-      box-shadow: 0 0 16px rgba(255, 55, 20, 0.28);
-      position: relative;
-    }
-
-    .step h3 {
-      margin: 0 0 10px;
-      color: #fff4e1;
-      letter-spacing: 2px;
-      position: relative;
-    }
-
-    .step p {
-      margin: 0;
-      color: #dfcab2;
-      line-height: 1.75;
-      font-size: 15px;
-      font-weight: 600;
-      position: relative;
-    }
-
-    .cta {
-      text-align: center;
-      padding: 74px 26px;
-      border-radius: 12px;
-      position: relative;
-      overflow: hidden;
-      border-color: rgba(255, 80, 50, 0.34);
-    }
-
-    .cta::after {
-      content: "魔丸";
-      position: absolute;
-      right: 32px;
-      bottom: 28px;
-      width: 70px;
-      height: 70px;
-      border: 3px solid #cf281b;
-      color: #cf281b;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transform: rotate(-9deg);
-      font-weight: 900;
-      font-size: 20px;
-      opacity: 0.92;
-      background: rgba(10, 5, 4, 0.75);
-    }
-
-    .cta h2,
-    .cta p,
-    .cta .buttons {
-      position: relative;
-      z-index: 2;
-    }
-
-    .cta h2 {
-      margin: 0;
-      font-size: clamp(34px, 5vw, 54px);
-      letter-spacing: 8px;
-      color: #fff3df;
-      text-shadow: 0 0 16px rgba(255, 60, 30, 0.25);
-    }
-
-    .cta p {
-      max-width: 680px;
-      margin: 18px auto 30px;
-      color: #dfcab2;
-      line-height: 1.9;
-      font-weight: 600;
+    .btn:hover {
+      transform: translateY(-2px);
     }
 
     footer {
@@ -697,30 +424,8 @@
     }
 
     @media (max-width: 980px) {
-      .hero-inner {
+      .price-grid {
         grid-template-columns: 1fr;
-        text-align: center;
-      }
-
-      .intro {
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .buttons {
-        justify-content: center;
-      }
-
-      .cards {
-        grid-template-columns: 1fr;
-      }
-
-      .shop-rules {
-        grid-template-columns: 1fr;
-      }
-
-      .process {
-        grid-template-columns: 1fr 1fr;
       }
 
       .nav-links {
@@ -729,43 +434,38 @@
     }
 
     @media (max-width: 560px) {
-      .hero {
-        padding-top: 112px;
-      }
-
-      .process {
-        grid-template-columns: 1fr;
-      }
-
-      .brand {
-        font-size: 14px;
+      .page-hero {
+        padding-top: 125px;
       }
 
       h1 {
         letter-spacing: 6px;
       }
 
-      .cta::after {
-        opacity: 0.25;
-        right: 18px;
-        bottom: 18px;
+      .price-card {
+        padding: 22px;
       }
 
-      .menu-preview {
-        padding: 28px 20px;
+      .price-card h2 {
+        font-size: 27px;
+      }
+
+      .btn {
+        width: 100%;
+        max-width: 320px;
       }
     }
 
     @media (prefers-reduced-motion: reduce) {
       .page-enter,
-      .page-exit,
-      .reveal,
-      .reveal-left,
-      .reveal-right {
+      .page-exit {
         animation: none !important;
+      }
+
+      .btn,
+      .price-card,
+      .quick-nav a {
         transition: none !important;
-        opacity: 1 !important;
-        transform: none !important;
       }
     }
   </style>
@@ -774,232 +474,243 @@
 <body class="page-enter">
   <header>
     <div class="nav">
-      <a class="brand" href="index.html">
+      <a class="brand page-link" href="index.html">
         <img src="logo.png" alt="魔丸娛樂 Logo">
         <span>魔丸娛樂</span>
       </a>
 
       <nav class="nav-links">
-        <a href="#services">服務項目</a>
-        <a class="page-link" href="basic.html">基礎單價目</a>
-        <a href="#rules">本店規章</a>
-        <a href="#process">下單流程</a>
-        <a href="#contact">立即下單</a>
+        <a class="page-link" href="index.html">回首頁</a>
+        <a href="#guarantee">保底單</a>
+        <a href="#trial">體驗單</a>
+        <a href="#bet">賭約單</a>
+        <a href="#item">油鍋單</a>
+        <a href="#play">娛樂陪</a>
+        <a href="#skill">技術陪</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="hero">
-      <div class="ink-stroke">魔丸</div>
-
-      <div class="hero-inner">
-        <div class="reveal-left show">
-          <div class="badge">
-            <span></span>
-            MOWAN ENTERTAINMENT
-          </div>
-
-          <h1>魔丸娛樂</h1>
-
-          <div class="subtitle">
-            三角洲護航｜遊戲陪玩｜Valorant 陪玩
-          </div>
-
-          <p class="intro">
-            魔丸娛樂以三角洲護航及陪玩服務為主，現階段也提供 Valorant 陪玩。
-            我們重視排單效率、服務品質與顧客體驗，讓每一單都更穩、更順、更有感。
-          </p>
-
-          <div class="buttons">
-            <a class="btn btn-primary" href="https://discord.gg/EdxRfJ2MfX" target="_blank">
-              加入 Discord
-            </a>
-
-            <a class="btn btn-secondary page-link" href="basic.html">
-              查看價目
-            </a>
-          </div>
-        </div>
-
-        <div class="logo-card reveal-right show">
-          <img src="logo.png" alt="魔丸娛樂 Logo">
-        </div>
+    <section class="page-hero">
+      <div class="badge">
+        <span></span>
+        BASIC ORDER MENU
       </div>
+
+      <h1>基礎單價目</h1>
+
+      <p class="subtitle">
+        以下為魔丸娛樂基礎單分類，實際排單、價格與服務內容仍以客服確認為準。
+      </p>
     </section>
 
-    <section id="services">
+    <div class="quick-nav">
+      <a href="#guarantee">保底單</a>
+      <a href="#trial">體驗單</a>
+      <a href="#bet">賭約單</a>
+      <a href="#item">油鍋單</a>
+      <a href="#play">娛樂陪</a>
+      <a href="#skill">技術陪</a>
+    </div>
+
+    <section>
       <div class="section-inner">
-        <div class="section-title reveal">
-          <h2>服務項目</h2>
-          <p>依照顧客需求安排合適人員，提供穩定、有效率的遊戲服務。</p>
-        </div>
+        <div class="price-grid">
+          <div class="price-card featured" id="guarantee">
+            <div class="price-label">BASIC</div>
+            <h2>保底單</h2>
 
-        <div class="cards">
-          <div class="card reveal">
-            <h3>三角洲護航</h3>
-            <p>安全箱、物資、任務需求與指定目標，依照訂單內容安排打手協助。</p>
+            <div class="price-main">
+              <p><strong>金額 x 1.3 = 保底哈夫幣</strong></p>
+              <p>最低 500T 起</p>
+              <p>1000T x 1.3 → 1300w</p>
+              <p>1500T x 1.3 → 1950w</p>
+              <p>2000T x 1.3 → 2600w</p>
+            </div>
+
+            <div class="mini-title">指定護航</div>
+            <div class="tag-list">
+              <span class="tag">Elite 200T</span>
+              <span class="tag">Grandmaster/Master 150T</span>
+              <span class="tag">Diamond 100T</span>
+              <span class="tag">單筆兩單以上免指定費</span>
+            </div>
+
+            <div class="mini-title">下單須知</div>
+            <ol class="rules-list">
+              <li>此單為打手選圖</li>
+              <li>打手最低四頭五甲</li>
+              <li>不包過點及飯卡，包卡 +500</li>
+              <li>打手雙倒並指示老闆丟包撤，該局不計入保底</li>
+              <li>老闆帶出價值低於100w，該局不計入保底</li>
+              <li>對局期間老闆務必全程配合打手指揮，如因老闆自身因素導致撤離失敗，將立即結單處理</li>
+              <li>服務期間老闆刻意不撿物品卡保底，經打手舉報核實，將立即結單處理</li>
+              <li>老闆撤離失敗算炸單，機密保底 +20w、絕密保底 +60w</li>
+              <li>連續炸單六局，遇外掛不計入，經老闆同意後，可更換打手或全額退款</li>
+              <li>服務期間出現服務態度惡劣等狀況，請立即連絡客服並善用客訴管道</li>
+            </ol>
           </div>
 
-          <div class="card reveal reveal-delay-1">
-            <h3>遊戲陪玩</h3>
-            <p>可依照時段、需求與風格安排陪玩，也支援指定陪玩服務。</p>
+          <div class="price-card" id="trial">
+            <div class="price-label">TRIAL</div>
+            <h2>體驗單</h2>
+
+            <div class="price-main">
+              <p><strong>普通體驗單 500T</strong> 保 777w</p>
+              <p><strong>尊爵體驗單 1000T</strong> 保 1688w</p>
+            </div>
+
+            <div class="tag-list">
+              <span class="tag">每周可下單一次</span>
+            </div>
+
+            <div class="mini-title">下單須知</div>
+            <ol class="rules-list">
+              <li>此單為打手選圖</li>
+              <li>打手最低四頭五甲</li>
+              <li>包過點及飯卡</li>
+              <li>打手雙倒並指示老闆丟包撤，該局不計入保底</li>
+              <li>老闆帶出價值低於100w，該局不計入保底</li>
+              <li>對局期間老闆務必全程配合打手指揮，如因老闆自身因素導致撤離失敗，將立即結單處理</li>
+              <li>服務期間老闆刻意不撿物品卡保底，經打手舉報核實，將立即結單處理</li>
+              <li>老闆撤離失敗算炸單，機密保底 +20w、絕密保底 +60w</li>
+              <li>連續炸單六局，遇外掛不計入，經老闆同意後，可更換打手或全額退款</li>
+              <li>服務期間出現服務態度惡劣等狀況，請立即連絡客服並善用客訴管道</li>
+            </ol>
           </div>
 
-          <div class="card reveal reveal-delay-2">
-            <h3>Valorant 陪玩</h3>
-            <p>Valorant 陪玩服務開放中，後續將持續擴充更多遊戲與服務項目。</p>
+          <div class="price-card" id="bet">
+            <div class="price-label">BET</div>
+            <h2>賭約單</h2>
+
+            <div class="price-main">
+              <p><strong>600T</strong> 單局 520w，打到有為止</p>
+              <p><strong>800T</strong> 單局 666w，打到有為止</p>
+              <p><strong>1000T</strong> 單局 888w，打到有為止</p>
+            </div>
+
+            <div class="mini-title">下單須知</div>
+            <ol class="rules-list">
+              <li>此單為打手選圖，機密以上</li>
+              <li>打手最低四頭五甲</li>
+              <li>包過點及飯卡</li>
+              <li>對局期間老闆務必全程配合打手指揮，如因老闆自身因素導致撤離失敗，將立即結單處理</li>
+              <li>服務期間老闆刻意不撿物品卡保底，經打手舉報核實，將立即結單處理</li>
+              <li>連續炸單六局，遇外掛不計入，經老闆同意後，可更換打手或全額退款</li>
+              <li>服務期間出現服務態度惡劣等狀況，請立即連絡客服並善用客訴管道</li>
+            </ol>
           </div>
-        </div>
 
-        <div class="menu-preview reveal">
-          <h3>基礎單價目</h3>
-          <p>
-            基礎單價目已獨立成專屬頁面，包含保底單、體驗單、賭約單、油鍋單、娛樂陪與技術陪。
-            點擊下方按鈕即可進入完整價目頁。
-          </p>
+          <div class="price-card" id="item">
+            <div class="price-label">ITEM</div>
+            <h2>油鍋單</h2>
 
-          <div class="menu-tags">
-            <span class="menu-tag">保底單</span>
-            <span class="menu-tag">體驗單</span>
-            <span class="menu-tag">賭約單</span>
-            <span class="menu-tag">油鍋單</span>
-            <span class="menu-tag">娛樂陪</span>
-            <span class="menu-tag">技術陪</span>
+            <div class="price-main">
+              <p><strong>火箭燃油 3000T</strong> 保底 2000w</p>
+              <p><strong>GTI衛星通信天線 2000T</strong> 保底 1500w</p>
+              <p><strong>全包 4500T</strong> 保底 3500w</p>
+            </div>
+
+            <div class="mini-title">指定護航</div>
+            <div class="tag-list">
+              <span class="tag">Elite 200T</span>
+              <span class="tag">Grandmaster/Master 150T</span>
+              <span class="tag">Diamond 100T</span>
+            </div>
+
+            <div class="notice">
+              若是保底仍未出貨，下場改以撞車形式將道具交由老闆，確保老闆一定能取得。<br>
+              若是保底前出貨即算結單。
+            </div>
+
+            <div class="mini-title">下單須知</div>
+            <ol class="rules-list">
+              <li>打手最低四頭五甲</li>
+              <li>不包過點及飯卡，包卡 +500</li>
+              <li>打手雙倒並指示老闆丟包撤，該局不計入保底</li>
+              <li>老闆帶出價值低於100w，該局不計入保底</li>
+              <li>對局期間老闆務必全程配合打手指揮，如因老闆自身因素導致撤離失敗，將立即結單處理</li>
+              <li>服務期間老闆刻意不撿物品卡保底，經打手舉報核實，將立即結單處理</li>
+              <li>老闆撤離失敗算炸單，機密保底 +20w、絕密保底 +60w</li>
+              <li>連續炸單六局，遇外掛不計入，經老闆同意後，可更換打手或全額退款</li>
+              <li>服務期間出現服務態度惡劣等狀況，請立即連絡客服並善用客訴管道</li>
+            </ol>
           </div>
 
-          <div class="buttons" style="justify-content: center;">
-            <a class="btn btn-primary page-link" href="basic.html">
-              前往基礎單價目
-            </a>
+          <div class="price-card" id="play">
+            <div class="price-label">PLAY</div>
+            <h2>娛樂陪</h2>
+
+            <div class="price-main">
+              <p><strong>陪玩單陪 320T / 1H</strong></p>
+              <p>不保撤，無保底</p>
+            </div>
+
+            <div class="tag-list">
+              <span class="tag">指定陪玩 +100T</span>
+              <span class="tag">單筆兩單以上免指定費</span>
+            </div>
+
+            <div class="mini-title">下單須知</div>
+            <ol class="rules-list">
+              <li>此單為老闆選圖</li>
+              <li>不包過點卡及飯卡</li>
+              <li>服務期間出現服務態度惡劣等狀況，請立即連絡客服並善用客訴管道</li>
+              <li>陪玩單一律不接受任何技術投訴</li>
+            </ol>
+          </div>
+
+          <div class="price-card featured" id="skill">
+            <div class="price-label">SKILL</div>
+            <h2>技術陪</h2>
+
+            <div class="price-main">
+              <p><strong>機密單護 400T / 1H</strong> 無保底</p>
+              <p><strong>機密雙護 700T / 1H</strong> 保底 550w</p>
+              <p><strong>絕密雙護 900T / 1H</strong> 無保底</p>
+            </div>
+
+            <div class="notice">
+              純綠護，台服絕密太多掛，本店不做沒把握的約。
+            </div>
+
+            <div class="mini-title">指定護航</div>
+            <div class="tag-list">
+              <span class="tag">Elite 200T</span>
+              <span class="tag">Grandmaster/Master 150T</span>
+              <span class="tag">Diamond 100T</span>
+              <span class="tag">單筆兩單以上免指定費</span>
+            </div>
+
+            <div class="mini-title">下單須知</div>
+            <ol class="rules-list">
+              <li>此單為打手選圖</li>
+              <li>打手最低四頭五甲</li>
+              <li>包過點及飯卡</li>
+              <li>時間到但保底未到，會幫老闆把保底打滿再結單；保底到但時間未到，仍會陪老闆打滿時間</li>
+              <li>打手雙倒並指示老闆丟包撤，該局不計入保底</li>
+              <li>老闆帶出價值低於100w，該局不計入保底</li>
+              <li>對局期間老闆務必全程配合打手指揮，如因老闆自身因素導致撤離失敗，將立即結單處理</li>
+              <li>服務期間老闆刻意不撿物品卡保底，經打手舉報核實，將立即結單處理</li>
+              <li>老闆撤離失敗算炸單，機密保底 +20w、絕密保底 +60w</li>
+              <li>連續炸單六局，遇外掛不計入，經老闆同意後，可更換打手或全額退款</li>
+              <li>服務期間出現服務態度惡劣等狀況，請立即連絡客服並善用客訴管道</li>
+            </ol>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="rules">
-      <div class="section-inner">
-        <div class="section-title reveal">
-          <h2>本店規章</h2>
-          <p>歡迎各位闆闆來到魔丸娛樂</p>
-          <p>感謝您選擇魔丸娛樂！為確保您流暢的體驗及安全，請在下單前詳閱以下說明。</p>
-        </div>
+    <div class="bottom-cta">
+      <a class="btn btn-primary" href="https://discord.gg/EdxRfJ2MfX" target="_blank">
+        前往 Discord 下單
+      </a>
 
-        <div class="shop-rules">
-          <div class="rule-box reveal">
-            <h3>下單前注意事項</h3>
-            <ul>
-              <li>確認需求：請先確認您所需的訂單內容及時間，並提供正確的資訊。</li>
-              <li>聯繫客服：建議先與客服確認排程與報價，再進行下單，避免時間衝突。</li>
-              <li>禁止私單：本店禁止打手接私單，若有爭議一律概不負責。</li>
-              <li>未成年消費：未成年消費需經過家長許可。</li>
-            </ul>
-          </div>
-
-          <div class="rule-box reveal reveal-delay-1">
-            <h3>下單流程</h3>
-            <ul>
-              <li>每日客服時間 AM10:00 - AM02:00。</li>
-              <li>與客服於票口確認訂單資料（服務項目、時間、聯絡方式等）。</li>
-              <li>完成付款後，我們將依序安排陪玩/打手。</li>
-              <li>訂單完成後，將提供成品截圖（若適用）。</li>
-            </ul>
-          </div>
-
-          <div class="rule-box reveal">
-            <h3>服務條款</h3>
-            <p>
-              本服務僅限於安全、正規操作，不涉及任何非法或違規行為。
-              若遇不可抗力因素（例：系統維護、伺服器異常、外掛、老闆不聽指揮），可協調更改時間或部分退款。
-            </p>
-          </div>
-
-          <div class="rule-box reveal reveal-delay-1">
-            <h3>服務過程中</h3>
-            <p>
-              為保障老闆與打手的權益，打手在服務過程中都會全程錄影，如老闆電腦設備允許，也請老闆全程錄影。
-              若老闆打單途中突然有事不能繼續，可以跟打手另約時間繼續。
-            </p>
-          </div>
-
-          <div class="rule-box reveal">
-            <h3>本店售後</h3>
-            <p>
-              護航完畢後如對結果有疑慮，請在 <strong>24 小時內</strong> 與客服反應。
-              我們將視情況提供補償或再次服務。
-            </p>
-          </div>
-
-          <div class="rule-box reveal reveal-delay-1">
-            <h3>聯絡方式</h3>
-            <p>
-              請至客服支援尋求客服聯絡。<br>
-              也可以至聊天頻道詢問工作人員。
-            </p>
-          </div>
-        </div>
-
-        <div class="final-note reveal">
-          - 魔丸娛樂擁有最終解釋權 -
-        </div>
-      </div>
-    </section>
-
-    <section id="process">
-      <div class="section-inner">
-        <div class="section-title reveal">
-          <h2>下單流程</h2>
-          <p>簡單四步驟，快速安排服務。</p>
-        </div>
-
-        <div class="process">
-          <div class="step reveal">
-            <div class="step-number">1</div>
-            <h3>加入 Discord</h3>
-            <p>進入魔丸娛樂伺服器，查看服務項目、價目表與最新公告。</p>
-          </div>
-
-          <div class="step reveal reveal-delay-1">
-            <div class="step-number">2</div>
-            <h3>選擇服務</h3>
-            <p>選擇基礎單、護航、陪玩或其他指定需求。</p>
-          </div>
-
-          <div class="step reveal reveal-delay-2">
-            <div class="step-number">3</div>
-            <h3>客服確認</h3>
-            <p>確認價格、時間、人員與訂單內容，避免資訊落差。</p>
-          </div>
-
-          <div class="step reveal reveal-delay-3">
-            <div class="step-number">4</div>
-            <h3>安排接單</h3>
-            <p>由合適人員接單服務，完成後可留下評價與回饋。</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="section-inner">
-        <div class="cta reveal">
-          <h2>準備下單了嗎？</h2>
-          <p>
-            點擊下方按鈕加入 Discord，客服將協助你確認需求、價格與排單時間。
-          </p>
-
-          <div class="buttons" style="justify-content: center;">
-            <a class="btn btn-primary" href="https://discord.gg/EdxRfJ2MfX" target="_blank">
-              前往 Discord
-            </a>
-
-            <a class="btn btn-secondary page-link" href="basic.html">
-              查看價目
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
+      <a class="btn btn-secondary page-link" href="index.html">
+        回到首頁
+      </a>
+    </div>
   </main>
 
   <footer>
@@ -1007,27 +718,6 @@
   </footer>
 
   <script>
-    const revealElements = document.querySelectorAll(
-      ".reveal, .reveal-left, .reveal-right"
-    );
-
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-          }
-        });
-      },
-      {
-        threshold: 0.12
-      }
-    );
-
-    revealElements.forEach(element => {
-      observer.observe(element);
-    });
-
     const pageLinks = document.querySelectorAll(".page-link");
 
     pageLinks.forEach(link => {
@@ -1044,7 +734,7 @@
 
         setTimeout(() => {
           window.location.href = href;
-        }, 320);
+        }, 280);
       });
     });
   </script>
