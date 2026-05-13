@@ -1,60 +1,34 @@
-新增趣味單頁面後，首頁 index.html 建議做這幾個小修改：
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-一、上方選單加入「趣味單價目」
+  <title>魔丸娛樂｜三角洲護航・遊戲陪玩</title>
 
-找到：
-<nav class="nav-links">
-  <a href="#services">服務項目</a>
-  <a class="page-link" href="basic.html">基礎單價目</a>
-  <a href="#rules">本店規章</a>
-  <a href="#process">下單流程</a>
-  <a href="#contact">立即下單</a>
-</nav>
+  <meta name="description" content="魔丸娛樂提供三角洲護航、遊戲陪玩與 Valorant 陪玩服務，重視排單效率、服務品質與顧客體驗。">
+  <meta property="og:title" content="魔丸娛樂｜三角洲護航・遊戲陪玩">
+  <meta property="og:description" content="三角洲護航、遊戲陪玩、Valorant 陪玩，快速排單，穩定服務。">
+  <meta property="og:image" content="logo.png">
+  <meta property="og:type" content="website">
 
-改成：
-<nav class="nav-links">
-  <a href="#services">服務項目</a>
-  <a class="page-link" href="basic.html">基礎單價目</a>
-  <a class="page-link" href="fun.html">趣味單價目</a>
-  <a href="#rules">本店規章</a>
-  <a href="#process">下單流程</a>
-  <a href="#contact">立即下單</a>
-</nav>
+  <meta name="theme-color" content="#0b0706">
+  <link rel="icon" href="logo.png">
 
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-二、首頁服務區的「基礎單價目」卡片可以加一個趣味單按鈕
+    html {
+      scroll-behavior: smooth;
+    }
 
-找到這段附近：
-<a class="btn btn-primary page-link" href="basic.html">
-  前往基礎單價目
-</a>
-
-在它下面加：
-<a class="btn btn-secondary page-link" href="fun.html">
-  前往趣味單價目
-</a>
-
-
-三、下方 CTA 的按鈕也可以加趣味單
-
-找到：
-<a class="btn btn-secondary page-link" href="basic.html">
-  查看價目
-</a>
-
-可以改成：
-<a class="btn btn-secondary page-link" href="basic.html">
-  查看基礎單
-</a>
-
-<a class="btn btn-secondary page-link" href="fun.html">
-  查看趣味單
-</a>
-
-
-四、GitHub 要新增檔案
-
-Add file → Create new file → 檔名輸入：
-fun.html
-
-然後把 fun_code.txt 裡的內容貼進去，Commit changes。
+    body {
+      margin: 0;
+      font-family: "Microsoft JhengHei", "Noto Sans TC", Arial, sans-serif;
+      color: #f7efe2;
+      background:
+        radial-gradient(circle at 12% 8%, rgba(190, 18, 18, 0.22), transparent 20%),
+        radial-gradient(circle at 88% 14%, rgba(255, 95, 30, 0.12), transparent 18%),
+        linear-gradient(180deg, #080504 0%, #120a
