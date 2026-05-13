@@ -22,6 +22,7 @@
 
     html {
       scroll-behavior: auto;
+      background: #080504;
     }
 
     body {
@@ -33,6 +34,7 @@
         radial-gradient(circle at 88% 14%, rgba(255, 95, 30, 0.1), transparent 18%),
         linear-gradient(180deg, #080504 0%, #120a08 45%, #050403 100%);
       overflow-x: hidden;
+      min-height: 100vh;
     }
 
     body::before {
@@ -48,24 +50,8 @@
       opacity: 0.45;
     }
 
-    .page-enter {
-      animation: pageEnter 0.45s ease both;
-    }
-
     .page-exit {
-      animation: pageExit 0.28s ease both;
-    }
-
-    @keyframes pageEnter {
-      from {
-        opacity: 0;
-        transform: translateY(16px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      animation: pageExit 0.25s ease both;
     }
 
     @keyframes pageExit {
@@ -76,7 +62,7 @@
 
       to {
         opacity: 0;
-        transform: translateY(18px);
+        transform: translateY(16px);
       }
     }
 
@@ -457,7 +443,6 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .page-enter,
       .page-exit {
         animation: none !important;
       }
@@ -471,7 +456,7 @@
   </style>
 </head>
 
-<body class="page-enter">
+<body>
   <header>
     <div class="nav">
       <a class="brand page-link" href="index.html">
@@ -481,6 +466,7 @@
 
       <nav class="nav-links">
         <a class="page-link" href="index.html">回首頁</a>
+        <a class="page-link" href="fun.html">趣味單</a>
         <a href="#guarantee">保底單</a>
         <a href="#trial">體驗單</a>
         <a href="#bet">賭約單</a>
@@ -624,4 +610,118 @@
               若是保底前出貨即算結單。
             </div>
 
- 
+            <div class="mini-title">下單須知</div>
+            <ol class="rules-list">
+              <li>打手最低四頭五甲</li>
+              <li>不包過點及飯卡，包卡 +500</li>
+              <li>打手雙倒並指示老闆丟包撤，該局不計入保底</li>
+              <li>老闆帶出價值低於100w，該局不計入保底</li>
+              <li>對局期間老闆務必全程配合打手指揮，如因老闆自身因素導致撤離失敗，將立即結單處理</li>
+              <li>服務期間老闆刻意不撿物品卡保底，經打手舉報核實，將立即結單處理</li>
+              <li>老闆撤離失敗算炸單，機密保底 +20w、絕密保底 +60w</li>
+              <li>連續炸單六局，遇外掛不計入，經老闆同意後，可更換打手或全額退款</li>
+              <li>服務期間出現服務態度惡劣等狀況，請立即連絡客服並善用客訴管道</li>
+            </ol>
+          </div>
+
+          <div class="price-card" id="play">
+            <div class="price-label">PLAY</div>
+            <h2>娛樂陪</h2>
+
+            <div class="price-main">
+              <p><strong>陪玩單陪 320T / 1H</strong></p>
+              <p>不保撤，無保底</p>
+            </div>
+
+            <div class="tag-list">
+              <span class="tag">指定陪玩 +100T</span>
+              <span class="tag">單筆兩單以上免指定費</span>
+            </div>
+
+            <div class="mini-title">下單須知</div>
+            <ol class="rules-list">
+              <li>此單為老闆選圖</li>
+              <li>不包過點卡及飯卡</li>
+              <li>服務期間出現服務態度惡劣等狀況，請立即連絡客服並善用客訴管道</li>
+              <li>陪玩單一律不接受任何技術投訴</li>
+            </ol>
+          </div>
+
+          <div class="price-card featured" id="skill">
+            <div class="price-label">SKILL</div>
+            <h2>技術陪</h2>
+
+            <div class="price-main">
+              <p><strong>機密單護 400T / 1H</strong> 無保底</p>
+              <p><strong>機密雙護 700T / 1H</strong> 保底 550w</p>
+              <p><strong>絕密雙護 900T / 1H</strong> 無保底</p>
+            </div>
+
+            <div class="notice">
+              純綠護，台服絕密太多掛，本店不做沒把握的約。
+            </div>
+
+            <div class="mini-title">指定護航</div>
+            <div class="tag-list">
+              <span class="tag">Elite 200T</span>
+              <span class="tag">Grandmaster/Master 150T</span>
+              <span class="tag">Diamond 100T</span>
+              <span class="tag">單筆兩單以上免指定費</span>
+            </div>
+
+            <div class="mini-title">下單須知</div>
+            <ol class="rules-list">
+              <li>此單為打手選圖</li>
+              <li>打手最低四頭五甲</li>
+              <li>包過點及飯卡</li>
+              <li>時間到但保底未到，會幫老闆把保底打滿再結單；保底到但時間未到，仍會陪老闆打滿時間</li>
+              <li>打手雙倒並指示老闆丟包撤，該局不計入保底</li>
+              <li>老闆帶出價值低於100w，該局不計入保底</li>
+              <li>對局期間老闆務必全程配合打手指揮，如因老闆自身因素導致撤離失敗，將立即結單處理</li>
+              <li>服務期間老闆刻意不撿物品卡保底，經打手舉報核實，將立即結單處理</li>
+              <li>老闆撤離失敗算炸單，機密保底 +20w、絕密保底 +60w</li>
+              <li>連續炸單六局，遇外掛不計入，經老闆同意後，可更換打手或全額退款</li>
+              <li>服務期間出現服務態度惡劣等狀況，請立即連絡客服並善用客訴管道</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="bottom-cta">
+      <a class="btn btn-primary" href="https://discord.gg/EdxRfJ2MfX" target="_blank">
+        前往 Discord 下單
+      </a>
+
+      <a class="btn btn-secondary page-link" href="index.html">
+        回到首頁
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    © 2026 魔丸娛樂 Mowan Entertainment. All rights reserved.
+  </footer>
+
+  <script>
+    const pageLinks = document.querySelectorAll(".page-link");
+
+    pageLinks.forEach(link => {
+      link.addEventListener("click", event => {
+        const href = link.getAttribute("href");
+
+        if (!href || href.startsWith("#") || link.target === "_blank") {
+          return;
+        }
+
+        event.preventDefault();
+        document.body.classList.add("page-exit");
+
+        setTimeout(() => {
+          window.location.href = href;
+        }, 260);
+      });
+    });
+  </script>
+</body>
+</html>
