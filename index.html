@@ -20,6 +20,7 @@
 
     html {
       scroll-behavior: smooth;
+      background: #080504;
     }
 
     body {
@@ -31,7 +32,7 @@
         radial-gradient(circle at 88% 14%, rgba(255, 95, 30, 0.12), transparent 18%),
         linear-gradient(180deg, #080504 0%, #120a08 45%, #050403 100%);
       overflow-x: hidden;
-      animation: pageEnter 0.45s ease both;
+      min-height: 100vh;
     }
 
     body::before {
@@ -47,20 +48,8 @@
       opacity: 0.5;
     }
 
-    @keyframes pageEnter {
-      from {
-        opacity: 0;
-        transform: translateY(18px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
     .page-exit {
-      animation: pageExit 0.28s ease both;
+      animation: pageExit 0.25s ease both;
     }
 
     @keyframes pageExit {
@@ -71,7 +60,7 @@
 
       to {
         opacity: 0;
-        transform: translateY(18px);
+        transform: translateY(16px);
       }
     }
 
@@ -965,7 +954,7 @@
 
         setTimeout(() => {
           window.location.href = href;
-        }, 280);
+        }, 260);
       });
     });
   </script>
